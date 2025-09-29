@@ -30,7 +30,7 @@
 ## 1. Project Setup & Configuration
 
 ### 1.1 Initialize Project
-- [ ] Create Git repository
+- [x] Create Git repository
 - [x] Initialize Next.js/React project (for Vercel deployment)
 - [x] Set up project folder structure
   - [x] `/components`
