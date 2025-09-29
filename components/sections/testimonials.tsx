@@ -1,0 +1,230 @@
+'use client'
+
+import * as React from 'react'
+import { Container } from '@/components/ui'
+
+const testimonials = [
+  {
+    id: 1,
+    name: 'Sarah Chen',
+    title: 'Business Owner',
+    company: 'Chen Manufacturing',
+    content: 'Damian guided us through a complex succession plan that preserved our family business while minimizing tax implications. His expertise and attention to detail gave us complete confidence in our decisions.',
+    rating: 5,
+    avatar: 'SC',
+  },
+  {
+    id: 2,
+    name: 'Michael Roberts',
+    title: 'Retired Executive',
+    company: 'Former VP, Tech Corp',
+    content: 'The estate planning strategy Damian developed exceeded our expectations. He took the time to understand our unique situation and created a plan that protects our legacy for our grandchildren.',
+    rating: 5,
+    avatar: 'MR',
+  },
+  {
+    id: 3,
+    name: 'Jennifer Thompson',
+    title: 'Medical Professional',
+    company: 'Thompson Medical Practice',
+    content: 'Working with Legacy Wealth Advisory was a game-changer for our family. Damian\'s comprehensive approach to wealth protection gave us peace of mind we never had before.',
+    rating: 5,
+    avatar: 'JT',
+  },
+  {
+    id: 4,
+    name: 'David Wilson',
+    title: 'Entrepreneur',
+    company: 'Wilson Enterprises',
+    content: 'Damian\'s succession planning expertise helped us seamlessly transition our business to the next generation while protecting our family\'s financial security. Outstanding service.',
+    rating: 5,
+    avatar: 'DW',
+  },
+  {
+    id: 5,
+    name: 'Lisa Martinez',
+    title: 'Investment Advisor',
+    company: 'Martinez Financial',
+    content: 'As a financial professional myself, I appreciate Damian\'s thorough approach and deep expertise. He helped us create a sophisticated wealth protection strategy that addresses all our concerns.',
+    rating: 5,
+    avatar: 'LM',
+  },
+]
+
+export function TestimonialsSection() {
+  const [currentIndex, setCurrentIndex] = React.useState(0)
+  const [isAutoPlaying, setIsAutoPlaying] = React.useState(true)
+
+  // Auto-advance testimonials
+  React.useEffect(() => {
+    if (!isAutoPlaying) return
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % testimonials.length)
+    }, 5000)
+
+    return () => clearInterval(interval)
+  }, [isAutoPlaying])
+
+  const goToSlide = (index: number) => {
+    setCurrentIndex(index)
+    setIsAutoPlaying(false)
+    // Resume auto-play after 10 seconds
+    setTimeout(() => setIsAutoPlaying(true), 10000)
+  }
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length)
+    setIsAutoPlaying(false)
+    setTimeout(() => setIsAutoPlaying(true), 10000)
+  }
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length)
+    setIsAutoPlaying(false)
+    setTimeout(() => setIsAutoPlaying(true), 10000)
+  }
+
+  const renderStars = (rating: number) => {
+    return Array.from({ length: 5 }, (_, index) => (
+      <svg
+        key={index}
+        className={`w-5 h-5 ${index < rating ? 'text-gold-400' : 'text-gray-300'}`}
+        fill="currentColor"
+        viewBox="0 0 20 20"
+      >
+        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+      </svg>
+    ))
+  }
+
+  return (
+    <section className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
+      <Container>
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-950 mb-6">
+            What Our Clients Say
+          </h2>
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Don't just take our word for it. Here's what our clients have to say about
+            their experience working with Legacy Wealth Advisory.
+          </p>
+        </div>
+
+        <div className="relative max-w-4xl mx-auto">
+          {/* Main Testimonial Display */}
+          <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 relative overflow-hidden">
+            {/* Background Pattern */}
+            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-gold-400/10 to-primary-950/10 rounded-full -translate-y-16 translate-x-16"></div>
+
+            {/* Quote Icon */}
+            <div className="absolute top-6 left-6 text-gold-400/20">
+              <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-10zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z" />
+              </svg>
+            </div>
+
+            <div className="relative z-10">
+              {/* Rating */}
+              <div className="flex justify-center mb-6">
+                <div className="flex space-x-1">
+                  {renderStars(testimonials[currentIndex].rating)}
+                </div>
+              </div>
+
+              {/* Testimonial Content */}
+              <blockquote className="text-lg md:text-xl text-gray-700 text-center mb-8 leading-relaxed font-medium">
+                "{testimonials[currentIndex].content}"
+              </blockquote>
+
+              {/* Client Info */}
+              <div className="flex items-center justify-center space-x-4">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary-950 to-primary-800 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                  {testimonials[currentIndex].avatar}
+                </div>
+                <div className="text-left">
+                  <div className="font-bold text-primary-950 text-lg">
+                    {testimonials[currentIndex].name}
+                  </div>
+                  <div className="text-gray-600">
+                    {testimonials[currentIndex].title}
+                  </div>
+                  <div className="text-sm text-gray-500">
+                    {testimonials[currentIndex].company}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Navigation Arrows */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 bg-white hover:bg-gray-50 rounded-full shadow-lg flex items-center justify-center text-primary-950 hover:text-primary-800 transition-colors"
+            aria-label="Previous testimonial"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          <button
+            onClick={nextSlide}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 bg-white hover:bg-gray-50 rounded-full shadow-lg flex items-center justify-center text-primary-950 hover:text-primary-800 transition-colors"
+            aria-label="Next testimonial"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+
+          {/* Dots Navigation */}
+          <div className="flex justify-center space-x-2 mt-8">
+            {testimonials.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`w-3 h-3 rounded-full transition-colors duration-300 ${
+                  index === currentIndex
+                    ? 'bg-primary-950'
+                    : 'bg-gray-300 hover:bg-gray-400'
+                }`}
+                aria-label={`Go to testimonial ${index + 1}`}
+              />
+            ))}
+          </div>
+
+          {/* Progress Bar */}
+          <div className="mt-4 h-1 bg-gray-200 rounded-full overflow-hidden">
+            <div
+              className="h-full bg-gradient-to-r from-primary-950 to-gold-500 transition-all duration-300"
+              style={{
+                width: `${((currentIndex + 1) / testimonials.length) * 100}%`
+              }}
+            />
+          </div>
+        </div>
+
+        {/* Bottom Stats */}
+        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div>
+            <div className="text-3xl font-bold text-primary-950 mb-2">20+</div>
+            <div className="text-gray-600 text-sm">Years Experience</div>
+          </div>
+          <div>
+            <div className="text-3xl font-bold text-primary-950 mb-2">500+</div>
+            <div className="text-gray-600 text-sm">Families Served</div>
+          </div>
+          <div>
+            <div className="text-3xl font-bold text-primary-950 mb-2">$2B+</div>
+            <div className="text-gray-600 text-sm">Assets Protected</div>
+          </div>
+          <div>
+            <div className="text-3xl font-bold text-primary-950 mb-2">98%</div>
+            <div className="text-gray-600 text-sm">Client Satisfaction</div>
+          </div>
+        </div>
+      </Container>
+    </section>
+  )
+}
