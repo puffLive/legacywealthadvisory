@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link'
 import Image from 'next/image'
+import { useState } from 'react'
 import { Container } from '@/components/ui'
 import { Logo } from './logo'
 
@@ -31,6 +34,51 @@ const partnerLogos = [
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
+  const [email, setEmail] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [message, setMessage] = useState('')
+  const [isSuccess, setIsSuccess] = useState(false)
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+
+    if (!email) {
+      setMessage('Please enter your email address')
+      setIsSuccess(false)
+      return
+    }
+
+    setIsSubmitting(true)
+    setMessage('')
+
+    try {
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      })
+
+      const data = await response.json()
+
+      if (data.success) {
+        setMessage(data.message)
+        setIsSuccess(true)
+        setEmail('')
+      } else {
+        setMessage(data.error || 'Failed to subscribe. Please try again.')
+        setIsSuccess(false)
+      }
+    } catch (error) {
+      setMessage('Failed to subscribe. Please try again.')
+      setIsSuccess(false)
+    } finally {
+      setIsSubmitting(false)
+      // Clear message after 5 seconds
+      setTimeout(() => setMessage(''), 5000)
+    }
+  }
 
   return (
     <footer className="bg-primary-950 text-white">
@@ -134,16 +182,30 @@ export function Footer() {
             <p className="text-gray-300 text-sm mb-4">
               Get valuable insights on estate planning and wealth protection strategies.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-2 bg-white/10 border border-gray-600 rounded-md text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-transparent"
-              />
-              <button className="px-6 py-2 bg-gold-500 hover:bg-gold-600 text-primary-950 font-medium rounded-md transition-colors whitespace-nowrap">
-                Subscribe
-              </button>
-            </div>
+            <form onSubmit={handleNewsletterSubmit} className="space-y-3">
+              <div className="flex flex-col sm:flex-row gap-3">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email"
+                  disabled={isSubmitting}
+                  className="flex-1 px-4 py-2 bg-white/10 border border-gray-600 rounded-md text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed"
+                />
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="px-6 py-2 bg-gold-500 hover:bg-gold-600 disabled:bg-gold-600 disabled:opacity-50 text-primary-950 font-medium rounded-md transition-colors whitespace-nowrap disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? 'Subscribing...' : 'Subscribe'}
+                </button>
+              </div>
+              {message && (
+                <p className={`text-sm ${isSuccess ? 'text-green-400' : 'text-red-400'}`}>
+                  {message}
+                </p>
+              )}
+            </form>
           </div>
         </div>
 
