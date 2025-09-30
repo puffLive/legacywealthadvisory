@@ -115,13 +115,18 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Profile Image Placeholder */}
+            {/* Profile Image */}
             <div className="flex justify-center lg:justify-end">
-              <div className="w-80 h-96 bg-gradient-to-br from-gold-400/20 to-primary-700/20 rounded-2xl flex items-center justify-center">
-                <div className="w-64 h-80 bg-white/10 rounded-2xl flex items-center justify-center">
-                  <svg className="w-32 h-32 text-white/30" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                  </svg>
+              <div className="relative w-80 h-96 bg-gradient-to-br from-gold-400/20 to-primary-700/20 rounded-2xl p-4">
+                <div className="relative w-full h-full rounded-2xl overflow-hidden">
+                  <Image
+                    src="/images/portrait/damian-alexander_profile-image.jpeg"
+                    alt="Damian Alexander - Financial Planner & CLU"
+                    fill
+                    className="object-cover object-center"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    priority
+                  />
                 </div>
               </div>
             </div>
