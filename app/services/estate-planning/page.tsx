@@ -139,7 +139,7 @@ export default function EstatePlanningPage() {
                 Comprehensive Estate Planning Solutions
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Estate planning is more than just writing a will. It's about creating a comprehensive
+                Estate planning is more than just writing a will. It&apos;s about creating a comprehensive
                 strategy that protects your assets, minimizes taxes, and ensures your loved ones are
                 taken care of according to your wishes.
               </p>
@@ -319,7 +319,7 @@ export default function EstatePlanningPage() {
               Ready to Protect Your Legacy?
             </h2>
             <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-              Don't leave your family's financial security to chance. Let's work together to create
+              Don&apos;t leave your family&apos;s financial security to chance. Let&apos;s work together to create
               a comprehensive estate plan that protects your assets and honors your wishes.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

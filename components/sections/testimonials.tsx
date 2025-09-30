@@ -106,7 +106,7 @@ export function TestimonialsSection() {
             What Our Clients Say
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Don't just take our word for it. Here's what our clients have to say about
+            Don&apos;t just take our word for it. Here&apos;s what our clients have to say about
             their experience working with Legacy Wealth Advisory.
           </p>
         </div>
@@ -134,7 +134,7 @@ export function TestimonialsSection() {
 
               {/* Testimonial Content */}
               <blockquote className="text-lg md:text-xl text-gray-700 text-center mb-8 leading-relaxed font-medium">
-                "{testimonials[currentIndex].content}"
+                &quot;{testimonials[currentIndex].content}&quot;
               </blockquote>
 
               {/* Client Info */}

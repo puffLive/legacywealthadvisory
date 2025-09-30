@@ -147,9 +147,9 @@ export default function SuccessionPlanningPage() {
                 Comprehensive Succession Planning Services
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Business succession planning is one of the most critical decisions you'll make as a business owner.
+                Business succession planning is one of the most critical decisions you&apos;ll make as a business owner.
                 Our comprehensive approach ensures your business continues to thrive while providing you with
-                the financial security you've worked so hard to achieve.
+                the financial security you&apos;ve worked so hard to achieve.
               </p>
             </div>
 
@@ -183,7 +183,7 @@ export default function SuccessionPlanningPage() {
                 Succession Planning Options
               </h2>
               <p className="text-lg text-gray-600">
-                Every business is unique. We'll help you choose the succession strategy that best fits your situation.
+                Every business is unique. We&apos;ll help you choose the succession strategy that best fits your situation.
               </p>
             </div>
 
@@ -312,7 +312,7 @@ export default function SuccessionPlanningPage() {
               <p className="text-blue-100 leading-relaxed">
                 Delaying succession planning can result in reduced business value, limited options,
                 family conflicts, and unnecessary taxes. The earlier you start, the more options
-                you'll have and the better outcomes you can achieve.
+                you&apos;ll have and the better outcomes you can achieve.
               </p>
             </div>
           </div>
@@ -327,7 +327,7 @@ export default function SuccessionPlanningPage() {
               Secure Your Business Legacy Today
             </h2>
             <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-              Don't leave your life's work to chance. Let's create a succession plan that protects
+              Don&apos;t leave your life&apos;s work to chance. Let&apos;s create a succession plan that protects
               your business, secures your financial future, and preserves your legacy.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

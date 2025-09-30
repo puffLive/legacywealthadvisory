@@ -13,7 +13,7 @@ export default function PrivacyPolicyPage() {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold text-[#102a43] mb-4">1. Introduction</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Legacy Wealth Advisory ("we," "our," or "us") is committed to protecting your privacy.
+                Legacy Wealth Advisory (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy.
                 This Privacy Policy explains how we collect, use, disclose, and safeguard your information
                 when you visit our website or use our services.
               </p>
@@ -106,7 +106,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-[#102a43] mb-4">8. Children's Privacy</h2>
+              <h2 className="text-2xl font-semibold text-[#102a43] mb-4">8. Children&apos;s Privacy</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Our services are not directed to individuals under 18 years of age. We do not
                 knowingly collect personal information from children under 18.

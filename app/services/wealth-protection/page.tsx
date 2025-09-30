@@ -151,7 +151,7 @@ export default function WealthProtectionPage() {
               <p className="text-lg text-gray-600 leading-relaxed">
                 Your wealth faces numerous threats throughout your lifetime. Our comprehensive approach
                 identifies potential risks and implements strategic protections to safeguard your assets
-                and secure your family's financial future.
+                and secure your family&apos;s financial future.
               </p>
             </div>
 
@@ -225,7 +225,7 @@ export default function WealthProtectionPage() {
                 Insurance Solutions We Provide
               </h2>
               <p className="text-lg text-gray-600">
-                Access to Canada's leading insurance providers ensures competitive rates and comprehensive coverage.
+                Access to Canada&apos;s leading insurance providers ensures competitive rates and comprehensive coverage.
               </p>
             </div>
 
@@ -344,7 +344,7 @@ export default function WealthProtectionPage() {
               <h3 className="text-2xl font-bold mb-4">The Challenge</h3>
               <p className="text-blue-100 leading-relaxed">
                 A successful business owner with $3M in assets was concerned about protecting his
-                family's lifestyle and business operations if he became disabled or passed away
+                family&apos;s lifestyle and business operations if he became disabled or passed away
                 prematurely. His current insurance coverage was inadequate and outdated.
               </p>
             </div>
@@ -431,12 +431,12 @@ export default function WealthProtectionPage() {
         <Container>
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Don't Leave Your Wealth Unprotected
+              Don&apos;t Leave Your Wealth Unprotected
             </h2>
             <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-              Every day without proper protection is a day your wealth is at risk. Let's work
+              Every day without proper protection is a day your wealth is at risk. Let&apos;s work
               together to create a comprehensive protection strategy that safeguards your assets
-              and secures your family's future.
+              and secures your family&apos;s future.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary">

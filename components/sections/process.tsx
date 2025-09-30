@@ -183,7 +183,7 @@ export function ProcessSection() {
         <div className="text-center mt-16 p-8 bg-gradient-to-r from-primary-950 to-primary-800 rounded-2xl text-white">
           <h3 className="text-2xl font-bold mb-4">Ready to Begin Your Journey?</h3>
           <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-            Let's schedule a discovery session to understand your unique situation and start
+            Let&apos;s schedule a discovery session to understand your unique situation and start
             crafting a personalized strategy for your financial future.
           </p>
           <button className="bg-gold-500 hover:bg-gold-600 text-primary-950 font-bold py-3 px-8 rounded-lg transition-colors inline-flex items-center">

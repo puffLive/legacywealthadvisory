@@ -28,14 +28,14 @@ export async function POST(request: NextRequest) {
     if (result.success) {
       return NextResponse.json({
         success: true,
-        message: result.message,
+        message: 'message' in result ? result.message : 'Thank you! The resource has been sent to your email.',
         downloadUrl: `/api/resources/${resourceId}/download`, // We'll implement this later
       });
     } else {
       return NextResponse.json(
         {
           success: false,
-          error: result.error,
+          error: 'error' in result ? result.error : 'Failed to process download. Please try again.',
         },
         { status: 400 }
       );
@@ -44,7 +44,7 @@ export async function POST(request: NextRequest) {
     console.error('Resource download error:', error);
 
     if (error instanceof z.ZodError) {
-      const errorMessages = error.errors.map(err => err.message).join(', ');
+      const errorMessages = error.issues.map(err => err.message).join(', ');
       return NextResponse.json(
         {
           success: false,

@@ -107,7 +107,7 @@ export default function ContactPage() {
                   <svg className="w-5 h-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  We'll review your inquiry and prepare for our conversation
+                  We&apos;ll review your inquiry and prepare for our conversation
                 </li>
                 <li className="flex items-start">
                   <svg className="w-5 h-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -119,7 +119,7 @@ export default function ContactPage() {
                   <svg className="w-5 h-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  We'll schedule your complimentary discovery session
+                  We&apos;ll schedule your complimentary discovery session
                 </li>
               </ul>
             </div>
@@ -142,7 +142,7 @@ export default function ContactPage() {
               Get In Touch
             </h1>
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Ready to secure your financial future? Let's discuss your unique situation
+              Ready to secure your financial future? Let&apos;s discuss your unique situation
               and explore how we can help protect and grow your wealth.
             </p>
           </div>

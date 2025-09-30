@@ -95,7 +95,7 @@ export default function TermsOfServicePage() {
               </p>
               <ul className="list-disc pl-6 text-gray-700 mb-4 space-y-1">
                 <li>Use the website for any fraudulent or illegal purpose</li>
-                <li>Interfere with or disrupt the website's operation</li>
+                <li>Interfere with or disrupt the website&apos;s operation</li>
                 <li>Attempt to gain unauthorized access to our systems</li>
                 <li>Reproduce, distribute, or modify website content without permission</li>
               </ul>
@@ -113,7 +113,7 @@ export default function TermsOfServicePage() {
 
               <h3 className="text-xl font-medium text-gray-900 mb-3">No Warranty</h3>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Our website and services are provided "as is" without warranties of any kind.
+                Our website and services are provided &quot;as is&quot; without warranties of any kind.
                 We do not warrant that our website will be uninterrupted, error-free, or free
                 of viruses or other harmful components.
               </p>

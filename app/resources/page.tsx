@@ -363,7 +363,7 @@ export default function ResourcesPage() {
             </h3>
             <p className="text-gray-600 mb-4">
               Please provide your details to access this free resource.
-              We'll also send you updates on new resources and insights.
+              We&apos;ll also send you updates on new resources and insights.
             </p>
             <div className="space-y-3 mb-4">
               <Input
