@@ -1,6 +1,11 @@
-import { Button, Container } from '@/components/ui'
+'use client'
+
+import { Button, Container, CalendlyModal } from '@/components/ui'
+import * as React from 'react'
 
 export function HeroSection() {
+  const [isCalendlyOpen, setIsCalendlyOpen] = React.useState(false)
+
   return (
     <section className="bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800 text-white py-20 lg:py-32">
       <Container>
@@ -18,13 +23,31 @@ export function HeroSection() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button size="lg" variant="secondary" className="text-lg px-8 py-4">
+            <Button
+              size="lg"
+              variant="secondary"
+              className="text-lg px-8 py-4"
+              onClick={() => setIsCalendlyOpen(true)}
+            >
               Book Your Discovery Call
             </Button>
             <Button size="lg" variant="outline" className="text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-primary-950">
               Download Estate Planning Checklist
             </Button>
           </div>
+
+          <CalendlyModal
+            url={process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/damian-legacywealthadvisory'}
+            isOpen={isCalendlyOpen}
+            onClose={() => setIsCalendlyOpen(false)}
+            pageSettings={{
+              backgroundColor: 'ffffff',
+              hideEventTypeDetails: false,
+              hideLandingPageDetails: false,
+              primaryColor: '002B5C',
+              textColor: '1a202c',
+            }}
+          />
 
           {/* Trust Indicators */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-blue-200">

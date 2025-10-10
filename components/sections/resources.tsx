@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import { Container, Button } from '@/components/ui'
+import { Container, Button, CalendlyModal } from '@/components/ui'
 
 const resources = [
   {
@@ -60,6 +60,7 @@ export function ResourcesSection() {
     interests: [] as string[],
   })
   const [isSubmitting, setIsSubmitting] = React.useState(false)
+  const [isCalendlyOpen, setIsCalendlyOpen] = React.useState(false)
 
   const handleDownload = (resource: typeof resources[0]) => {
     setSelectedResource(resource)
@@ -175,6 +176,7 @@ export function ResourcesSection() {
             size="lg"
             variant="secondary"
             className="inline-flex items-center"
+            onClick={() => setIsCalendlyOpen(true)}
           >
             Schedule Free Consultation
             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -182,6 +184,19 @@ export function ResourcesSection() {
             </svg>
           </Button>
         </div>
+
+        <CalendlyModal
+          url={process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/planningwithdamian/30-min-with-damian'}
+          isOpen={isCalendlyOpen}
+          onClose={() => setIsCalendlyOpen(false)}
+          pageSettings={{
+            backgroundColor: 'ffffff',
+            hideEventTypeDetails: false,
+            hideLandingPageDetails: false,
+            primaryColor: '002B5C',
+            textColor: '1a202c',
+          }}
+        />
       </Container>
 
       {/* Lead Capture Modal */}

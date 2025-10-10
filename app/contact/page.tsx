@@ -4,7 +4,7 @@ import * as React from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
-import { Container, Button, Input, Textarea } from '@/components/ui'
+import { Container, Button, Input, Textarea, CalendlyInline } from '@/components/ui'
 
 const contactSchema = z.object({
   firstName: z.string().min(2, 'First name must be at least 2 characters'),
@@ -145,6 +145,35 @@ export default function ContactPage() {
               Ready to secure your financial future? Let&apos;s discuss your unique situation
               and explore how we can help protect and grow your wealth.
             </p>
+          </div>
+
+          {/* Calendly Booking Section */}
+          <div className="mb-16">
+            <div className="bg-gradient-to-br from-primary-50 to-blue-50 rounded-2xl p-8 md:p-12">
+              <div className="text-center mb-8">
+                <h2 className="text-2xl md:text-3xl font-bold text-primary-950 mb-4">
+                  Book Your Complimentary Discovery Session
+                </h2>
+                <p className="text-gray-600 max-w-2xl mx-auto">
+                  Prefer to schedule directly? Select a convenient time for your 30-minute
+                  complimentary discovery session. We&apos;ll discuss your goals and explore
+                  how we can help secure your financial future.
+                </p>
+              </div>
+
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+                <CalendlyInline
+                  url={process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/damian-legacywealthadvisory'}
+                  pageSettings={{
+                    backgroundColor: 'ffffff',
+                    hideEventTypeDetails: false,
+                    hideLandingPageDetails: false,
+                    primaryColor: '002B5C',
+                    textColor: '1a202c',
+                  }}
+                />
+              </div>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">

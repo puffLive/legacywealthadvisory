@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import { Container } from '@/components/ui'
+import { Container, CalendlyModal } from '@/components/ui'
 
 const processSteps = [
   {
@@ -59,6 +59,7 @@ const processSteps = [
 
 export function ProcessSection() {
   const [activeStep, setActiveStep] = React.useState<number | null>(null)
+  const [isCalendlyOpen, setIsCalendlyOpen] = React.useState(false)
 
   return (
     <section className="py-20 bg-white">
@@ -186,13 +187,29 @@ export function ProcessSection() {
             Let&apos;s schedule a discovery session to understand your unique situation and start
             crafting a personalized strategy for your financial future.
           </p>
-          <button className="bg-gold-500 hover:bg-gold-600 text-primary-950 font-bold py-3 px-8 rounded-lg transition-colors inline-flex items-center">
+          <button
+            onClick={() => setIsCalendlyOpen(true)}
+            className="bg-gold-500 hover:bg-gold-600 text-primary-950 font-bold py-3 px-8 rounded-lg transition-colors inline-flex items-center"
+          >
             Schedule Discovery Session
             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
           </button>
         </div>
+
+        <CalendlyModal
+          url={process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/planningwithdamian/30-min-with-damian'}
+          isOpen={isCalendlyOpen}
+          onClose={() => setIsCalendlyOpen(false)}
+          pageSettings={{
+            backgroundColor: 'ffffff',
+            hideEventTypeDetails: false,
+            hideLandingPageDetails: false,
+            primaryColor: '002B5C',
+            textColor: '1a202c',
+          }}
+        />
       </Container>
     </section>
   )
