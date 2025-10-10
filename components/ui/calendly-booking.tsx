@@ -87,6 +87,12 @@ export function CalendlyButton({
   utm,
   pageSettings,
 }: CalendlyButtonProps) {
+  const [rootElement, setRootElement] = React.useState<HTMLElement | null>(null)
+
+  React.useEffect(() => {
+    setRootElement(document.getElementById('__next') || document.body)
+  }, [])
+
   const baseClasses = 'inline-flex items-center justify-center font-semibold rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2'
 
   const variantClasses = {
@@ -103,10 +109,12 @@ export function CalendlyButton({
 
   const buttonClasses = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`
 
+  if (!rootElement) return null
+
   return (
     <PopupButton
       url={url}
-      rootElement={typeof document !== 'undefined' ? document.getElementById('__next') || document.body : undefined}
+      rootElement={rootElement}
       text={text}
       className={buttonClasses}
       prefill={prefill}
@@ -150,6 +158,12 @@ export function CalendlyModal({
   utm,
   pageSettings,
 }: CalendlyModalProps) {
+  const [rootElement, setRootElement] = React.useState<HTMLElement | null>(null)
+
+  React.useEffect(() => {
+    setRootElement(document.getElementById('__next') || document.body)
+  }, [])
+
   useCalendlyEventListener({
     onEventScheduled: (e) => {
       console.log('Event scheduled:', e.data.payload)
@@ -157,12 +171,14 @@ export function CalendlyModal({
     },
   })
 
+  if (!rootElement) return null
+
   return (
     <PopupModal
       url={url}
       open={isOpen}
       onModalClose={onClose}
-      rootElement={typeof document !== 'undefined' ? document.getElementById('__next') || document.body : undefined}
+      rootElement={rootElement}
       prefill={prefill}
       utm={utm}
       pageSettings={pageSettings}
