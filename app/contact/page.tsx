@@ -163,7 +163,7 @@ export default function ContactPage() {
 
               <div className="bg-white rounded-xl shadow-lg overflow-hidden">
                 <CalendlyInline
-                  url={process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/damian-legacywealthadvisory'}
+                  url={process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/planningwithdamian/30-min-with-damian'}
                   pageSettings={{
                     backgroundColor: 'ffffff',
                     hideEventTypeDetails: false,

@@ -37,7 +37,7 @@ export function HeroSection() {
           </div>
 
           <CalendlyModal
-            url={process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/damian-legacywealthadvisory'}
+            url={process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/planningwithdamian/30-min-with-damian'}
             isOpen={isCalendlyOpen}
             onClose={() => setIsCalendlyOpen(false)}
             pageSettings={{
