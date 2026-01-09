@@ -47,9 +47,12 @@ export default function ServicesPage() {
             <p className="text-xl text-primary-100 mb-8">
               Specialized financial planning solutions for high-net-worth individuals and business owners in the Greater Toronto Area.
             </p>
-            <CalendlyButton variant="secondary" size="lg">
-              Schedule a Consultation
-            </CalendlyButton>
+            <CalendlyButton
+              url={process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/planningwithdamian/30-min-with-damian'}
+              text="Schedule a Consultation"
+              variant="secondary"
+              size="lg"
+            />
           </div>
         </div>
       </section>
@@ -171,9 +174,11 @@ export default function ServicesPage() {
               Let&apos;s discuss how we can help protect and grow your wealth for generations to come.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <CalendlyButton size="lg">
-                Schedule a Consultation
-              </CalendlyButton>
+              <CalendlyButton
+                url={process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/planningwithdamian/30-min-with-damian'}
+                text="Schedule a Consultation"
+                size="lg"
+              />
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center px-8 py-3 border border-primary-600 text-base font-medium rounded-md text-primary-600 bg-white hover:bg-primary-50 transition-colors"
