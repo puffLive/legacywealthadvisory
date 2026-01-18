@@ -45,12 +45,12 @@ export function Header({ className }: HeaderProps) {
             {/* Contact Info - Desktop */}
             <div className="hidden lg:flex items-center space-x-4">
               <div className="text-right text-sm">
-                <p className="text-gray-600">Call us today</p>
+                <p className="text-gray-600">Call Us Today</p>
                 <a
-                  href="tel:416-471-3766"
+                  href="tel:905-840-2222"
                   className="font-semibold text-primary-950 hover:text-primary-800 transition-colors"
                 >
-                  (416) 471-3766
+                  (905) 840-2222
                 </a>
               </div>
             </div>
