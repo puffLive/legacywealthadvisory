@@ -24,12 +24,13 @@ const navigationLinks = {
 }
 
 const partnerLogos = [
-  { name: 'Sun Life', src: '/images/logo/partnerLogos/sunlife.svg' },
-  { name: 'Manulife', src: '/images/logo/partnerLogos/manulife.svg' },
-  { name: 'Canada Life', src: '/images/logo/partnerLogos/canadaLife.svg' },
-  { name: 'Empire Life', src: '/images/logo/partnerLogos/empireLife.svg' },
-  { name: 'Equitable Life', src: '/images/logo/partnerLogos/equitableLife.svg' },
-  { name: 'iA Financial Group', src: '/images/logo/partnerLogos/iAFinancialGroup.svg' },
+  { name: 'Sun Life', src: '/images/logo/partnerLogos/sunlife.svg', noInvert: false },
+  { name: 'Manulife', src: '/images/logo/partnerLogos/manulife.svg', noInvert: false },
+  { name: 'Canada Life', src: '/images/logo/partnerLogos/canadaLife.svg', noInvert: false },
+  { name: 'Empire Life', src: '/images/logo/partnerLogos/empireLife_clean.svg', noInvert: true },
+  { name: 'Equitable Life', src: '/images/logo/partnerLogos/equitableLife_clean.png', noInvert: true },
+  { name: 'iA Financial Group', src: '/images/logo/partnerLogos/iAFinancialGroup.svg', noInvert: false },
+  { name: 'Advocis', src: '/images/logo/partnerLogos/advocis.svg', noInvert: false },
 ]
 
 export function Footer() {
@@ -211,20 +212,49 @@ export function Footer() {
 
         {/* Partner Logos */}
         <div className="border-t border-gray-700 pt-8 mb-8">
-          <h3 className="font-semibold text-lg mb-4 text-center">Our Partners</h3>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 items-center opacity-70">
-            {partnerLogos.map((partner) => (
-              <div key={partner.name} className="flex justify-center">
-                <div className="relative h-8 w-24">
-                  <Image
-                    src={partner.src}
-                    alt={`${partner.name} logo`}
-                    fill
-                    className="object-contain filter brightness-0 invert"
-                  />
+          <h3 className="font-semibold text-lg mb-6 text-center">Our Partners</h3>
+          <div className="relative overflow-hidden group">
+            <div className="flex animate-scroll-partners group-hover:pause" style={{ width: 'max-content' }}>
+              {/* First set of logos */}
+              {partnerLogos.map((partner, index) => (
+                <div key={`${partner.name}-1-${index}`} className="inline-flex flex-shrink-0 px-8">
+                  <div className="relative h-20 w-48">
+                    <Image
+                      src={partner.src}
+                      alt={`${partner.name} logo`}
+                      fill
+                      className={`object-contain ${partner.noInvert ? '' : 'filter brightness-0 invert'} opacity-80 hover:opacity-100 transition-opacity`}
+                    />
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+              {/* Second set for seamless scroll */}
+              {partnerLogos.map((partner, index) => (
+                <div key={`${partner.name}-2-${index}`} className="inline-flex flex-shrink-0 px-8">
+                  <div className="relative h-20 w-48">
+                    <Image
+                      src={partner.src}
+                      alt={`${partner.name} logo`}
+                      fill
+                      className={`object-contain ${partner.noInvert ? '' : 'filter brightness-0 invert'} opacity-80 hover:opacity-100 transition-opacity`}
+                    />
+                  </div>
+                </div>
+              ))}
+              {/* Third set for extra smoothness */}
+              {partnerLogos.map((partner, index) => (
+                <div key={`${partner.name}-3-${index}`} className="inline-flex flex-shrink-0 px-8">
+                  <div className="relative h-20 w-48">
+                    <Image
+                      src={partner.src}
+                      alt={`${partner.name} logo`}
+                      fill
+                      className={`object-contain ${partner.noInvert ? '' : 'filter brightness-0 invert'} opacity-80 hover:opacity-100 transition-opacity`}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -233,17 +263,7 @@ export function Footer() {
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
             {/* Credentials */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <div className="flex items-center gap-4">
-                <div className="relative h-8 w-16">
-                  <Image
-                    src="/images/logo/partnerLogos/advocis.svg"
-                    alt="Advocis member"
-                    fill
-                    className="object-contain filter brightness-0 invert"
-                  />
-                </div>
-                <span className="text-xs text-gray-400">CLU • Financial Planner</span>
-              </div>
+              <span className="text-xs text-gray-400">CLU • Financial Planner</span>
             </div>
 
             {/* Legal Links */}
