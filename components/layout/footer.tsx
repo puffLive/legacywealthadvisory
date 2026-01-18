@@ -17,7 +17,7 @@ const navigationLinks = {
     { label: 'Wealth Protection', href: '/services/wealth-protection' },
   ],
   resources: [
-    { label: 'Resources', href: '/resources' },
+    // { label: 'Resources', href: '/resources' }, // Hidden for now
     { label: 'Privacy Policy', href: '/privacy-policy' },
     { label: 'Terms of Service', href: '/terms-of-service' },
   ],

@@ -22,7 +22,7 @@ const navigationItems: NavigationItem[] = [
       { label: 'Wealth Protection', href: '/services/wealth-protection' },
     ],
   },
-  { label: 'Resources', href: '/resources' },
+  // { label: 'Resources', href: '/resources' }, // Hidden for now
   { label: 'Contact', href: '/contact' },
 ]
 

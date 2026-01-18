@@ -31,9 +31,9 @@ export function HeroSection() {
             >
               Book Your Discovery Call
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-primary-950">
+            {/* <Button size="lg" variant="outline" className="text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-primary-950">
               Download Estate Planning Checklist
-            </Button>
+            </Button> */} {/* Hidden for now - download not ready */}
           </div>
 
           <CalendlyModal
