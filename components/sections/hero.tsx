@@ -31,9 +31,9 @@ export function HeroSection() {
             >
               Book Your Discovery Call
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-primary-950">
+            {/* <Button size="lg" variant="outline" className="text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-primary-950">
               Download Estate Planning Checklist
-            </Button>
+            </Button> */} {/* Hidden for now - download not ready */}
           </div>
 
           <CalendlyModal
@@ -61,7 +61,7 @@ export function HeroSection() {
               <svg className="w-5 h-5 text-gold-400" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <span className="text-sm">20+ Years Experience</span>
+              <span className="text-sm">25+ Years Experience</span>
             </div>
             <div className="flex items-center gap-2">
               <svg className="w-5 h-5 text-gold-400" fill="currentColor" viewBox="0 0 20 20">

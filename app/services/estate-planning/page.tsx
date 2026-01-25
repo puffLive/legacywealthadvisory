@@ -122,9 +122,9 @@ export default function EstatePlanningPage() {
               <Button size="lg" variant="secondary">
                 Schedule Consultation
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary-950">
+              {/* <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary-950">
                 Download Estate Planning Guide
-              </Button>
+              </Button> */} {/* Hidden for now - download not ready */}
             </div>
           </div>
         </Container>

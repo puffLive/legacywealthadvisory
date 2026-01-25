@@ -208,19 +208,19 @@ export function TestimonialsSection() {
         {/* Bottom Stats */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div>
-            <div className="text-3xl font-bold text-primary-950 mb-2">20+</div>
+            <div className="text-3xl font-bold text-primary-950 mb-2">25+</div>
             <div className="text-gray-600 text-sm">Years Experience</div>
           </div>
           <div>
             <div className="text-3xl font-bold text-primary-950 mb-2">500+</div>
-            <div className="text-gray-600 text-sm">Families Served</div>
+            <div className="text-gray-600 text-sm">Families Helped</div>
           </div>
           <div>
-            <div className="text-3xl font-bold text-primary-950 mb-2">$2B+</div>
+            <div className="text-3xl font-bold text-primary-950 mb-2">$50M+</div>
             <div className="text-gray-600 text-sm">Assets Protected</div>
           </div>
           <div>
-            <div className="text-3xl font-bold text-primary-950 mb-2">98%</div>
+            <div className="text-3xl font-bold text-primary-950 mb-2">100%</div>
             <div className="text-gray-600 text-sm">Client Satisfaction</div>
           </div>
         </div>

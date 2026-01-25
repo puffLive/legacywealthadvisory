@@ -130,9 +130,9 @@ export default function SuccessionPlanningPage() {
               <Button size="lg" variant="secondary">
                 Schedule Business Review
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary-950">
+              {/* <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary-950">
                 Download Succession Checklist
-              </Button>
+              </Button> */} {/* Hidden for now - download not ready */}
             </div>
           </div>
         </Container>

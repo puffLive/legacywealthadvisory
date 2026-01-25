@@ -11,48 +11,10 @@ const contactSchema = z.object({
   lastName: z.string().min(2, 'Last name must be at least 2 characters'),
   email: z.string().email('Please enter a valid email address'),
   phone: z.string().min(10, 'Please enter a valid phone number'),
-  company: z.string().optional(),
-  serviceInterest: z.string().min(1, 'Please select a service of interest'),
-  netWorth: z.string().optional(),
-  timeframe: z.string().min(1, 'Please select a timeframe'),
-  message: z.string().min(10, 'Please provide more details about your needs'),
-  preferredContact: z.string().min(1, 'Please select a preferred contact method'),
-  referralSource: z.string().optional(),
+  message: z.string().optional(),
 })
 
 type ContactFormData = z.infer<typeof contactSchema>
-
-const serviceOptions = [
-  { value: 'estate-planning', label: 'Estate Planning' },
-  { value: 'succession-planning', label: 'Business Succession Planning' },
-  { value: 'wealth-protection', label: 'Wealth Protection' },
-  { value: 'tax-optimization', label: 'Tax Optimization' },
-  { value: 'comprehensive', label: 'Comprehensive Planning' },
-  { value: 'other', label: 'Other' },
-]
-
-const netWorthRanges = [
-  { value: 'prefer-not-to-say', label: 'Prefer not to say' },
-  { value: '500k-1m', label: '$500K - $1M' },
-  { value: '1m-2m', label: '$1M - $2M' },
-  { value: '2m-5m', label: '$2M - $5M' },
-  { value: '5m-10m', label: '$5M - $10M' },
-  { value: '10m+', label: '$10M+' },
-]
-
-const timeframeOptions = [
-  { value: 'immediate', label: 'Immediately' },
-  { value: '1-3-months', label: '1-3 months' },
-  { value: '3-6-months', label: '3-6 months' },
-  { value: '6-12-months', label: '6-12 months' },
-  { value: 'information-gathering', label: 'Just gathering information' },
-]
-
-const contactMethods = [
-  { value: 'phone', label: 'Phone' },
-  { value: 'email', label: 'Email' },
-  { value: 'either', label: 'Either phone or email' },
-]
 
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = React.useState(false)
@@ -71,16 +33,25 @@ export default function ContactPage() {
     setIsSubmitting(true)
 
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000))
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
 
-      // Here you would send the data to your backend/email service
-      console.log('Form submitted:', data)
+      const result = await response.json()
 
-      setIsSubmitted(true)
-      reset()
+      if (result.success) {
+        setIsSubmitted(true)
+        reset()
+      } else {
+        alert(result.error || 'Failed to submit form. Please try again or call us at (905) 840-2222.')
+      }
     } catch (error) {
       console.error('Form submission error:', error)
+      alert('Failed to submit form. Please try again or call us at (905) 840-2222.')
     } finally {
       setIsSubmitting(false)
     }
@@ -214,111 +185,13 @@ export default function ContactPage() {
                   />
                 </div>
 
-                {/* Company */}
-                <Input
-                  label="Company (Optional)"
-                  {...register('company')}
-                  error={errors.company?.message}
-                />
-
-                {/* Service Interest */}
-                <div className="space-y-2">
-                  <label className="text-sm font-medium leading-none">
-                    Service of Interest <span className="text-red-500">*</span>
-                  </label>
-                  <select
-                    {...register('serviceInterest')}
-                    className="flex h-10 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
-                  >
-                    <option value="">Select a service</option>
-                    {serviceOptions.map((option) => (
-                      <option key={option.value} value={option.value}>
-                        {option.label}
-                      </option>
-                    ))}
-                  </select>
-                  {errors.serviceInterest && (
-                    <p className="text-sm text-red-600">{errors.serviceInterest.message}</p>
-                  )}
-                </div>
-
-                {/* Net Worth */}
-                <div className="space-y-2">
-                  <label className="text-sm font-medium leading-none">
-                    Approximate Net Worth (Optional)
-                  </label>
-                  <select
-                    {...register('netWorth')}
-                    className="flex h-10 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
-                  >
-                    <option value="">Select range</option>
-                    {netWorthRanges.map((option) => (
-                      <option key={option.value} value={option.value}>
-                        {option.label}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                {/* Timeframe */}
-                <div className="space-y-2">
-                  <label className="text-sm font-medium leading-none">
-                    When are you looking to get started? <span className="text-red-500">*</span>
-                  </label>
-                  <select
-                    {...register('timeframe')}
-                    className="flex h-10 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
-                  >
-                    <option value="">Select timeframe</option>
-                    {timeframeOptions.map((option) => (
-                      <option key={option.value} value={option.value}>
-                        {option.label}
-                      </option>
-                    ))}
-                  </select>
-                  {errors.timeframe && (
-                    <p className="text-sm text-red-600">{errors.timeframe.message}</p>
-                  )}
-                </div>
-
-                {/* Preferred Contact Method */}
-                <div className="space-y-2">
-                  <label className="text-sm font-medium leading-none">
-                    Preferred Contact Method <span className="text-red-500">*</span>
-                  </label>
-                  <div className="flex flex-wrap gap-4">
-                    {contactMethods.map((method) => (
-                      <label key={method.value} className="flex items-center">
-                        <input
-                          type="radio"
-                          value={method.value}
-                          {...register('preferredContact')}
-                          className="mr-2 text-primary-500 focus:ring-primary-500"
-                        />
-                        <span className="text-sm text-gray-700">{method.label}</span>
-                      </label>
-                    ))}
-                  </div>
-                  {errors.preferredContact && (
-                    <p className="text-sm text-red-600">{errors.preferredContact.message}</p>
-                  )}
-                </div>
-
                 {/* Message */}
                 <Textarea
-                  label="Tell us about your situation and goals"
+                  label="Tell us about your situation and goals (Optional)"
                   {...register('message')}
                   error={errors.message?.message}
                   rows={5}
-                  required
                   helperText="The more details you provide, the better we can prepare for our conversation"
-                />
-
-                {/* Referral Source */}
-                <Input
-                  label="How did you hear about us? (Optional)"
-                  {...register('referralSource')}
-                  error={errors.referralSource?.message}
                 />
 
                 {/* Submit Button */}
@@ -415,7 +288,7 @@ export default function ContactPage() {
                 <h4 className="font-semibold text-primary-950">Quick Contact Options</h4>
                 <div className="space-y-3">
                   <a
-                    href="tel:416-471-3766"
+                    href="tel:905-840-2222"
                     className="flex items-center p-4 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors group"
                   >
                     <svg className="w-5 h-5 text-gold-500 mr-3 group-hover:text-gold-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -423,7 +296,7 @@ export default function ContactPage() {
                     </svg>
                     <div>
                       <p className="font-medium text-primary-950">Call Now</p>
-                      <p className="text-sm text-gray-600">(416) 471-3766</p>
+                      <p className="text-sm text-gray-600">(905) 840-2222</p>
                     </div>
                   </a>
 

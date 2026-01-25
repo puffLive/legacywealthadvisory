@@ -1,82 +1,101 @@
 'use client';
 
 import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Download, FileText, Calculator, BookOpen, TrendingUp, Shield } from 'lucide-react';
+import { DocumentTextIcon, CheckCircleIcon, CalculatorIcon, DocumentDuplicateIcon, ArrowDownTrayIcon } from '@heroicons/react/24/outline';
 
 interface Resource {
   id: string;
   title: string;
   description: string;
-  type: 'guide' | 'checklist' | 'calculator' | 'template';
-  category: 'estate-planning' | 'succession-planning' | 'wealth-protection' | 'general';
-  icon: React.ComponentType<any>;
+  category: string;
+  type: string;
+  icon: React.ComponentType<{ className?: string }>;
   fileSize: string;
-  downloadCount: number;
+  downloadUrl?: string;
 }
 
 const resources: Resource[] = [
   {
     id: 'estate-planning-guide',
     title: 'Complete Estate Planning Guide',
-    description: 'A comprehensive guide covering all aspects of estate planning, from basic wills to complex trust structures.',
-    type: 'guide',
+    description: 'A comprehensive guide covering all aspects of estate planning, from wills to trusts.',
     category: 'estate-planning',
-    icon: BookOpen,
-    fileSize: '2.5 MB',
-    downloadCount: 1243
+    type: 'guide',
+    icon: DocumentTextIcon,
+    fileSize: '2.4 MB',
   },
   {
     id: 'succession-checklist',
-    title: 'Business Succession Planning Checklist',
-    description: 'Step-by-step checklist to ensure your business succession plan covers all critical elements.',
-    type: 'checklist',
+    title: 'Business Succession Checklist',
+    description: 'Essential steps for planning a smooth business transition to the next generation.',
     category: 'succession-planning',
-    icon: FileText,
-    fileSize: '850 KB',
-    downloadCount: 892
+    type: 'checklist',
+    icon: CheckCircleIcon,
+    fileSize: '1.1 MB',
   },
   {
-    id: 'wealth-calculator',
-    title: 'Wealth Protection Calculator',
-    description: 'Calculate your insurance needs and wealth protection gaps with our interactive tool.',
+    id: 'insurance-calculator',
+    title: 'Life Insurance Needs Calculator',
+    description: 'Calculate your life insurance needs based on your financial obligations and goals.',
+    category: 'wealth-protection',
     type: 'calculator',
-    category: 'wealth-protection',
-    icon: Calculator,
-    fileSize: '1.2 MB',
-    downloadCount: 1567
+    icon: CalculatorIcon,
+    fileSize: 'Online Tool',
   },
   {
-    id: 'trust-template',
-    title: 'Family Trust Template',
-    description: 'Customizable family trust template with guidance notes for common scenarios.',
-    type: 'template',
+    id: 'will-template',
+    title: 'Will Planning Template',
+    description: 'A template to help you organize your thoughts before meeting with an estate lawyer.',
     category: 'estate-planning',
-    icon: FileText,
-    fileSize: '750 KB',
-    downloadCount: 623
+    type: 'template',
+    icon: DocumentDuplicateIcon,
+    fileSize: '856 KB',
   },
   {
-    id: 'tax-strategies',
+    id: 'tax-strategies-guide',
     title: 'Tax-Efficient Wealth Transfer Strategies',
-    description: 'Advanced strategies for minimizing tax impact during wealth transfers.',
+    description: 'Learn how to minimize taxes when transferring wealth to the next generation.',
+    category: 'estate-planning',
     type: 'guide',
-    category: 'general',
-    icon: TrendingUp,
+    icon: DocumentTextIcon,
     fileSize: '1.8 MB',
-    downloadCount: 934
   },
   {
-    id: 'insurance-guide',
-    title: 'Life Insurance Buyer\'s Guide',
-    description: 'Everything you need to know about choosing the right life insurance for your situation.',
-    type: 'guide',
+    id: 'retirement-planning-checklist',
+    title: 'Retirement Planning Checklist',
+    description: 'Ensure you\'re on track for a comfortable retirement with this comprehensive checklist.',
+    category: 'general',
+    type: 'checklist',
+    icon: CheckCircleIcon,
+    fileSize: '945 KB',
+  },
+  {
+    id: 'business-valuation-template',
+    title: 'Business Valuation Worksheet',
+    description: 'A worksheet to help you estimate the value of your business for succession planning.',
+    category: 'succession-planning',
+    type: 'template',
+    icon: DocumentDuplicateIcon,
+    fileSize: '1.3 MB',
+  },
+  {
+    id: 'estate-tax-calculator',
+    title: 'Estate Tax Calculator',
+    description: 'Estimate potential estate taxes and explore strategies to minimize them.',
+    category: 'estate-planning',
+    type: 'calculator',
+    icon: CalculatorIcon,
+    fileSize: 'Online Tool',
+  },
+  {
+    id: 'wealth-protection-guide',
+    title: 'Asset Protection Strategies',
+    description: 'Protect your wealth from creditors, lawsuits, and other risks.',
     category: 'wealth-protection',
-    icon: Shield,
+    type: 'guide',
+    icon: DocumentTextIcon,
     fileSize: '2.1 MB',
-    downloadCount: 1156
-  }
+  },
 ];
 
 const categories = [
@@ -98,14 +117,6 @@ const types = [
 export default function ResourcesPage() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedType, setSelectedType] = useState('all');
-  const [email, setEmail] = useState('');
-  const [firstName, setFirstName] = useState('');
-  const [downloadingId, setDownloadingId] = useState<string | null>(null);
-  const [showEmailModal, setShowEmailModal] = useState(false);
-  const [selectedResource, setSelectedResource] = useState<Resource | null>(null);
-  const [newsletterEmail, setNewsletterEmail] = useState('');
-  const [isNewsletterSubmitting, setIsNewsletterSubmitting] = useState(false);
-  const [newsletterMessage, setNewsletterMessage] = useState('');
 
   const filteredResources = resources.filter(resource => {
     const categoryMatch = selectedCategory === 'all' || resource.category === selectedCategory;
@@ -114,89 +125,9 @@ export default function ResourcesPage() {
   });
 
   const handleDownload = (resource: Resource) => {
-    setSelectedResource(resource);
-    setShowEmailModal(true);
-  };
-
-  const handleConfirmDownload = async () => {
-    if (!selectedResource || !email) return;
-
-    setDownloadingId(selectedResource.id);
-
-    try {
-      const response = await fetch('/api/resource-download', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email: email,
-          firstName: firstName,
-          resourceId: selectedResource.id,
-          resourceTitle: selectedResource.title,
-        }),
-      });
-
-      const data = await response.json();
-
-      if (data.success) {
-        // Close modal and reset form
-        setShowEmailModal(false);
-        setEmail('');
-        setFirstName('');
-        setSelectedResource(null);
-
-        // Show success message (you could add a toast notification here)
-        alert(data.message);
-
-        // Simulate file download (in a real app, you'd serve the actual file)
-        console.log(`Download successful: ${selectedResource.title} for ${email}`);
-      } else {
-        alert(data.error || 'Failed to process download. Please try again.');
-      }
-    } catch (error) {
-      console.error('Download error:', error);
-      alert('Failed to process download. Please try again.');
-    } finally {
-      setDownloadingId(null);
-    }
-  };
-
-  const handleNewsletterSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    if (!newsletterEmail) {
-      setNewsletterMessage('Please enter your email address');
-      return;
-    }
-
-    setIsNewsletterSubmitting(true);
-    setNewsletterMessage('');
-
-    try {
-      const response = await fetch('/api/newsletter', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email: newsletterEmail }),
-      });
-
-      const data = await response.json();
-
-      if (data.success) {
-        setNewsletterMessage(data.message);
-        setNewsletterEmail('');
-      } else {
-        setNewsletterMessage(data.error || 'Failed to subscribe. Please try again.');
-      }
-    } catch (error) {
-      setNewsletterMessage('Failed to subscribe. Please try again.');
-    } finally {
-      setIsNewsletterSubmitting(false);
-      // Clear message after 5 seconds
-      setTimeout(() => setNewsletterMessage(''), 5000);
-    }
+    // For now, just log the download
+    console.log(`Download requested: ${resource.title}`);
+    alert('Please contact us at damian@legacywealthadvisory.ca to receive this resource.');
   };
 
   return (
@@ -278,37 +209,22 @@ export default function ResourcesPage() {
                         </span>
                       </div>
                     </div>
-
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
                       {resource.title}
                     </h3>
-
-                    <p className="text-gray-600 mb-4 line-clamp-3">
+                    <p className="text-gray-600 mb-4 line-clamp-2">
                       {resource.description}
                     </p>
-
-                    <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                      <span>{resource.fileSize}</span>
-                      <span>{resource.downloadCount.toLocaleString()} downloads</span>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-gray-500">{resource.fileSize}</span>
+                      <button
+                        onClick={() => handleDownload(resource)}
+                        className="flex items-center px-4 py-2 bg-[#102a43] text-white rounded-md hover:bg-[#0d2138] transition-colors duration-200"
+                      >
+                        <ArrowDownTrayIcon className="h-4 w-4 mr-2" />
+                        Download
+                      </button>
                     </div>
-
-                    <Button
-                      onClick={() => handleDownload(resource)}
-                      disabled={downloadingId === resource.id}
-                      className="w-full bg-[#D4AF37] hover:bg-[#B8941F] text-white"
-                    >
-                      {downloadingId === resource.id ? (
-                        <div className="flex items-center">
-                          <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                          Preparing Download...
-                        </div>
-                      ) : (
-                        <div className="flex items-center">
-                          <Download className="h-4 w-4 mr-2" />
-                          Download Free
-                        </div>
-                      )}
-                    </Button>
                   </div>
                 </div>
               );
@@ -317,87 +233,24 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      {/* Newsletter Section */}
-      <section className="bg-[#102a43] text-white py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">
-            Stay Updated with Our Latest Resources
+      {/* CTA Section */}
+      <section className="bg-gray-900 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-white mb-4">
+            Need Personalized Advice?
           </h2>
-          <p className="text-blue-100 mb-8">
-            Get notified when we publish new guides, tools, and insights to help you
-            protect and grow your wealth.
+          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            Our resources are a great starting point, but nothing beats personalized advice
+            tailored to your unique situation.
           </p>
-          <form onSubmit={handleNewsletterSubmit} className="max-w-md mx-auto">
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Input
-                type="email"
-                value={newsletterEmail}
-                onChange={(e) => setNewsletterEmail(e.target.value)}
-                placeholder="Enter your email"
-                disabled={isNewsletterSubmitting}
-                className="flex-1 bg-white text-gray-900 disabled:opacity-50"
-              />
-              <Button
-                type="submit"
-                disabled={isNewsletterSubmitting}
-                className="bg-[#D4AF37] hover:bg-[#B8941F] disabled:bg-[#B8941F] disabled:opacity-50 text-white whitespace-nowrap"
-              >
-                {isNewsletterSubmitting ? 'Subscribing...' : 'Subscribe'}
-              </Button>
-            </div>
-            {newsletterMessage && (
-              <p className="text-sm mt-2 text-center">
-                {newsletterMessage}
-              </p>
-            )}
-          </form>
+          <a
+            href="/contact"
+            className="inline-block px-8 py-3 bg-[#d4af37] text-[#102a43] font-semibold rounded-md hover:bg-[#b8962c] transition-colors duration-200"
+          >
+            Schedule a Consultation
+          </a>
         </div>
       </section>
-
-      {/* Email Modal */}
-      {showEmailModal && selectedResource && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-          <div className="bg-white rounded-lg max-w-md w-full p-6">
-            <h3 className="text-xl font-semibold mb-4">
-              Download {selectedResource.title}
-            </h3>
-            <p className="text-gray-600 mb-4">
-              Please provide your details to access this free resource.
-              We&apos;ll also send you updates on new resources and insights.
-            </p>
-            <div className="space-y-3 mb-4">
-              <Input
-                type="text"
-                placeholder="First name"
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-              />
-              <Input
-                type="email"
-                placeholder="Email address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-            <div className="flex gap-3">
-              <Button
-                onClick={() => setShowEmailModal(false)}
-                variant="outline"
-                className="flex-1"
-              >
-                Cancel
-              </Button>
-              <Button
-                onClick={handleConfirmDownload}
-                disabled={!email || !firstName || downloadingId === selectedResource.id}
-                className="flex-1 bg-[#D4AF37] hover:bg-[#B8941F] text-white"
-              >
-                {downloadingId === selectedResource.id ? 'Processing...' : 'Download'}
-              </Button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

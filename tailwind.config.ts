@@ -51,6 +51,15 @@ const config: Config = {
       screens: {
         'xs': '320px',
       },
+      animation: {
+        'scroll-partners': 'scroll-partners 35s linear infinite',
+      },
+      keyframes: {
+        'scroll-partners': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-33.333%)' },
+        },
+      },
     },
   },
   plugins: [],
