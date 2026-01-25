@@ -143,6 +143,7 @@ export function Footer() {
                       src={partner.src}
                       alt={`${partner.name} logo`}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 192px"
                       className={`object-contain ${partner.noInvert ? '' : 'filter brightness-0 invert'} opacity-80 hover:opacity-100 transition-opacity`}
                     />
                   </div>
@@ -156,6 +157,7 @@ export function Footer() {
                       src={partner.src}
                       alt={`${partner.name} logo`}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 192px"
                       className={`object-contain ${partner.noInvert ? '' : 'filter brightness-0 invert'} opacity-80 hover:opacity-100 transition-opacity`}
                     />
                   </div>
@@ -169,6 +171,7 @@ export function Footer() {
                       src={partner.src}
                       alt={`${partner.name} logo`}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 192px"
                       className={`object-contain ${partner.noInvert ? '' : 'filter brightness-0 invert'} opacity-80 hover:opacity-100 transition-opacity`}
                     />
                   </div>
