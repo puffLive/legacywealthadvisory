@@ -1,14 +1,57 @@
 'use client'
 
 import { Button, Container, CalendlyModal } from '@/components/ui'
+import Image from 'next/image'
 import * as React from 'react'
+
+const heroImages = [
+  '/images/hero-images/lwa-elephant-herd.jpg',
+  '/images/hero-images/lwa-multigenerational-people-hugging.jpg',
+  '/images/hero-images/lwa-palms-of-the-father-and-mother.jpg',
+  '/images/hero-images/lwa-senior-couple-holding-hands.jpg',
+]
 
 export function HeroSection() {
   const [isCalendlyOpen, setIsCalendlyOpen] = React.useState(false)
+  const [currentImageIndex, setCurrentImageIndex] = React.useState(0)
+
+  // Cycle through images every 5 seconds
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length)
+    }, 5000)
+
+    return () => clearInterval(interval)
+  }, [])
 
   return (
-    <section className="bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800 text-white py-20 lg:py-32">
-      <Container>
+    <section className="relative text-white py-20 lg:py-32 overflow-hidden">{/* Add background images with fade transition */}
+      <div className="absolute inset-0 z-0">
+        {heroImages.map((image, index) => (
+          <div
+            key={image}
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            <Image
+              src={image}
+              alt="Legacy wealth planning"
+              fill
+              className="object-cover"
+              priority={index === 0}
+              quality={90}
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* Blue gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-950/90 via-primary-900/85 to-primary-800/80 z-10"></div>
+
+      {/* Content */}
+      <div className="relative z-20">
+        <Container>
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
             Strength for Today.{' '}
@@ -74,9 +117,10 @@ export function HeroSection() {
       </Container>
 
       {/* Background Decorative Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-10">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-10 z-30">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-gold-400 rounded-full blur-3xl"></div>
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-400 rounded-full blur-3xl"></div>
+      </div>
       </div>
     </section>
   )
