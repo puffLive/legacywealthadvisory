@@ -23,13 +23,13 @@ const navigationLinks = {
 }
 
 const partnerLogos = [
-  { name: 'Sun Life', src: '/images/logo/partnerLogos/sunlife.svg', noInvert: false },
+  { name: 'Sun Life', src: '/images/logo/partnerLogos/sunlife.svg', noInvert: false, scale: 1.8 },
   { name: 'Manulife', src: '/images/logo/partnerLogos/manulife.svg', noInvert: false },
   { name: 'Canada Life', src: '/images/logo/partnerLogos/canadaLife.svg', noInvert: false },
-  { name: 'Empire Life', src: '/images/logo/partnerLogos/empireLife_clean.svg', noInvert: true },
-  { name: 'Equitable Life', src: '/images/logo/partnerLogos/equitableLife_clean.png', noInvert: true },
+  { name: 'Empire Life', src: '/images/logo/partnerLogos/empireLife_clean.svg', noInvert: false },
+  { name: 'Equitable Life', src: '/images/logo/partnerLogos/equitableLife.svg', noInvert: false },
   { name: 'iA Financial Group', src: '/images/logo/partnerLogos/iAFinancialGroup.svg', noInvert: false },
-  { name: 'Advocis', src: '/images/logo/partnerLogos/advocis.svg', noInvert: false },
+  { name: 'Advocis', src: '/images/logo/partnerLogos/advocis.svg', noInvert: false, scale: 1.8 },
 ]
 
 export function Footer() {
@@ -145,6 +145,7 @@ export function Footer() {
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 192px"
                       className={`object-contain ${partner.noInvert ? '' : 'filter brightness-0 invert'} opacity-80 hover:opacity-100 transition-opacity`}
+                      style={partner.scale ? { transform: `scale(${partner.scale})` } : undefined}
                     />
                   </div>
                 </div>
@@ -159,6 +160,7 @@ export function Footer() {
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 192px"
                       className={`object-contain ${partner.noInvert ? '' : 'filter brightness-0 invert'} opacity-80 hover:opacity-100 transition-opacity`}
+                      style={partner.scale ? { transform: `scale(${partner.scale})` } : undefined}
                     />
                   </div>
                 </div>
@@ -173,6 +175,7 @@ export function Footer() {
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 192px"
                       className={`object-contain ${partner.noInvert ? '' : 'filter brightness-0 invert'} opacity-80 hover:opacity-100 transition-opacity`}
+                      style={partner.scale ? { transform: `scale(${partner.scale})` } : undefined}
                     />
                   </div>
                 </div>
