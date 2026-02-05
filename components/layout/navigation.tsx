@@ -92,9 +92,10 @@ export function Navigation({ className }: NavigationProps) {
 interface MobileNavigationProps {
   isOpen: boolean
   onClose: () => void
+  onBookConsultation?: () => void
 }
 
-export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
+export function MobileNavigation({ isOpen, onClose, onBookConsultation }: MobileNavigationProps) {
   const [expandedItems, setExpandedItems] = React.useState<string[]>([])
 
   const toggleExpanded = (label: string) => {
@@ -179,6 +180,21 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
               </div>
             ))}
           </nav>
+
+          {/* Book Consultation Button */}
+          <div className="mt-6">
+            <button
+              onClick={() => {
+                if (onBookConsultation) {
+                  onBookConsultation()
+                  onClose()
+                }
+              }}
+              className="w-full bg-gold-500 hover:bg-gold-400 text-primary-950 font-semibold py-3 px-6 rounded-lg transition-colors"
+            >
+              Book Consultation
+            </button>
+          </div>
 
           <div className="mt-8 pt-8 border-t border-gray-200">
             <div className="space-y-2 text-sm text-gray-600">

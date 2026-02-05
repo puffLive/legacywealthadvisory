@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import { Container } from '@/components/ui'
+import { Container, Button, CalendlyModal } from '@/components/ui'
 import { Logo } from './logo'
 import { Navigation, MobileNavigation } from './navigation'
 import { cn } from '@/lib/utils'
@@ -13,6 +13,7 @@ interface HeaderProps {
 export function Header({ className }: HeaderProps) {
   const [isScrolled, setIsScrolled] = React.useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
+  const [isCalendlyOpen, setIsCalendlyOpen] = React.useState(false)
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -42,8 +43,8 @@ export function Header({ className }: HeaderProps) {
             {/* Desktop Navigation */}
             <Navigation className="text-white" />
 
-            {/* Contact Info - Desktop */}
-            <div className="hidden lg:flex items-center space-x-4">
+            {/* Contact Info and Book Button - Desktop */}
+            <div className="hidden lg:flex items-center space-x-6">
               <div className="text-right text-sm">
                 <p className="text-white/80">Call Us Today</p>
                 <a
@@ -53,6 +54,14 @@ export function Header({ className }: HeaderProps) {
                   (905) 840-2222
                 </a>
               </div>
+              <Button
+                size="md"
+                variant="secondary"
+                onClick={() => setIsCalendlyOpen(true)}
+                className="bg-gold-500 hover:bg-gold-400 text-primary-950 font-semibold px-6 py-2"
+              >
+                Book Consultation
+              </Button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -78,10 +87,23 @@ export function Header({ className }: HeaderProps) {
       <MobileNavigation
         isOpen={isMobileMenuOpen}
         onClose={() => setIsMobileMenuOpen(false)}
+        onBookConsultation={() => setIsCalendlyOpen(true)}
       />
 
       {/* Spacer to prevent content from hiding under fixed header */}
       <div className="h-16 lg:h-20" />
+
+      {/* Calendly Modal */}
+      <CalendlyModal
+        url={process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/planningwithdamian/30-min-with-damian'}
+        isOpen={isCalendlyOpen}
+        onClose={() => setIsCalendlyOpen(false)}
+        pageSettings={{
+          backgroundColor: 'ffffff',
+          textColor: '102a43',
+          primaryColor: '163759'
+        }}
+      />
     </>
   )
 }
