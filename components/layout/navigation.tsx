@@ -44,7 +44,7 @@ export function Navigation({ className }: NavigationProps) {
         >
           <Link
             href={item.href}
-            className="text-gray-700 hover:text-primary-950 font-medium transition-colors py-2 flex items-center"
+            className="hover:text-gold-400 font-medium transition-colors py-2 flex items-center"
           >
             {item.label}
             {item.children && (
@@ -65,17 +65,23 @@ export function Navigation({ className }: NavigationProps) {
           </Link>
 
           {item.children && activeDropdown === item.label && (
-            <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-md shadow-lg border border-gray-200 py-2 z-50">
-              {item.children.map((child) => (
-                <Link
-                  key={child.label}
-                  href={child.href}
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary-950 transition-colors"
-                >
-                  {child.label}
-                </Link>
-              ))}
-            </div>
+            <>
+              {/* Invisible bridge to prevent gap issues */}
+              <div className="absolute top-full left-0 w-64 h-2 z-40" />
+              <div className="absolute top-full left-0 pt-2 z-50">
+                <div className="w-64 bg-white rounded-md shadow-lg border border-gray-200 py-2">
+                  {item.children.map((child) => (
+                    <Link
+                      key={child.label}
+                      href={child.href}
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary-950 transition-colors"
+                    >
+                      {child.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </>
           )}
         </div>
       ))}
@@ -177,9 +183,8 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
           <div className="mt-8 pt-8 border-t border-gray-200">
             <div className="space-y-2 text-sm text-gray-600">
               <p className="font-medium">Contact Information</p>
-              <p>Cell: (416) 471-3766</p>
-              <p>Office: (905) 840-2222</p>
-              <p>damian@legacywealthadvisory.ca</p>
+              <p>Phone: (905) 840-2222</p>
+              <p>info@legacywealthadvisory.ca</p>
             </div>
           </div>
         </div>

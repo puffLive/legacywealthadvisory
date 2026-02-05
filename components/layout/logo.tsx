@@ -26,7 +26,7 @@ export function Logo({ className }: LogoProps) {
       </div>
       <div className="flex flex-col">
         <span className="font-bold text-lg sm:text-xl leading-none">Legacy</span>
-        <span className="text-sm sm:text-base text-gray-600 leading-none">Wealth Advisory</span>
+        <span className="text-sm sm:text-base opacity-80 leading-none">Wealth Advisory</span>
       </div>
     </Link>
   )

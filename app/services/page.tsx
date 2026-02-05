@@ -1,5 +1,9 @@
+'use client'
+
+import * as React from 'react'
 import Link from 'next/link'
-import { CalendlyButton } from '@/components/ui/calendly-booking'
+import { CalendlyModal } from '@/components/ui/calendly-booking'
+import { Button } from '@/components/ui'
 
 const services = [
   {
@@ -35,6 +39,8 @@ const services = [
 ]
 
 export default function ServicesPage() {
+  const [isCalendlyOpen, setIsCalendlyOpen] = React.useState(false)
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -47,12 +53,13 @@ export default function ServicesPage() {
             <p className="text-xl text-primary-100 mb-8">
               Specialized financial planning solutions for high-net-worth individuals and business owners in the Greater Toronto Area.
             </p>
-            <CalendlyButton
-              url={process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/planningwithdamian/30-min-with-damian'}
-              text="Schedule a Consultation"
+            <Button
+              onClick={() => setIsCalendlyOpen(true)}
               variant="secondary"
               size="lg"
-            />
+            >
+              Schedule a Consultation
+            </Button>
           </div>
         </div>
       </section>
@@ -174,11 +181,12 @@ export default function ServicesPage() {
               Let&apos;s discuss how we can help protect and grow your wealth for generations to come.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <CalendlyButton
-                url={process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/planningwithdamian/30-min-with-damian'}
-                text="Schedule a Consultation"
+              <Button
+                onClick={() => setIsCalendlyOpen(true)}
                 size="lg"
-              />
+              >
+                Schedule a Consultation
+              </Button>
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center px-8 py-3 border border-primary-600 text-base font-medium rounded-md text-primary-600 bg-white hover:bg-primary-50 transition-colors"
@@ -189,6 +197,18 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+
+      {/* Calendly Modal */}
+      <CalendlyModal
+        url={process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/planningwithdamian/30-min-with-damian'}
+        isOpen={isCalendlyOpen}
+        onClose={() => setIsCalendlyOpen(false)}
+        pageSettings={{
+          backgroundColor: 'ffffff',
+          textColor: '102a43',
+          primaryColor: '163759'
+        }}
+      />
     </div>
   )
 }

@@ -160,7 +160,6 @@ npm run test:a11y
 ## Contact Information
 
 - **Client:** Damian Alexander
-- **Cell:** 416-471-3766
-- **Office:** 905-840-2222
+- **Phone:** 905-840-2222
 - **Email:** damian@legacywealthadvisory.ca
 - **Address:** 14-30 Eglinton Ave W, Mississauga, ON L5R 0C1

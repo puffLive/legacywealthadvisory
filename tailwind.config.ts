@@ -20,7 +20,7 @@ const config: Config = {
           700: '#334e68',
           800: '#243b53',
           900: '#102a43',
-          950: '#0a1929', // Deep blue
+          950: '#163759', // Deep blue
         },
         gold: {
           50: '#fefce8',

@@ -178,9 +178,8 @@ export default function TermsOfServicePage() {
               </p>
               <div className="bg-gray-50 p-6 rounded-lg">
                 <p className="text-gray-700 mb-2"><strong>Legacy Wealth Advisory</strong></p>
-                <p className="text-gray-700 mb-2">Email: damian@legacywealthadvisory.ca</p>
-                <p className="text-gray-700 mb-2">Phone: (416) 471-3766</p>
-                <p className="text-gray-700">Office: (905) 840-2222</p>
+                <p className="text-gray-700 mb-2">Email: info@legacywealthadvisory.ca</p>
+                <p className="text-gray-700">Phone: (905) 840-2222</p>
               </div>
             </section>
           </div>

@@ -1,5 +1,8 @@
+'use client'
+
+import * as React from 'react'
 import Image from 'next/image'
-import { Container, Button } from '@/components/ui'
+import { Container, Button, CalendlyModal } from '@/components/ui'
 
 const credentials = [
   {
@@ -70,15 +73,9 @@ const values = [
   },
 ]
 
-const milestones = [
-  { year: '2004', event: 'Started career in financial services' },
-  { year: '2008', event: 'Achieved CLU designation' },
-  { year: '2012', event: 'Founded Legacy Wealth Advisory' },
-  { year: '2018', event: 'Expanded services to succession planning' },
-  { year: '2023', event: 'Reached over $50M in protected assets' },
-]
-
 export default function AboutPage() {
+  const [isCalendlyOpen, setIsCalendlyOpen] = React.useState(false)
+
   return (
     <main>
       {/* Hero Section */}
@@ -149,7 +146,7 @@ export default function AboutPage() {
             </h2>
 
             <div className="prose prose-lg mx-auto text-gray-600 leading-relaxed">
-              <p className="text-xl mb-8">
+              <p className="mb-8">
                 With over two decades of experience in the financial services industry, Damian Alexander
                 has built Legacy Wealth Advisory on the foundation of trust, expertise, and unwavering
                 commitment to client success.
@@ -242,42 +239,6 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* Timeline Section */}
-      <section className="py-20 bg-gradient-to-br from-primary-950 to-primary-800 text-white">
-        <Container>
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Our Journey
-            </h2>
-            <p className="text-lg text-blue-100 max-w-3xl mx-auto">
-              Key milestones in building Legacy Wealth Advisory into the trusted
-              advisory firm it is today.
-            </p>
-          </div>
-
-          <div className="max-w-3xl mx-auto">
-            <div className="relative">
-              {/* Timeline line */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gold-400"></div>
-
-              {milestones.map((milestone, index) => (
-                <div key={index} className={`relative flex items-center mb-8 ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
-                  <div className={`w-5/12 ${index % 2 === 0 ? 'text-right pr-8' : 'text-left pl-8'}`}>
-                    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                      <div className="text-gold-400 font-bold text-lg mb-1">{milestone.year}</div>
-                      <div className="text-blue-100">{milestone.event}</div>
-                    </div>
-                  </div>
-
-                  {/* Timeline dot */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gold-400 rounded-full border-4 border-primary-800"></div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </Container>
-      </section>
-
       {/* CTA Section */}
       <section className="py-20 bg-white">
         <Container>
@@ -291,7 +252,11 @@ export default function AboutPage() {
               for generations to come.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="inline-flex items-center">
+              <Button
+                size="lg"
+                className="inline-flex items-center"
+                onClick={() => setIsCalendlyOpen(true)}
+              >
                 Schedule a Consultation
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -307,6 +272,18 @@ export default function AboutPage() {
           </div>
         </Container>
       </section>
+
+      {/* Calendly Modal */}
+      <CalendlyModal
+        url={process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/planningwithdamian/30-min-with-damian'}
+        isOpen={isCalendlyOpen}
+        onClose={() => setIsCalendlyOpen(false)}
+        pageSettings={{
+          backgroundColor: 'ffffff',
+          textColor: '102a43',
+          primaryColor: '163759'
+        }}
+      />
     </main>
   )
 }

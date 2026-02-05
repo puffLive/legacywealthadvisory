@@ -127,7 +127,7 @@ export default function ResourcesPage() {
   const handleDownload = (resource: Resource) => {
     // For now, just log the download
     console.log(`Download requested: ${resource.title}`);
-    alert('Please contact us at damian@legacywealthadvisory.ca to receive this resource.');
+    alert('Please contact us at info@legacywealthadvisory.ca to receive this resource.');
   };
 
   return (

@@ -131,7 +131,7 @@ This message was sent from the Legacy Wealth Advisory website contact form.
   // Send email to Damian
   await transporter.sendMail({
     from: `"Legacy Wealth Advisory Website" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
-    to: 'damian@legacywealthadvisory.ca',
+    to: 'info@legacywealthadvisory.ca',
     replyTo: data.email,
     subject: `New Contact Form Submission from ${data.firstName} ${data.lastName}`,
     text: textContent,
@@ -153,8 +153,8 @@ This message was sent from the Legacy Wealth Advisory website contact form.
     <hr>
     <p style="color: #666; font-size: 12px;">
       14-30 Eglinton Ave W, Mississauga, ON L5R 0C1<br>
-      Office: (905) 840-2222 | Cell: (416) 471-3766<br>
-      damian@legacywealthadvisory.ca | www.legacywealthadvisory.ca
+      Phone: (905) 840-2222<br>
+      info@legacywealthadvisory.ca | www.legacywealthadvisory.ca
     </p>
   `;
 

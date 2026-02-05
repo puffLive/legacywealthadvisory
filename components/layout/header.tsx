@@ -27,28 +27,28 @@ export function Header({ className }: HeaderProps) {
     <>
       <header
         className={cn(
-          'fixed top-0 left-0 right-0 z-40 transition-all duration-200',
+          'fixed top-0 left-0 right-0 z-40 transition-all duration-200 bg-[#163759]',
           isScrolled
-            ? 'bg-white/95 backdrop-blur-sm shadow-sm'
-            : 'bg-white',
+            ? 'shadow-lg'
+            : '',
           className
         )}
       >
         <Container>
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
-            <Logo />
+            <Logo className="text-white hover:text-gold-400" />
 
             {/* Desktop Navigation */}
-            <Navigation />
+            <Navigation className="text-white" />
 
             {/* Contact Info - Desktop */}
             <div className="hidden lg:flex items-center space-x-4">
               <div className="text-right text-sm">
-                <p className="text-gray-600">Call Us Today</p>
+                <p className="text-white/80">Call Us Today</p>
                 <a
                   href="tel:905-840-2222"
-                  className="font-semibold text-primary-950 hover:text-primary-800 transition-colors"
+                  className="font-semibold text-white hover:text-gold-400 transition-colors"
                 >
                   (905) 840-2222
                 </a>
@@ -57,7 +57,7 @@ export function Header({ className }: HeaderProps) {
 
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden p-2 text-gray-500 hover:text-gray-700 transition-colors"
+              className="lg:hidden p-2 text-white hover:text-gold-400 transition-colors"
               onClick={() => setIsMobileMenuOpen(true)}
               aria-label="Open mobile menu"
             >

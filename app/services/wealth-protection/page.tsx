@@ -3,8 +3,8 @@ import { Container, Button, Card, CardContent, CardHeader, CardTitle } from '@/c
 
 const protectionStrategies = [
   {
-    title: 'Life Insurance Optimization',
-    description: 'Comprehensive life insurance strategies to protect your family\'s financial security and provide estate liquidity.',
+    title: 'Survivor Income Planning & Legacy Protection',
+    description: 'Ensures loved ones maintain financial stability while protecting your family\'s lifestyle, obligations, and long-term legacy goals.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20.618 5.984A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -12,8 +12,8 @@ const protectionStrategies = [
     ),
   },
   {
-    title: 'Disability Income Protection',
-    description: 'Safeguard your income and lifestyle with comprehensive disability insurance strategies tailored to your profession.',
+    title: 'Income Protection',
+    description: 'Safeguards your cash flow if you can\'t work, covering essential expenses and preserving financial momentum during unexpected interruptions.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -39,8 +39,8 @@ const protectionStrategies = [
     ),
   },
   {
-    title: 'Critical Illness Coverage',
-    description: 'Protection against the financial impact of serious illness with comprehensive critical illness insurance strategies.',
+    title: 'Wellness Protection Strategy',
+    description: 'Provides financial flexibility during health challenges, covering costs and income gaps so you can focus on recovery.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />

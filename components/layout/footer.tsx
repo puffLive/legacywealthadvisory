@@ -94,16 +94,7 @@ export function Footer() {
             <h3 className="font-semibold text-lg mb-4">Contact</h3>
             <div className="space-y-3 text-sm">
               <div>
-                <p className="text-gray-300">Cell:</p>
-                <a
-                  href="tel:416-471-3766"
-                  className="text-gold-400 hover:text-gold-300 transition-colors font-medium"
-                >
-                  (416) 471-3766
-                </a>
-              </div>
-              <div>
-                <p className="text-gray-300">Office:</p>
+                <p className="text-gray-300">Phone:</p>
                 <a
                   href="tel:905-840-2222"
                   className="text-gold-400 hover:text-gold-300 transition-colors font-medium"
@@ -114,10 +105,10 @@ export function Footer() {
               <div>
                 <p className="text-gray-300">Email:</p>
                 <a
-                  href="mailto:damian@legacywealthadvisory.ca"
+                  href="mailto:info@legacywealthadvisory.ca"
                   className="text-gold-400 hover:text-gold-300 transition-colors font-medium"
                 >
-                  damian@legacywealthadvisory.ca
+                  info@legacywealthadvisory.ca
                 </a>
               </div>
               <div className="pt-2">
