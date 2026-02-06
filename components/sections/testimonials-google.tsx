@@ -233,6 +233,7 @@ export function GoogleTestimonialsSection() {
                       src={currentReview.profilePhoto}
                       alt={currentReview.name}
                       fill
+                      sizes="64px"
                       className="rounded-full object-cover"
                     />
                   </div>
