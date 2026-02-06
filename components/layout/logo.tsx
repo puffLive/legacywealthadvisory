@@ -20,6 +20,7 @@ export function Logo({ className }: LogoProps) {
           src="/images/logo/legacyLogos/lwa-logo.png"
           alt="Legacy Wealth Advisory Logo"
           fill
+          sizes="(max-width: 640px) 40px, 48px"
           className="object-contain"
           priority
         />

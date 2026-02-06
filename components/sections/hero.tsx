@@ -38,6 +38,7 @@ export function HeroSection() {
               src={image}
               alt="Legacy wealth planning"
               fill
+              sizes="100vw"
               className="object-cover"
               priority={index === 0}
               quality={90}
