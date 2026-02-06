@@ -38,8 +38,16 @@ export async function GET(request: NextRequest) {
 
       const data = await response.json();
 
+      // Check for API key restrictions error
+      if (data.status === 'REQUEST_DENIED' && data.error_message) {
+        console.error('Google Places API error:', data.error_message);
+
+        if (data.error_message.includes('referer restrictions')) {
+          console.log('API Key has HTTP referrer restrictions. Server-side calls require IP restrictions or no restrictions.');
+        }
+
       // Check if we need to enable the Places API
-      if (data.error_message && data.error_message.includes('Places API')) {
+      } else if (data.error_message && data.error_message.includes('Places API')) {
         console.error('Places API not enabled:', data.error_message);
 
         // Return mock data for demonstration

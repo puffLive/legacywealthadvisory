@@ -16,6 +16,7 @@ This guide will help you set up the Google Places API to display real Google Rev
 4. Copy the Place ID (it looks like: `ChIJxxxxxxxxxxxxxxxxxxxxxx`)
 
 Alternative method:
+
 1. Find your business on Google Maps
 2. Copy the URL
 3. Extract the Place ID from the URL or use the Place ID Finder tool
@@ -59,12 +60,14 @@ NEXT_PUBLIC_GOOGLE_PLACE_ID=your-place-id-here
 ```
 
 Replace:
+
 - `your-api-key-here` with your Google Cloud API key
 - `your-place-id-here` with your Google Place ID
 
 ## Step 6: Test Locally
 
 1. Restart your development server:
+
    ```bash
    npm run dev
    ```
@@ -83,18 +86,21 @@ Replace:
 ## Troubleshooting
 
 ### No reviews showing up?
+
 - Check that your Place ID is correct
 - Verify the API key has Places API enabled
 - Check browser console for error messages
 - Ensure your Google Business Profile has reviews
 
 ### API quota exceeded?
+
 - The free tier includes $200/month credit
 - Places Details calls cost $0.017 each
 - You get ~11,000 free calls per month
 - The component caches results for 1 hour
 
 ### Reviews not updating?
+
 - Reviews are cached for 1 hour to minimize API calls
 - Clear your browser cache or wait for the cache to expire
 - You can adjust the cache time in `/app/api/google-reviews/route.ts`
@@ -102,6 +108,7 @@ Replace:
 ## API Usage Optimization
 
 The current setup:
+
 - Caches reviews for 1 hour
 - Only fetches when the page loads
 - Falls back to placeholder testimonials if API fails
@@ -118,6 +125,7 @@ The current setup:
 ## Support
 
 If you need help:
+
 1. Check Google Cloud Console for API errors
 2. Review browser console for JavaScript errors
 3. Verify all environment variables are set correctly
