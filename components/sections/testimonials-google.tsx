@@ -1,6 +1,7 @@
 'use client'
 
 import * as React from 'react'
+import Image from 'next/image'
 import { Container } from '@/components/ui'
 
 interface Review {
@@ -22,13 +23,14 @@ interface GoogleReviewsData {
 }
 
 // Fallback testimonials in case API is not configured or fails
-const fallbackTestimonials = [
+const fallbackTestimonials: Review[] = [
   {
     id: '1',
     name: 'Sarah Chen',
     text: 'Damian guided us through a complex succession plan that preserved our family business while minimizing tax implications. His expertise and attention to detail gave us complete confidence in our decisions.',
     rating: 5,
     date: 'Recently',
+    timestamp: Date.now(),
   },
   {
     id: '2',
@@ -36,6 +38,7 @@ const fallbackTestimonials = [
     text: 'The estate planning strategy Damian developed exceeded our expectations. He took the time to understand our unique situation and created a plan that protects our legacy for our grandchildren.',
     rating: 5,
     date: 'Recently',
+    timestamp: Date.now(),
   },
   {
     id: '3',
@@ -43,6 +46,7 @@ const fallbackTestimonials = [
     text: 'Working with Legacy Wealth Advisory was a game-changer for our family. Damian\'s comprehensive approach to wealth protection gave us peace of mind we never had before.',
     rating: 5,
     date: 'Recently',
+    timestamp: Date.now(),
   },
 ];
 
@@ -224,11 +228,14 @@ export function GoogleTestimonialsSection() {
               {/* Client Info */}
               <div className="flex items-center justify-center space-x-4">
                 {currentReview.profilePhoto ? (
-                  <img
-                    src={currentReview.profilePhoto}
-                    alt={currentReview.name}
-                    className="w-16 h-16 rounded-full object-cover"
-                  />
+                  <div className="relative w-16 h-16">
+                    <Image
+                      src={currentReview.profilePhoto}
+                      alt={currentReview.name}
+                      fill
+                      className="rounded-full object-cover"
+                    />
+                  </div>
                 ) : (
                   <div className="w-16 h-16 bg-gradient-to-br from-primary-950 to-primary-800 rounded-full flex items-center justify-center text-white font-bold text-lg">
                     {getInitials(currentReview.name)}
