@@ -292,7 +292,7 @@ export default function WealthProtectionPage() {
                     </svg>
                   </div>
                   <h4 className="text-lg font-bold text-primary-950 mb-2">Ongoing Guidance & Support</h4>
-                  <p className="text-gray-600 text-sm">From your first plan to major life milestones, we're by your side every step of the journey.</p>
+                  <p className="text-gray-600 text-sm">From your first plan to major life milestones, we&apos;re by your side every step of the journey.</p>
                 </div>
               </div>
             </div>
