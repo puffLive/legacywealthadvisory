@@ -1,5 +1,8 @@
+'use client'
+
+import * as React from 'react'
 import Link from 'next/link'
-import { Container, Button, Card, CardContent, CardHeader, CardTitle } from '@/components/ui'
+import { Container, Button, Card, CardContent, CardHeader, CardTitle, CalendlyModal } from '@/components/ui'
 
 const serviceFeatures = [
   {
@@ -105,6 +108,8 @@ const faqs = [
 ]
 
 export default function EstatePlanningPage() {
+  const [isCalendlyOpen, setIsCalendlyOpen] = React.useState(false)
+
   return (
     <main>
       {/* Hero Section */}
@@ -119,7 +124,11 @@ export default function EstatePlanningPage() {
               with comprehensive estate planning strategies designed for your unique situation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary">
+              <Button
+                size="lg"
+                variant="secondary"
+                onClick={() => setIsCalendlyOpen(true)}
+              >
                 Schedule Consultation
               </Button>
               {/* <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary-950">
@@ -335,6 +344,18 @@ export default function EstatePlanningPage() {
           </div>
         </Container>
       </section>
+
+      {/* Calendly Modal */}
+      <CalendlyModal
+        url={process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/planningwithdamian/30-min-with-damian'}
+        isOpen={isCalendlyOpen}
+        onClose={() => setIsCalendlyOpen(false)}
+        pageSettings={{
+          backgroundColor: 'ffffff',
+          textColor: '102a43',
+          primaryColor: '163759'
+        }}
+      />
     </main>
   )
 }

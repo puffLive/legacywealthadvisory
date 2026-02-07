@@ -44,7 +44,7 @@ export function Navigation({ className }: NavigationProps) {
         >
           <Link
             href={item.href}
-            className="text-gray-700 hover:text-primary-950 font-medium transition-colors py-2 flex items-center"
+            className="hover:text-gold-400 font-medium transition-colors py-2 flex items-center"
           >
             {item.label}
             {item.children && (
@@ -65,17 +65,23 @@ export function Navigation({ className }: NavigationProps) {
           </Link>
 
           {item.children && activeDropdown === item.label && (
-            <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-md shadow-lg border border-gray-200 py-2 z-50">
-              {item.children.map((child) => (
-                <Link
-                  key={child.label}
-                  href={child.href}
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary-950 transition-colors"
-                >
-                  {child.label}
-                </Link>
-              ))}
-            </div>
+            <>
+              {/* Invisible bridge to prevent gap issues */}
+              <div className="absolute top-full left-0 w-64 h-2 z-40" />
+              <div className="absolute top-full left-0 pt-2 z-50">
+                <div className="w-64 bg-white rounded-md shadow-lg border border-gray-200 py-2">
+                  {item.children.map((child) => (
+                    <Link
+                      key={child.label}
+                      href={child.href}
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary-950 transition-colors"
+                    >
+                      {child.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </>
           )}
         </div>
       ))}
@@ -86,9 +92,10 @@ export function Navigation({ className }: NavigationProps) {
 interface MobileNavigationProps {
   isOpen: boolean
   onClose: () => void
+  onBookConsultation?: () => void
 }
 
-export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
+export function MobileNavigation({ isOpen, onClose, onBookConsultation }: MobileNavigationProps) {
   const [expandedItems, setExpandedItems] = React.useState<string[]>([])
 
   const toggleExpanded = (label: string) => {
@@ -174,12 +181,26 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
             ))}
           </nav>
 
+          {/* Book Consultation Button */}
+          <div className="mt-6">
+            <button
+              onClick={() => {
+                if (onBookConsultation) {
+                  onBookConsultation()
+                  onClose()
+                }
+              }}
+              className="w-full bg-gold-500 hover:bg-gold-400 text-primary-950 font-semibold py-3 px-6 rounded-lg transition-colors"
+            >
+              Book Consultation
+            </button>
+          </div>
+
           <div className="mt-8 pt-8 border-t border-gray-200">
             <div className="space-y-2 text-sm text-gray-600">
               <p className="font-medium">Contact Information</p>
-              <p>Cell: (416) 471-3766</p>
-              <p>Office: (905) 840-2222</p>
-              <p>damian@legacywealthadvisory.ca</p>
+              <p>Phone: (905) 840-2222</p>
+              <p>info@legacywealthadvisory.ca</p>
             </div>
           </div>
         </div>

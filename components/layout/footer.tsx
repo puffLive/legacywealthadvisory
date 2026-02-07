@@ -23,13 +23,13 @@ const navigationLinks = {
 }
 
 const partnerLogos = [
-  { name: 'Sun Life', src: '/images/logo/partnerLogos/sunlife.svg', noInvert: false },
+  { name: 'Sun Life', src: '/images/logo/partnerLogos/sunlife.svg', noInvert: false, scale: 1.8 },
   { name: 'Manulife', src: '/images/logo/partnerLogos/manulife.svg', noInvert: false },
   { name: 'Canada Life', src: '/images/logo/partnerLogos/canadaLife.svg', noInvert: false },
-  { name: 'Empire Life', src: '/images/logo/partnerLogos/empireLife_clean.svg', noInvert: true },
-  { name: 'Equitable Life', src: '/images/logo/partnerLogos/equitableLife_clean.png', noInvert: true },
+  { name: 'Empire Life', src: '/images/logo/partnerLogos/empireLife_clean.svg', noInvert: false },
+  { name: 'Equitable Life', src: '/images/logo/partnerLogos/equitableLife.svg', noInvert: false },
   { name: 'iA Financial Group', src: '/images/logo/partnerLogos/iAFinancialGroup.svg', noInvert: false },
-  { name: 'Advocis', src: '/images/logo/partnerLogos/advocis.svg', noInvert: false },
+  { name: 'Advocis', src: '/images/logo/partnerLogos/advocis.svg', noInvert: false, scale: 1.8 },
 ]
 
 export function Footer() {
@@ -94,16 +94,7 @@ export function Footer() {
             <h3 className="font-semibold text-lg mb-4">Contact</h3>
             <div className="space-y-3 text-sm">
               <div>
-                <p className="text-gray-300">Cell:</p>
-                <a
-                  href="tel:416-471-3766"
-                  className="text-gold-400 hover:text-gold-300 transition-colors font-medium"
-                >
-                  (416) 471-3766
-                </a>
-              </div>
-              <div>
-                <p className="text-gray-300">Office:</p>
+                <p className="text-gray-300">Phone:</p>
                 <a
                   href="tel:905-840-2222"
                   className="text-gold-400 hover:text-gold-300 transition-colors font-medium"
@@ -114,10 +105,10 @@ export function Footer() {
               <div>
                 <p className="text-gray-300">Email:</p>
                 <a
-                  href="mailto:damian@legacywealthadvisory.ca"
+                  href="mailto:info@legacywealthadvisory.ca"
                   className="text-gold-400 hover:text-gold-300 transition-colors font-medium"
                 >
-                  damian@legacywealthadvisory.ca
+                  info@legacywealthadvisory.ca
                 </a>
               </div>
               <div className="pt-2">
@@ -143,7 +134,9 @@ export function Footer() {
                       src={partner.src}
                       alt={`${partner.name} logo`}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 192px"
                       className={`object-contain ${partner.noInvert ? '' : 'filter brightness-0 invert'} opacity-80 hover:opacity-100 transition-opacity`}
+                      style={partner.scale ? { transform: `scale(${partner.scale})` } : undefined}
                     />
                   </div>
                 </div>
@@ -156,7 +149,9 @@ export function Footer() {
                       src={partner.src}
                       alt={`${partner.name} logo`}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 192px"
                       className={`object-contain ${partner.noInvert ? '' : 'filter brightness-0 invert'} opacity-80 hover:opacity-100 transition-opacity`}
+                      style={partner.scale ? { transform: `scale(${partner.scale})` } : undefined}
                     />
                   </div>
                 </div>
@@ -169,7 +164,9 @@ export function Footer() {
                       src={partner.src}
                       alt={`${partner.name} logo`}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 192px"
                       className={`object-contain ${partner.noInvert ? '' : 'filter brightness-0 invert'} opacity-80 hover:opacity-100 transition-opacity`}
+                      style={partner.scale ? { transform: `scale(${partner.scale})` } : undefined}
                     />
                   </div>
                 </div>

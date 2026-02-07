@@ -119,7 +119,7 @@ export default function ContactPage() {
           </div>
 
           {/* Calendly Booking Section */}
-          <div className="mb-16">
+          <div id="calendly-booking" className="mb-16">
             <div className="bg-gradient-to-br from-primary-50 to-blue-50 rounded-2xl p-8 md:p-12">
               <div className="text-center mb-8">
                 <h2 className="text-2xl md:text-3xl font-bold text-primary-950 mb-4">
@@ -227,8 +227,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h4 className="font-semibold mb-1">Phone</h4>
-                      <p className="text-blue-100 text-sm mb-2">Cell: <a href="tel:416-471-3766" className="text-gold-400 hover:text-gold-300">(416) 471-3766</a></p>
-                      <p className="text-blue-100 text-sm">Office: <a href="tel:905-840-2222" className="text-gold-400 hover:text-gold-300">(905) 840-2222</a></p>
+                      <p className="text-blue-100 text-sm"><a href="tel:905-840-2222" className="text-gold-400 hover:text-gold-300">(905) 840-2222</a></p>
                     </div>
                   </div>
 
@@ -241,8 +240,8 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h4 className="font-semibold mb-1">Email</h4>
-                      <a href="mailto:damian@legacywealthadvisory.ca" className="text-gold-400 hover:text-gold-300">
-                        damian@legacywealthadvisory.ca
+                      <a href="mailto:info@legacywealthadvisory.ca" className="text-gold-400 hover:text-gold-300">
+                        info@legacywealthadvisory.ca
                       </a>
                     </div>
                   </div>
@@ -301,7 +300,7 @@ export default function ContactPage() {
                   </a>
 
                   <a
-                    href="mailto:damian@legacywealthadvisory.ca"
+                    href="mailto:info@legacywealthadvisory.ca"
                     className="flex items-center p-4 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors group"
                   >
                     <svg className="w-5 h-5 text-gold-500 mr-3 group-hover:text-gold-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -309,7 +308,7 @@ export default function ContactPage() {
                     </svg>
                     <div>
                       <p className="font-medium text-primary-950">Send Email</p>
-                      <p className="text-sm text-gray-600">damian@legacywealthadvisory.ca</p>
+                      <p className="text-sm text-gray-600">info@legacywealthadvisory.ca</p>
                     </div>
                   </a>
                 </div>

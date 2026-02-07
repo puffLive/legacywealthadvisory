@@ -17,7 +17,14 @@
       "Bash(magick:*)",
       "Bash(lsof:*)",
       "Bash(xargs kill:*)",
-      "Bash(npm uninstall:*)"
+      "Bash(npm uninstall:*)",
+      "Bash(npx vercel:*)",
+      "Bash(echo \"To deploy to Vercel, run: npx vercel\n\nThis will:\n1. Ask you to log in (if not already)\n2. Link to your project (create new or use existing)\n3. Deploy to a preview URL immediately\n4. Give you a unique URL like: https://your-project-xyz.vercel.app\n\nFor the lwa_v2 branch specifically, you can:\n- Push to GitHub and Vercel will auto-create preview URLs for branches\n- Or run: npx vercel --build-env BRANCH=lwa_v2\")",
+      "Bash(echo \"Run: npx vercel\n\nThis should now work correctly with the Next.js output directory.\n\nIf you still get an error, you can also try:\nnpx vercel --prod\n\nOr to ensure it detects Next.js properly:\nnpx vercel deploy --yes\")",
+      "Bash(echo \"Run this command to redeploy with public access:\n\nnpx vercel --prod\n\nThis will create a production deployment that''s publicly accessible without authentication.\")",
+      "Bash(curl:*)",
+      "Bash(echo:*)",
+      "Bash(node:*)"
     ],
     "deny": [],
     "ask": []

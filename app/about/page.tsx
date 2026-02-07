@@ -1,5 +1,8 @@
+'use client'
+
+import * as React from 'react'
 import Image from 'next/image'
-import { Container, Button } from '@/components/ui'
+import { Container, Button, CalendlyModal } from '@/components/ui'
 
 const credentials = [
   {
@@ -70,15 +73,9 @@ const values = [
   },
 ]
 
-const milestones = [
-  { year: '2004', event: 'Started career in financial services' },
-  { year: '2008', event: 'Achieved CLU designation' },
-  { year: '2012', event: 'Founded Legacy Wealth Advisory' },
-  { year: '2018', event: 'Expanded services to succession planning' },
-  { year: '2023', event: 'Reached over $50M in protected assets' },
-]
-
 export default function AboutPage() {
+  const [isCalendlyOpen, setIsCalendlyOpen] = React.useState(false)
+
   return (
     <main>
       {/* Hero Section */}
@@ -86,6 +83,9 @@ export default function AboutPage() {
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
+              <p className="text-sm uppercase tracking-wider text-gold-400 mb-2">
+                Founder & President
+              </p>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
                 Meet Damian Alexander
               </h1>
@@ -149,37 +149,32 @@ export default function AboutPage() {
             </h2>
 
             <div className="prose prose-lg mx-auto text-gray-600 leading-relaxed">
-              <p className="text-xl mb-8">
-                With over two decades of experience in the financial services industry, Damian Alexander
-                has built Legacy Wealth Advisory on the foundation of trust, expertise, and unwavering
-                commitment to client success.
+              <p className="mb-8">
+                With over two decades of experience in the financial services industry, Damian Alexander has built Legacy Wealth Advisory on the foundation of trust, expertise, and unwavering commitment to client success.
               </p>
 
               <p className="mb-6">
-                Damian&apos;s journey began in 2004 when he entered the financial services industry with a
-                passion for helping individuals and families secure their financial futures. Recognizing
-                the complex challenges facing high-net-worth individuals and business owners, he pursued
-                advanced education and professional designations to better serve his clients.
+                Damian&apos;s journey began in 1999 when he entered the financial industry with a passion for helping clients at one of Canada&apos;s major banks. Recognizing the complex challenges facing medium- and high-net-worth individuals, families, and business owners, he pursued advanced education and professional designations to better serve his clients.
               </p>
 
               <p className="mb-6">
-                In 2008, Damian achieved his Chartered Life Underwriter (CLU) designation, one of the
-                most respected credentials in the insurance and estate planning field. This advanced
-                designation requires extensive study in areas including estate planning, taxation,
-                business planning, and risk management.
+                In 2006, Damian completed the Canadian Securities Course, followed by the Conduct and Practices Handbook in the same year. In 2007, he successfully completed the Options and Derivatives Course, further strengthening his expertise in investment strategies.
               </p>
 
               <p className="mb-6">
-                Founded in 2012, Legacy Wealth Advisory represents Damian&apos;s vision of providing boutique-level
-                service with institutional-quality expertise. The firm specializes in comprehensive wealth
-                management solutions for successful individuals, families, and business owners throughout
-                the Greater Toronto Area.
+                In 2008, Damian earned his Canadian Insurance LLQP license, expanding his ability to provide comprehensive insurance and risk-management solutions.
+              </p>
+
+              <p className="mb-6">
+                In 2018, he achieved his Chartered Life Underwriter (CLU) designation—one of the most respected credentials in insurance and estate planning—and also completed the Canadian Investment Funds Course. These achievements deepened his knowledge in estate planning, taxation, business planning, investment strategies, and risk management.
+              </p>
+
+              <p className="mb-6">
+                Legacy Wealth Advisory was first conceptualized in 2013 and officially branded in 2023, reflecting Damian&apos;s vision of delivering personalized, comprehensive wealth management solutions to individuals, families, and business owners across the Greater Toronto Area.
               </p>
 
               <p>
-                Today, Damian and Legacy Wealth Advisory have protected over $50 million in assets for
-                more than 500 families, establishing a reputation for excellence in estate planning,
-                succession planning, and wealth protection strategies.
+                Today, Damian and Legacy Wealth Advisory have protected over $50 million in assets for more than 500 families, establishing a reputation for excellence in estate planning, succession planning, and wealth protection strategies.
               </p>
             </div>
           </div>
@@ -242,42 +237,6 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* Timeline Section */}
-      <section className="py-20 bg-gradient-to-br from-primary-950 to-primary-800 text-white">
-        <Container>
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Our Journey
-            </h2>
-            <p className="text-lg text-blue-100 max-w-3xl mx-auto">
-              Key milestones in building Legacy Wealth Advisory into the trusted
-              advisory firm it is today.
-            </p>
-          </div>
-
-          <div className="max-w-3xl mx-auto">
-            <div className="relative">
-              {/* Timeline line */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gold-400"></div>
-
-              {milestones.map((milestone, index) => (
-                <div key={index} className={`relative flex items-center mb-8 ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
-                  <div className={`w-5/12 ${index % 2 === 0 ? 'text-right pr-8' : 'text-left pl-8'}`}>
-                    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                      <div className="text-gold-400 font-bold text-lg mb-1">{milestone.year}</div>
-                      <div className="text-blue-100">{milestone.event}</div>
-                    </div>
-                  </div>
-
-                  {/* Timeline dot */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gold-400 rounded-full border-4 border-primary-800"></div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </Container>
-      </section>
-
       {/* CTA Section */}
       <section className="py-20 bg-white">
         <Container>
@@ -291,7 +250,11 @@ export default function AboutPage() {
               for generations to come.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="inline-flex items-center">
+              <Button
+                size="lg"
+                className="inline-flex items-center"
+                onClick={() => setIsCalendlyOpen(true)}
+              >
                 Schedule a Consultation
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -307,6 +270,18 @@ export default function AboutPage() {
           </div>
         </Container>
       </section>
+
+      {/* Calendly Modal */}
+      <CalendlyModal
+        url={process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/planningwithdamian/30-min-with-damian'}
+        isOpen={isCalendlyOpen}
+        onClose={() => setIsCalendlyOpen(false)}
+        pageSettings={{
+          backgroundColor: 'ffffff',
+          textColor: '102a43',
+          primaryColor: '163759'
+        }}
+      />
     </main>
   )
 }

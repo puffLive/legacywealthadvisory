@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import { Container } from '@/components/ui'
+import { Container, Button, CalendlyModal } from '@/components/ui'
 import { Logo } from './logo'
 import { Navigation, MobileNavigation } from './navigation'
 import { cn } from '@/lib/utils'
@@ -13,6 +13,7 @@ interface HeaderProps {
 export function Header({ className }: HeaderProps) {
   const [isScrolled, setIsScrolled] = React.useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
+  const [isCalendlyOpen, setIsCalendlyOpen] = React.useState(false)
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -27,37 +28,45 @@ export function Header({ className }: HeaderProps) {
     <>
       <header
         className={cn(
-          'fixed top-0 left-0 right-0 z-40 transition-all duration-200',
+          'fixed top-0 left-0 right-0 z-40 transition-all duration-200 bg-[#163759]',
           isScrolled
-            ? 'bg-white/95 backdrop-blur-sm shadow-sm'
-            : 'bg-white',
+            ? 'shadow-lg'
+            : '',
           className
         )}
       >
         <Container>
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
-            <Logo />
+            <Logo className="text-white hover:text-gold-400" />
 
             {/* Desktop Navigation */}
-            <Navigation />
+            <Navigation className="text-white" />
 
-            {/* Contact Info - Desktop */}
-            <div className="hidden lg:flex items-center space-x-4">
+            {/* Contact Info and Book Button - Desktop */}
+            <div className="hidden lg:flex items-center space-x-6">
               <div className="text-right text-sm">
-                <p className="text-gray-600">Call Us Today</p>
+                <p className="text-white/80">Call Us Today</p>
                 <a
                   href="tel:905-840-2222"
-                  className="font-semibold text-primary-950 hover:text-primary-800 transition-colors"
+                  className="font-semibold text-white hover:text-gold-400 transition-colors"
                 >
                   (905) 840-2222
                 </a>
               </div>
+              <Button
+                size="md"
+                variant="secondary"
+                onClick={() => setIsCalendlyOpen(true)}
+                className="bg-gold-500 hover:bg-gold-400 text-primary-950 font-semibold px-6 py-2"
+              >
+                Book Consultation
+              </Button>
             </div>
 
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden p-2 text-gray-500 hover:text-gray-700 transition-colors"
+              className="lg:hidden p-2 text-white hover:text-gold-400 transition-colors"
               onClick={() => setIsMobileMenuOpen(true)}
               aria-label="Open mobile menu"
             >
@@ -78,10 +87,23 @@ export function Header({ className }: HeaderProps) {
       <MobileNavigation
         isOpen={isMobileMenuOpen}
         onClose={() => setIsMobileMenuOpen(false)}
+        onBookConsultation={() => setIsCalendlyOpen(true)}
       />
 
       {/* Spacer to prevent content from hiding under fixed header */}
       <div className="h-16 lg:h-20" />
+
+      {/* Calendly Modal */}
+      <CalendlyModal
+        url={process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/planningwithdamian/30-min-with-damian'}
+        isOpen={isCalendlyOpen}
+        onClose={() => setIsCalendlyOpen(false)}
+        pageSettings={{
+          backgroundColor: 'ffffff',
+          textColor: '102a43',
+          primaryColor: '163759'
+        }}
+      />
     </>
   )
 }
