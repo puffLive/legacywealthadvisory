@@ -273,8 +273,8 @@ export default function WealthProtectionPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <h4 className="text-lg font-bold text-primary-950 mb-2">Independent Access</h4>
-                  <p className="text-gray-600 text-sm">Access to multiple insurance companies ensures best rates and coverage for your needs.</p>
+                  <h4 className="text-lg font-bold text-primary-950 mb-2">Personalized Financial Blueprints</h4>
+                  <p className="text-gray-600 text-sm">A strategy designed around your life, your goals, and the future you want to create.</p>
                 </div>
                 <div>
                   <div className="w-16 h-16 bg-primary-950 text-gold-400 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -282,8 +282,8 @@ export default function WealthProtectionPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                     </svg>
                   </div>
-                  <h4 className="text-lg font-bold text-primary-950 mb-2">Expert Guidance</h4>
-                  <p className="text-gray-600 text-sm">20+ years of experience and CLU designation ensure professional, knowledgeable advice.</p>
+                  <h4 className="text-lg font-bold text-primary-950 mb-2">Legacy & Generational Planning</h4>
+                  <p className="text-gray-600 text-sm">We help you build, protect, and pass on wealth so your family and business can thrive for generations.</p>
                 </div>
                 <div>
                   <div className="w-16 h-16 bg-primary-950 text-gold-400 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -291,8 +291,8 @@ export default function WealthProtectionPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>
                   </div>
-                  <h4 className="text-lg font-bold text-primary-950 mb-2">Ongoing Service</h4>
-                  <p className="text-gray-600 text-sm">Comprehensive service from initial planning through claims support and policy management.</p>
+                  <h4 className="text-lg font-bold text-primary-950 mb-2">Ongoing Guidance & Support</h4>
+                  <p className="text-gray-600 text-sm">From your first plan to major life milestones, we're by your side every step of the journey.</p>
                 </div>
               </div>
             </div>

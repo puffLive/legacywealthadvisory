@@ -83,6 +83,9 @@ export default function AboutPage() {
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
+              <p className="text-sm uppercase tracking-wider text-gold-400 mb-2">
+                Founder & President
+              </p>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
                 Meet Damian Alexander
               </h1>
@@ -147,36 +150,31 @@ export default function AboutPage() {
 
             <div className="prose prose-lg mx-auto text-gray-600 leading-relaxed">
               <p className="mb-8">
-                With over two decades of experience in the financial services industry, Damian Alexander
-                has built Legacy Wealth Advisory on the foundation of trust, expertise, and unwavering
-                commitment to client success.
+                With over two decades of experience in the financial services industry, Damian Alexander has built Legacy Wealth Advisory on the foundation of trust, expertise, and unwavering commitment to client success.
               </p>
 
               <p className="mb-6">
-                Damian&apos;s journey began in 2004 when he entered the financial services industry with a
-                passion for helping individuals and families secure their financial futures. Recognizing
-                the complex challenges facing high-net-worth individuals and business owners, he pursued
-                advanced education and professional designations to better serve his clients.
+                Damian&apos;s journey began in 1999 when he entered the financial industry with a passion for helping clients at one of Canada&apos;s major banks. Recognizing the complex challenges facing medium- and high-net-worth individuals, families, and business owners, he pursued advanced education and professional designations to better serve his clients.
               </p>
 
               <p className="mb-6">
-                In 2008, Damian achieved his Chartered Life Underwriter (CLU) designation, one of the
-                most respected credentials in the insurance and estate planning field. This advanced
-                designation requires extensive study in areas including estate planning, taxation,
-                business planning, and risk management.
+                In 2006, Damian completed the Canadian Securities Course, followed by the Conduct and Practices Handbook in the same year. In 2007, he successfully completed the Options and Derivatives Course, further strengthening his expertise in investment strategies.
               </p>
 
               <p className="mb-6">
-                Founded in 2012, Legacy Wealth Advisory represents Damian&apos;s vision of providing boutique-level
-                service with institutional-quality expertise. The firm specializes in comprehensive wealth
-                management solutions for successful individuals, families, and business owners throughout
-                the Greater Toronto Area.
+                In 2008, Damian earned his Canadian Insurance LLQP license, expanding his ability to provide comprehensive insurance and risk-management solutions.
+              </p>
+
+              <p className="mb-6">
+                In 2018, he achieved his Chartered Life Underwriter (CLU) designation—one of the most respected credentials in insurance and estate planning—and also completed the Canadian Investment Funds Course. These achievements deepened his knowledge in estate planning, taxation, business planning, investment strategies, and risk management.
+              </p>
+
+              <p className="mb-6">
+                Legacy Wealth Advisory was first conceptualized in 2013 and officially branded in 2023, reflecting Damian&apos;s vision of delivering personalized, comprehensive wealth management solutions to individuals, families, and business owners across the Greater Toronto Area.
               </p>
 
               <p>
-                Today, Damian and Legacy Wealth Advisory have protected over $50 million in assets for
-                more than 500 families, establishing a reputation for excellence in estate planning,
-                succession planning, and wealth protection strategies.
+                Today, Damian and Legacy Wealth Advisory have protected over $50 million in assets for more than 500 families, establishing a reputation for excellence in estate planning, succession planning, and wealth protection strategies.
               </p>
             </div>
           </div>
