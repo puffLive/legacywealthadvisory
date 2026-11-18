@@ -5,7 +5,7 @@ summary: "NVIDIA reported another exceptionally strong quarter as AI infrastruct
 category: Investing
 status: published
 seoDescription: "NVIDIA NVDA November 2026 outlook: Q3 fiscal 2027 earnings, AI data centre growth, valuation risks and considerations for Canadian investors."
-image: /images/blog/nvidia-state-november-2026.svg
+image: /images/blog/nvidia-ai-growth-investor-risks-november-2026.webp
 imageAlt: "Legacy Wealth Advisory illustration: The State of NVIDIA — AI Growth, Investor Risk, November 2026"
 ---
 
