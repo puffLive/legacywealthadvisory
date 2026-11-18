@@ -181,6 +181,18 @@ export default function AboutPage() {
         </Container>
       </section>
 
+      <section className="bg-primary-950 py-10 text-white">
+        <Container>
+          <div className="text-center">
+            <h2 className="text-2xl font-bold mb-3">Connect with Damian on LinkedIn</h2>
+            <p className="text-blue-100 mb-5">Follow Damian Alexander for financial planning insights and professional updates.</p>
+            <a href="https://www.linkedin.com/in/damianfalexander/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center rounded-lg bg-gold-500 px-6 py-3 font-semibold text-primary-950 hover:bg-gold-400">
+              View Damian&apos;s LinkedIn Profile
+            </a>
+          </div>
+        </Container>
+      </section>
+
       {/* Credentials Section */}
       <section className="py-20 bg-gray-50">
         <Container>

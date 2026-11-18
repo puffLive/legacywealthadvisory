@@ -22,6 +22,14 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
+      <section className="bg-white py-8">
+        <div className="mx-auto max-w-5xl px-6 text-center">
+          <p className="text-gray-700 mb-3">Connect with Damian Alexander, CLU, for professional updates and financial planning insights.</p>
+          <a href="https://www.linkedin.com/in/damianfalexander/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center rounded-lg border border-primary-950 px-5 py-2 font-semibold text-primary-950 hover:bg-gray-50">
+            Connect with Damian on LinkedIn
+          </a>
+        </div>
+      </section>
       <ExpertiseSection />
       <ProcessSection />
       <GoogleTestimonialsSection />
