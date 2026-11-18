@@ -68,6 +68,11 @@ export function Footer() {
                   <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 2A3.75 3.75 0 0 0 4 7.75v8.5A3.75 3.75 0 0 0 7.75 20h8.5A3.75 3.75 0 0 0 20 16.25v-8.5A3.75 3.75 0 0 0 16.25 4h-8.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.5-2.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"/>
                 </svg>
               </a>
+              <a href="https://www.threads.com/@legacywealthadvisory.ca?hl=en" target="_blank" rel="noopener noreferrer" aria-label="Legacy Wealth Advisory on Threads" title="Visit Legacy Wealth Advisory on Threads" className="ml-2 inline-flex items-center justify-center rounded-md bg-black p-2 text-white transition-colors hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-400">
+                <svg aria-hidden="true" className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.7 9.8c-.2-1.5-.8-2.7-1.8-3.6-1-.9-2.3-1.4-3.9-1.4-2.2 0-3.8 1.1-4.7 3.1l1.9.8c.6-1.3 1.5-1.9 2.8-1.9 1.9 0 3 1 3.4 2.8-.9-.4-1.9-.6-3-.6-2.9 0-4.8 1.6-4.8 4.1 0 2.4 1.8 4 4.3 4 2.1 0 3.8-1.1 4.5-3 .4.6.5 1.3.5 2 0 3-2.1 4.9-5.2 4.9-3.7 0-6.1-2.6-6.1-6.6V12c0-4.2 2.5-6.8 6.2-6.8 3.5 0 5.7 2 6.1 5.6l2.1-.2C20.5 5.7 17.4 3 12 3 6.4 3 3 6.7 3 12v.4C3 17.7 6.5 21 12 21c4.4 0 7.3-2.8 7.3-7.1 0-1.5-.4-2.9-1.2-4.1h-.4Zm-5.7 5.4c-1.4 0-2.2-.7-2.2-1.9 0-1.3 1-2.1 2.6-2.1 1.1 0 2.1.3 2.9.9-.2 1.9-1.4 3.1-3.3 3.1Z"/>
+                </svg>
+              </a>
             </div>
           </div>
 
