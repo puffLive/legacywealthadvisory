@@ -1,6 +1,6 @@
 ---
 title: "Commuted Value or Monthly Pension? What to Consider Before You Decide"
-date: 2026-11-21
+date: 2026-11-20
 summary: "Leaving an employer with a defined benefit pension often means choosing between a lifetime monthly pension and a lump-sum commuted value. Here are the factors that matter most."
 category: Pensions
 status: published

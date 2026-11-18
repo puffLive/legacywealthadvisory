@@ -1,6 +1,6 @@
 ---
 title: "RDSP Grants and Bonds: How the Government Helps Build Savings for a Person With a Disability"
-date: 2026-11-20
+date: 2026-11-19
 summary: "The Registered Disability Savings Plan can attract up to $3,500 a year in government grants and up to $1,000 a year in bonds. Here is who qualifies and how the matching works."
 category: Disability Planning
 status: published
