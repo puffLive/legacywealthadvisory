@@ -10,8 +10,8 @@ const inter = Inter({
 
 export const metadata = {
   title: 'Legacy Wealth Advisory - Strength for Today. Stability for Tomorrow. Legacy Forever.',
-  description: 'Estate planning, succession planning, and wealth protection services for high-net-worth individuals and business owners in the Greater Toronto Area.',
-  keywords: 'estate planning, succession planning, wealth protection, financial advisor, Greater Toronto Area',
+  description: 'Legacy Wealth Advisory provides financial planning, retirement planning, investment and insurance solutions, estate planning, and business succession planning in Mississauga, Ontario and the Greater Toronto Area.',
+  keywords: 'financial advisor Mississauga, financial planner Mississauga, Legacy Wealth Advisory, Damian Alexander CLU, retirement planning Mississauga, estate planning Mississauga, succession planning, life insurance, investment planning, Greater Toronto Area',
   icons: {
     icon: [
       { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
