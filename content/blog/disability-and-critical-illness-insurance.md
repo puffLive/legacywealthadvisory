@@ -1,6 +1,6 @@
 ---
 title: "Disability vs. Critical Illness Insurance: Protecting Your Income When Health Changes"
-date: 2026-11-22
+date: 2026-11-21
 summary: "Disability insurance replaces part of your income if you cannot work. Critical illness insurance pays a lump sum after a covered diagnosis. Here is how they differ and where each fits."
 category: Insurance
 status: published
