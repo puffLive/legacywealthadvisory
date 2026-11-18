@@ -5,7 +5,7 @@ summary: "NVIDIA reported another exceptionally strong quarter as AI infrastruct
 category: Investing
 status: published
 seoDescription: "NVIDIA NVDA November 2026 outlook: Q3 fiscal 2027 earnings, AI data centre growth, valuation risks and considerations for Canadian investors."
-image: /images/blog/nvidia-state-november-2026.svg
+image: /images/blog/nvidia-ai-growth-investor-risks-november-2026.webp
 imageAlt: "Legacy Wealth Advisory illustration: The State of NVIDIA — AI Growth, Investor Risk, November 2026"
 ---
 
@@ -13,7 +13,7 @@ NVIDIA (NASDAQ: NVDA) remains a central company in the global artificial intelli
 
 ## NVIDIA's latest quarterly results
 
-On **November 17, 2026**, NVIDIA announced results for its **third quarter of fiscal 2027**, which ended October 25, 2026. The company reported:
+On **November 17, 2026**, NVIDIA announced results for its **third quarter**, which ended October 25, 2026. The company reported:
 
 - **Revenue of US$115.8 billion**, up **103%** from the same quarter a year earlier and **20%** from the preceding quarter.
 - **Data Center revenue of US$107.6 billion**, up **110%** year over year.
@@ -22,7 +22,6 @@ On **November 17, 2026**, NVIDIA announced results for its **third quarter of fi
 
 For the following quarter, management forecast revenue of approximately **US$130 billion, plus or minus 3%**. The company noted that its fourth fiscal quarter includes an extra week. These are company-reported figures, not guarantees of future results.
 
-Source: [NVIDIA Q3 fiscal 2027 earnings release](https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/default.aspx).
 
 ## Why investors are watching the AI buildout
 

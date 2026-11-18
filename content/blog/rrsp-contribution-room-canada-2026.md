@@ -5,7 +5,7 @@ summary: "The 2026 RRSP dollar limit is $33,810. Here is how your own contributi
 category: Retirement
 status: published
 seoDescription: "Learn how RRSP contribution room works in Canada for 2026, including the $33,810 limit, the March 1, 2027 deadline, carry-forward room and over-contribution penalties."
-image: /images/blog/rrsp-contribution-room-canada-2026.svg
+image: /images/blog/rrsp-contribution-room-canada-2026.webp
 imageAlt: "Legacy Wealth Advisory RRSP Contribution Room in 2026 illustration with savings chart and Canadian retirement planning imagery"
 ---
 
