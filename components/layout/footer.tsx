@@ -73,6 +73,11 @@ export function Footer() {
                   <path d="M17.7 9.8c-.2-1.5-.8-2.7-1.8-3.6-1-.9-2.3-1.4-3.9-1.4-2.2 0-3.8 1.1-4.7 3.1l1.9.8c.6-1.3 1.5-1.9 2.8-1.9 1.9 0 3 1 3.4 2.8-.9-.4-1.9-.6-3-.6-2.9 0-4.8 1.6-4.8 4.1 0 2.4 1.8 4 4.3 4 2.1 0 3.8-1.1 4.5-3 .4.6.5 1.3.5 2 0 3-2.1 4.9-5.2 4.9-3.7 0-6.1-2.6-6.1-6.6V12c0-4.2 2.5-6.8 6.2-6.8 3.5 0 5.7 2 6.1 5.6l2.1-.2C20.5 5.7 17.4 3 12 3 6.4 3 3 6.7 3 12v.4C3 17.7 6.5 21 12 21c4.4 0 7.3-2.8 7.3-7.1 0-1.5-.4-2.9-1.2-4.1h-.4Zm-5.7 5.4c-1.4 0-2.2-.7-2.2-1.9 0-1.3 1-2.1 2.6-2.1 1.1 0 2.1.3 2.9.9-.2 1.9-1.4 3.1-3.3 3.1Z"/>
                 </svg>
               </a>
+              <a href="https://x.com/_legacywealth" target="_blank" rel="noopener noreferrer" aria-label="Legacy Wealth Advisory on X (formerly Twitter)" title="Visit Legacy Wealth Advisory on X" className="ml-2 inline-flex items-center justify-center rounded-md bg-black p-2 text-white transition-colors hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-400">
+                <svg aria-hidden="true" className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.847h-7.406l-5.8-7.584-6.634 7.584H.478l8.6-9.83L0 1.153h7.594l5.243 6.932 6.064-6.932Zm-1.29 19.49h2.039L6.486 3.24H4.298l13.313 17.403Z"/>
+                </svg>
+              </a>
             </div>
           </div>
 
