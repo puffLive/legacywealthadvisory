@@ -78,8 +78,14 @@ export function Footer() {
                   <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.847h-7.406l-5.8-7.584-6.634 7.584H.478l8.6-9.83L0 1.153h7.594l5.243 6.932 6.064-6.932Zm-1.29 19.49h2.039L6.486 3.24H4.298l13.313 17.403Z"/>
                 </svg>
               </a>
-              <a href="https://g.page/r/CUPiJ9JeiHXJEAE/review?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" className="ml-3 inline-block align-middle font-bold uppercase tracking-wide text-gold-400 underline underline-offset-4 transition-colors hover:text-gold-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-400">
-                LEAVE A GOOGLE REVIEW
+              <a href="https://g.page/r/CUPiJ9JeiHXJEAE/review?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" aria-label="Leave a Google review for Legacy Wealth Advisory" className="ml-3 inline-flex flex-col items-center align-middle gap-1 rounded-md p-1 text-center text-gold-400 transition-colors hover:text-gold-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-400">
+                <svg aria-hidden="true" className="h-9 w-9" viewBox="0 0 24 24">
+                  <path fill="#4285F4" d="M21.35 11.1H12v3.8h5.35c-.55 2.55-2.7 4.1-5.35 4.1v4c5.2 0 9-3.65 9-8.8 0-.37-.04-.73-.1-1.1Z"/>
+                  <path fill="#34A853" d="M12 19a7 7 0 0 1-6.58-4.64l-3.27 2.54A11 11 0 0 0 12 23v-4Z"/>
+                  <path fill="#FBBC05" d="M5.42 14.36A7 7 0 0 1 5 12c0-.82.14-1.61.42-2.36L2.15 7.1A11 11 0 0 0 1 12c0 1.76.42 3.42 1.15 4.9l3.27-2.54Z"/>
+                  <path fill="#EA4335" d="M12 5c1.53 0 2.9.53 3.98 1.56l2.83-2.83A9.94 9.94 0 0 0 12 1 11 11 0 0 0 2.15 7.1l3.27 2.54A7 7 0 0 1 12 5Z"/>
+                </svg>
+                <span className="text-xs font-bold uppercase tracking-wide underline underline-offset-4">PLEASE LEAVE A GOOGLE REVIEW</span>
               </a>
             </div>
           </div>
