@@ -53,6 +53,7 @@ export function Footer() {
             <div className="space-y-2 text-sm">
               <p className="font-semibold text-gold-400">Damian Alexander</p>
               <p className="text-gray-300">Financial Planner & CLU</p>
+              <a href="https://www.linkedin.com/in/damianfalexander/" target="_blank" rel="noopener noreferrer" aria-label="Damian Alexander on LinkedIn" className="inline-flex items-center gap-2 text-gold-400 hover:text-gold-300 underline">Connect on LinkedIn</a>
             </div>
           </div>
 
