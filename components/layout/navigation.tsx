@@ -2,6 +2,7 @@
 
 import * as React from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
 
 interface NavigationItem {
@@ -22,9 +23,16 @@ const navigationItems: NavigationItem[] = [
       { label: 'Wealth Protection', href: '/services/wealth-protection' },
     ],
   },
+  { label: 'Blog', href: '/blog' },
   // { label: 'Resources', href: '/resources' }, // Hidden for now
   { label: 'Contact', href: '/contact' },
 ]
+
+function isActivePath(pathname: string | null, href: string) {
+  if (!pathname) return false
+  if (href === '/') return pathname === '/'
+  return pathname === href || pathname.startsWith(`${href}/`)
+}
 
 interface NavigationProps {
   className?: string
@@ -32,6 +40,7 @@ interface NavigationProps {
 
 export function Navigation({ className }: NavigationProps) {
   const [activeDropdown, setActiveDropdown] = React.useState<string | null>(null)
+  const pathname = usePathname()
 
   return (
     <nav className={cn('hidden lg:flex items-center space-x-8', className)}>
@@ -44,7 +53,11 @@ export function Navigation({ className }: NavigationProps) {
         >
           <Link
             href={item.href}
-            className="hover:text-gold-400 font-medium transition-colors py-2 flex items-center"
+            aria-current={isActivePath(pathname, item.href) ? 'page' : undefined}
+            className={cn(
+              'hover:text-gold-400 font-medium transition-colors py-2 flex items-center',
+              isActivePath(pathname, item.href) && 'text-gold-400'
+            )}
           >
             {item.label}
             {item.children && (
@@ -97,6 +110,7 @@ interface MobileNavigationProps {
 
 export function MobileNavigation({ isOpen, onClose, onBookConsultation }: MobileNavigationProps) {
   const [expandedItems, setExpandedItems] = React.useState<string[]>([])
+  const pathname = usePathname()
 
   const toggleExpanded = (label: string) => {
     setExpandedItems((prev) =>
@@ -133,7 +147,11 @@ export function MobileNavigation({ isOpen, onClose, onBookConsultation }: Mobile
                 <div className="flex items-center justify-between">
                   <Link
                     href={item.href}
-                    className="block py-2 text-gray-700 hover:text-primary-950 font-medium transition-colors flex-1"
+                    aria-current={isActivePath(pathname, item.href) ? 'page' : undefined}
+                    className={cn(
+                      'block py-2 text-gray-700 hover:text-primary-950 font-medium transition-colors flex-1',
+                      isActivePath(pathname, item.href) && 'text-primary-950 font-semibold'
+                    )}
                     onClick={onClose}
                   >
                     {item.label}

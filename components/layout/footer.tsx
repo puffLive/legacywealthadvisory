@@ -8,6 +8,7 @@ import { Logo } from './logo'
 const navigationLinks = {
   company: [
     { label: 'About', href: '/about' },
+    { label: 'Blog', href: '/blog' },
     { label: 'Contact', href: '/contact' },
   ],
   services: [
