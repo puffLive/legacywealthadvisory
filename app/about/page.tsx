@@ -208,6 +208,51 @@ export default function AboutPage() {
         </Container>
       </section>
 
+      {/* Licensing and Registration Section */}
+      <section id="licensing-credentials" className="py-20 bg-white scroll-mt-24" aria-labelledby="licensing-heading">
+        <Container>
+          <div className="max-w-4xl mx-auto">
+            <h2 id="licensing-heading" className="text-3xl md:text-4xl font-bold text-primary-950 mb-6">
+              Professional Licensing &amp; Credentials
+            </h2>
+            <p className="text-lg text-gray-600 mb-8">
+              Damian Alexander, CLU is the founder of Legacy Wealth Advisory, serving individuals, families and business owners in Mississauga, Ontario and the Greater Toronto Area.
+            </p>
+            <dl className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+              <div className="rounded-xl bg-gray-50 p-6">
+                <dt className="font-bold text-primary-950 mb-2">Professional designation</dt>
+                <dd className="text-gray-700">Chartered Life Underwriter (CLU)</dd>
+              </div>
+              <div className="rounded-xl bg-gray-50 p-6">
+                <dt className="font-bold text-primary-950 mb-2">Ontario insurance licensing</dt>
+                <dd className="text-gray-700">Active Ontario life insurance agent licence</dd>
+              </div>
+              <div className="rounded-xl bg-gray-50 p-6">
+                <dt className="font-bold text-primary-950 mb-2">Insurance regulator</dt>
+                <dd className="text-gray-700">Financial Services Regulatory Authority of Ontario (FSRA)</dd>
+              </div>
+              <div className="rounded-xl bg-gray-50 p-6">
+                <dt className="font-bold text-primary-950 mb-2">Managing General Agency (MGA)</dt>
+                <dd className="text-gray-700">HUB Financial Inc.</dd>
+              </div>
+            </dl>
+            <h3 className="text-2xl font-bold text-primary-950 mb-4">Investment and Insurance Solutions</h3>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Through his Ontario insurance licence and relationship with HUB Financial Inc., Damian provides access to insurance-based financial products, including segregated investment funds, guaranteed investment products offered by insurance companies, life insurance, critical illness insurance and disability insurance.
+            </p>
+            <p className="text-gray-700 leading-relaxed mb-6">
+              His financial planning services include retirement income planning, registered savings strategies, estate and succession planning, and wealth protection. Product availability and recommendations are subject to applicable licensing, insurer appointments, eligibility requirements and individual client needs.
+            </p>
+            <p className="text-gray-700">
+              Ontario insurance licensing information can be verified through the{' '}
+              <a href="https://www.fsrao.ca/" target="_blank" rel="noopener noreferrer" className="text-primary-800 underline hover:text-primary-950">
+                Financial Services Regulatory Authority of Ontario (FSRA)
+              </a>.
+            </p>
+          </div>
+        </Container>
+      </section>
+
       {/* Values Section */}
       <section className="py-20 bg-white">
         <Container>
