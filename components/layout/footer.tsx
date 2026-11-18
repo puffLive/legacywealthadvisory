@@ -78,6 +78,11 @@ export function Footer() {
                   <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.847h-7.406l-5.8-7.584-6.634 7.584H.478l8.6-9.83L0 1.153h7.594l5.243 6.932 6.064-6.932Zm-1.29 19.49h2.039L6.486 3.24H4.298l13.313 17.403Z"/>
                 </svg>
               </a>
+              <div className="pt-3">
+                <a href="https://g.page/r/CUPiJ9JeiHXJEAE/review?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" className="inline-block font-bold uppercase tracking-wide text-gold-400 underline underline-offset-4 transition-colors hover:text-gold-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-400">
+                  LEAVE A GOOGLE REVIEW
+                </a>
+              </div>
             </div>
           </div>
 
