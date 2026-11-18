@@ -114,7 +114,7 @@ export function Footer() {
               </div>
               <div className="pt-2">
                 <p className="text-gray-300 text-xs leading-relaxed">
-                  14-30 Eglinton Ave W<br />
+                  14-30 Eglinton Ave W, Suite 579<br />
                   Mississauga, ON L5R 0C1
                 </p>
               </div>
