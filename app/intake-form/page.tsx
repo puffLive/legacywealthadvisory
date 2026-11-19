@@ -80,7 +80,7 @@ export default function IntakeFormPage() {
     e.preventDefault()
     const form = e.currentTarget
     const data: Record<string,string> = {}
-    for (const [key, value] of new FormData(form).entries()) data[key] = String(value)
+    new FormData(form).forEach((value, key) => { data[key] = String(value) })
     setStatus('sending'); setError('')
     try {
       const response = await fetch('/api/intake', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data) })
