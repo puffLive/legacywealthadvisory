@@ -18,6 +18,7 @@ const navigationLinks = {
     { label: 'Wealth Protection', href: '/services/wealth-protection' },
     { label: 'Life Insurance', href: '/services/life-insurance' },
     { label: 'Critical Illness Insurance', href: '/services/critical-illness' },
+    { label: 'Disability Insurance', href: '/services/disability-insurance' },
   ],
   resources: [
     // { label: 'Resources', href: '/resources' }, // Hidden for now
