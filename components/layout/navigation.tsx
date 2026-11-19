@@ -21,6 +21,7 @@ const navigationItems: NavigationItem[] = [
       { label: 'Estate Planning', href: '/services/estate-planning' },
       { label: 'Succession Planning', href: '/services/succession-planning' },
       { label: 'Wealth Protection', href: '/services/wealth-protection' },
+      { label: 'Life Insurance', href: '/services/life-insurance' },
     ],
   },
   { label: 'Blog', href: '/blog' },
