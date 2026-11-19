@@ -226,6 +226,18 @@ export function Footer() {
             {/* Credentials */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
               <span className="text-xs text-gray-400">CLU • Financial Planner</span>
+              <div className="inline-flex items-center gap-2" aria-label="BNI member">
+                <span className="inline-flex items-center justify-center rounded bg-white px-2 py-1" title="BNI member">
+                  <svg viewBox="0 0 156 72" role="img" aria-label="BNI logo" className="h-7 w-[61px]" xmlns="http://www.w3.org/2000/svg">
+                    <g fill="#CF162B">
+                      <path d="M6 9h41c20 0 29 8 29 20 0 8-4 13-11 16 10 3 15 9 15 18 0 14-11 22-32 22H6V9Zm25 18v12h14c5 0 8-2 8-6s-3-6-8-6H31Zm0 28v12h16c6 0 9-2 9-6s-3-6-9-6H31Z" transform="translate(0 -9) scale(.86 1)"/>
+                      <path d="M70 0h21l33 43V0h21v72h-21L91 29v43H70V0Z"/>
+                      <path d="M150 0h6v72h-6z"/>
+                    </g>
+                  </svg>
+                </span>
+                <span className="text-xs text-gray-400">BNI Member</span>
+              </div>
             </div>
 
             {/* Legal Links */}
