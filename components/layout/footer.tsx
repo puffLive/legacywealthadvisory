@@ -9,6 +9,7 @@ const navigationLinks = {
   company: [
     { label: 'About', href: '/about' },
     { label: 'Blog', href: '/blog' },
+    { label: 'Intake Form', href: '/intake-form' },
     { label: 'Contact', href: '/contact' },
   ],
   services: [
