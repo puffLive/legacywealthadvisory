@@ -24,6 +24,7 @@ const navigationItems: NavigationItem[] = [
       { label: 'Life Insurance', href: '/services/life-insurance' },
     ],
   },
+  { label: 'Intake Form', href: '/intake-form' },
   { label: 'Blog', href: '/blog' },
   // { label: 'Resources', href: '/resources' }, // Hidden for now
   { label: 'Contact', href: '/contact' },
