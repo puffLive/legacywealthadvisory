@@ -34,6 +34,62 @@ export default function CriticalIllnessPage() {
         <a href="https://calendly.com/planningwithdamian/30-min-with-damian" target="_blank" rel="noopener noreferrer" className="inline-flex rounded-lg bg-gold-500 px-7 py-3 font-bold text-primary-950 hover:bg-gold-400">Discuss Your Coverage Options</a>
       </div>
     </section>
+    <section className="bg-white px-6 py-12" aria-labelledby="families-protected">
+      <div className="mx-auto max-w-5xl">
+        <h2 id="families-protected" className="mb-3 text-center text-3xl font-bold text-primary-950">Protecting Families. Supporting Recovery.</h2>
+        <p className="mx-auto mb-8 max-w-3xl text-center text-gray-700">Every family is different. Critical illness protection can help provide financial flexibility when a covered diagnosis changes your plans.</p>
+        <div className="grid gap-6 md:grid-cols-2">
+          <article className="overflow-hidden rounded-2xl border border-gold-400 bg-blue-50 shadow-sm">
+            <svg role="img" aria-label="Illustration of a Black family with two parents and two children" viewBox="0 0 480 270" className="h-auto w-full">
+              <rect width="480" height="270" fill="#eaf4fb"/>
+              <circle cx="400" cy="55" r="95" fill="#f6dfac"/>
+              <path d="M0 225Q130 165 240 218T480 208V270H0Z" fill="#d6e7ef"/>
+              <g>
+                <path d="M40 265Q44 160 130 160Q220 160 222 265Z" fill="#173d66"/>
+                <ellipse cx="130" cy="100" rx="52" ry="64" fill="#553122"/>
+                <ellipse cx="130" cy="116" rx="43" ry="49" fill="#986042"/>
+                <path d="M89 93Q90 36 134 38Q177 42 173 98Q150 76 132 77Q113 87 89 93Z" fill="#2b1a19"/>
+                <path d="M247 265Q250 158 340 158Q430 158 438 265Z" fill="#b88d3b"/>
+                <ellipse cx="340" cy="103" rx="60" ry="72" fill="#271a1b"/>
+                <ellipse cx="340" cy="119" rx="42" ry="51" fill="#b97955"/>
+                <path d="M291 113Q275 40 335 35Q406 39 390 120L375 90Q339 68 304 99Z" fill="#25191a"/>
+                <path d="M148 270Q150 203 214 203Q274 203 278 270Z" fill="#417c89"/>
+                <ellipse cx="212" cy="184" rx="32" ry="38" fill="#9b6244"/>
+                <path d="M181 175Q183 143 214 145Q243 148 242 180Q218 159 181 175Z" fill="#2a1c19"/>
+                <path d="M287 270Q290 208 355 208Q413 208 416 270Z" fill="#e5ad60"/>
+                <ellipse cx="353" cy="188" rx="32" ry="37" fill="#b77b56"/>
+                <path d="M320 181Q322 150 353 150Q385 151 385 184Q354 160 320 181Z" fill="#251919"/>
+              </g>
+            </svg>
+            <div className="p-5 text-center"><h3 className="text-lg font-bold text-primary-950">Protection for the people you love</h3><p className="mt-2 text-sm text-gray-700">Support everyday expenses, caregiving and your family's financial priorities.</p></div>
+          </article>
+          <article className="overflow-hidden rounded-2xl border border-gold-400 bg-amber-50 shadow-sm">
+            <svg role="img" aria-label="Illustration of a South Asian family with two parents and two children" viewBox="0 0 480 270" className="h-auto w-full">
+              <rect width="480" height="270" fill="#fff2df"/>
+              <circle cx="70" cy="60" r="90" fill="#f5d9ac"/>
+              <path d="M0 220Q130 180 240 220T480 210V270H0Z" fill="#eaded0"/>
+              <g>
+                <path d="M40 265Q44 160 130 160Q220 160 222 265Z" fill="#397a78"/>
+                <ellipse cx="130" cy="111" rx="44" ry="53" fill="#b97952"/>
+                <path d="M86 106Q76 38 130 40Q181 40 176 107Q152 75 125 76Q105 80 86 106Z" fill="#251a18"/>
+                <path d="M245 265Q250 160 340 160Q431 160 438 265Z" fill="#a75b5d"/>
+                <ellipse cx="340" cy="107" rx="58" ry="70" fill="#21191b"/>
+                <ellipse cx="340" cy="119" rx="42" ry="52" fill="#c68b65"/>
+                <path d="M289 111Q281 39 340 37Q405 41 391 119L377 88Q337 69 301 98Z" fill="#221a1c"/>
+                <path d="M146 270Q151 203 214 203Q274 203 278 270Z" fill="#e5a23e"/>
+                <ellipse cx="212" cy="185" rx="32" ry="38" fill="#c58a61"/>
+                <path d="M181 175Q183 144 214 145Q243 148 242 180Q218 160 181 175Z" fill="#291d1b"/>
+                <path d="M286 270Q290 208 355 208Q413 208 416 270Z" fill="#516b9b"/>
+                <ellipse cx="353" cy="188" rx="32" ry="37" fill="#b97b56"/>
+                <path d="M320 181Q322 150 353 150Q385 151 385 184Q354 161 320 181Z" fill="#2b201d"/>
+              </g>
+            </svg>
+            <div className="p-5 text-center"><h3 className="text-lg font-bold text-primary-950">Financial flexibility during recovery</h3><p className="mt-2 text-sm text-gray-700">Help protect savings and give your household more choices during a difficult time.</p></div>
+          </article>
+        </div>
+        <p className="mt-4 text-center text-xs text-gray-500">Illustrations represent the diverse families and communities we serve.</p>
+      </div>
+    </section>
     <section className="px-6 py-16"><div className="mx-auto max-w-5xl">
       <h2 className="mb-5 text-3xl font-bold text-primary-950">What is critical illness insurance?</h2>
       <p className="max-w-4xl text-lg leading-relaxed text-gray-700">Critical illness insurance generally provides a lump-sum payment if you are diagnosed with a condition covered by your policy and meet its claim requirements. Unlike disability insurance, which typically replaces a portion of income, critical illness insurance is generally designed to pay a specified benefit after a qualifying diagnosis. The money can help with financial needs that arise during treatment or recovery.</p>
