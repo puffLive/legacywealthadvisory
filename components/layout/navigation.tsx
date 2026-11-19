@@ -22,6 +22,7 @@ const navigationItems: NavigationItem[] = [
       { label: 'Succession Planning', href: '/services/succession-planning' },
       { label: 'Wealth Protection', href: '/services/wealth-protection' },
       { label: 'Life Insurance', href: '/services/life-insurance' },
+      { label: 'Critical Illness Insurance', href: '/services/critical-illness' },
     ],
   },
   { label: 'Intake Form', href: '/intake-form' },

@@ -17,6 +17,7 @@ const navigationLinks = {
     { label: 'Succession Planning', href: '/services/succession-planning' },
     { label: 'Wealth Protection', href: '/services/wealth-protection' },
     { label: 'Life Insurance', href: '/services/life-insurance' },
+    { label: 'Critical Illness Insurance', href: '/services/critical-illness' },
   ],
   resources: [
     // { label: 'Resources', href: '/resources' }, // Hidden for now

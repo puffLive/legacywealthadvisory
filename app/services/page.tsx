@@ -7,6 +7,17 @@ import { Button } from '@/components/ui'
 
 const services = [
   {
+    title: 'Critical Illness Insurance',
+    href: '/services/critical-illness',
+    description: 'Learn how a qualifying critical illness benefit can help protect your savings, income and family during recovery.',
+    icon: (
+      <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h2l1-2 2 4 1-2h2" />
+      </svg>
+    ),
+  },
+  {
     title: 'Life Insurance',
     href: '/services/life-insurance',
     description: 'Explore term and permanent life insurance as tools for protecting family income, supporting business continuity and planning your estate.',
@@ -77,7 +88,7 @@ export default function ServicesPage() {
       {/* Services Grid */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service) => (
               <Link
                 key={service.title}
