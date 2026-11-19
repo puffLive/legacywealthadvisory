@@ -78,6 +78,11 @@ export function Footer() {
                   <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.847h-7.406l-5.8-7.584-6.634 7.584H.478l8.6-9.83L0 1.153h7.594l5.243 6.932 6.064-6.932Zm-1.29 19.49h2.039L6.486 3.24H4.298l13.313 17.403Z"/>
                 </svg>
               </a>
+              <a href="https://www.tiktok.com/@legacywealthadvisory?_r=1&amp;_t=ZS-9BWXuAxzeI3" target="_blank" rel="noopener noreferrer" aria-label="Legacy Wealth Advisory on TikTok" title="Visit Legacy Wealth Advisory on TikTok" className="ml-2 inline-flex items-center justify-center rounded-md bg-black p-2 text-white transition-colors hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-400">
+                <svg aria-hidden="true" className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M16.7 1h-3.4v14.1a3.4 3.4 0 1 1-3.4-3.4c.4 0 .8.1 1.2.2V8.4a7.3 7.3 0 0 0-1.2-.1 6.8 6.8 0 1 0 6.8 6.8V7.7a8.5 8.5 0 0 0 5.3 1.8V4.3A5.2 5.2 0 0 1 16.7 1Z"/>
+                </svg>
+              </a>
               <a href="https://g.page/r/CUPiJ9JeiHXJEAE/review?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" aria-label="Leave a Google review for Legacy Wealth Advisory" className="ml-3 inline-flex flex-col items-center align-middle gap-1 rounded-md p-1 text-center text-gold-400 transition-colors hover:text-gold-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-400">
                 <svg aria-hidden="true" className="h-9 w-9" viewBox="0 0 24 24">
                   <path fill="#4285F4" d="M21.35 11.1H12v3.8h5.35c-.55 2.55-2.7 4.1-5.35 4.1v4c5.2 0 9-3.65 9-8.8 0-.37-.04-.73-.1-1.1Z"/>
