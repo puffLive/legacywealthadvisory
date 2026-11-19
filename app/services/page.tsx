@@ -7,6 +7,12 @@ import { Button } from '@/components/ui'
 
 const services = [
   {
+    title: 'Disability Insurance',
+    href: '/services/disability-insurance',
+    description: 'Learn how disability insurance can help protect your income if illness or injury prevents you from working.',
+    icon: (<svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11ZM8 13l3-3 2 2 3-3" /></svg>),
+  },
+  {
     title: 'Critical Illness Insurance',
     href: '/services/critical-illness',
     description: 'Learn how a qualifying critical illness benefit can help protect your savings, income and family during recovery.',
