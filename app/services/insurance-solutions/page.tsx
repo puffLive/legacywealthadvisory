@@ -9,6 +9,7 @@ export default function Page() {
       <div className="max-w-5xl mx-auto px-6">
         <h1 className="text-4xl font-bold text-primary-950 mb-5">Insurance Solutions</h1>
         <p className="text-lg text-gray-700 mb-10">Explore our insurance solutions services and learn how Legacy Wealth Advisory can help.</p>
+        <Link href="/services/corporate-insurance-planning" className="block rounded-lg border border-gray-200 p-5 mb-8 hover:shadow-md"><h2 className="font-semibold text-primary-950 text-xl">Corporate Insurance Planning</h2><p className="text-gray-600 mt-2">Consider key-person protection, buy-sell funding and business continuity.</p></Link>
         <div className="grid gap-6 md:grid-cols-3">
           <Link href="/services/life-insurance" className="block rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-shadow"><h2 className="text-xl font-semibold text-primary-950">Life Insurance</h2><span className="text-gold-600 mt-3 inline-block">Learn more →</span></Link>
           <Link href="/services/critical-illness" className="block rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-shadow"><h2 className="text-xl font-semibold text-primary-950">Critical Illness Insurance</h2><span className="text-gold-600 mt-3 inline-block">Learn more →</span></Link>
