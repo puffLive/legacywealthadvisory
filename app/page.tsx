@@ -71,6 +71,12 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="bg-white border-b border-[#e8e4dc] py-12" aria-labelledby="advisor-trust-heading">
+        <div className="mx-auto max-w-[1300px] px-6 sm:px-12 grid gap-7 lg:grid-cols-[1fr_2fr] lg:items-center">
+          <div><p className="text-xs uppercase tracking-[.2em] text-[#9a7a3f]">Your advisor</p><h2 id="advisor-trust-heading" className="mt-2 font-serif text-3xl text-[#102c49]">Experience you can explore.</h2></div>
+          <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between"><p className="max-w-xl text-sm leading-7 text-[#53616c]"><strong className="text-[#102c49]">Damian Alexander, CLU</strong> brings more than two decades of financial services experience to an integrated approach to planning. Learn about his professional background, licensing context and five-step process.</p><Link href="/about" className="shrink-0 text-sm font-semibold text-[#102c49] underline decoration-[#b99a5e] underline-offset-8">Meet Damian →</Link></div>
+        </div>
+      </section>
       <section className="lwa-reveal border-t border-[#e8e4dc] bg-white py-14">
         <div className="mx-auto flex max-w-[1300px] flex-col items-start justify-between gap-6 px-6 sm:px-12 lg:flex-row lg:items-center">
           <div><p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9a7a3f]">Your financial future</p><h2 className="mt-3 font-serif text-3xl text-[#102c49]">Let's build a plan that fits your life.</h2><p className="mt-3 text-sm text-[#64717b]">Start with a conversation about your goals and priorities.</p></div>
