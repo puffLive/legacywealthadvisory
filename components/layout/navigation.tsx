@@ -18,6 +18,8 @@ const navigationItems: NavigationItem[] = [
     label: 'Planning and Advisory',
     href: '/services/planning-advisory',
     children: [
+      { label: 'Comprehensive Financial Planning', href: '/services/comprehensive-financial-planning' },
+      { label: 'Retirement Planning', href: '/services/retirement-planning' },
       { label: 'Estate Planning', href: '/services/estate-planning' },
       { label: 'Succession Planning', href: '/services/succession-planning' },
       { label: 'Wealth Protection', href: '/services/wealth-protection' },
@@ -28,12 +30,14 @@ const navigationItems: NavigationItem[] = [
     href: '/services/insurance-solutions',
     children: [
       { label: 'Life Insurance', href: '/services/life-insurance' },
+      { label: 'Corporate Insurance Planning', href: '/services/corporate-insurance-planning' },
       { label: 'Critical Illness Insurance', href: '/services/critical-illness' },
       { label: 'Disability Insurance', href: '/services/disability-insurance' },
     ],
   },
   { label: 'Intake Form', href: '/intake-form' },
   { label: 'Blog', href: '/blog' },
+  { label: 'Guides', href: '/guides' },
   // { label: 'Resources', href: '/resources' }, // Hidden for now
   { label: 'Contact', href: '/contact' },
 ]
