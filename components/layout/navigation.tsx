@@ -35,10 +35,15 @@ const navigationItems: NavigationItem[] = [
       { label: 'Disability Insurance', href: '/services/disability-insurance' },
     ],
   },
-  { label: 'Intake Form', href: '/intake-form' },
-  { label: 'Blog', href: '/blog' },
-  { label: 'Guides', href: '/guides' },
-  // { label: 'Resources', href: '/resources' }, // Hidden for now
+  {
+    label: 'Resources',
+    href: '/guides',
+    children: [
+      { label: 'Financial Planning Guides', href: '/guides' },
+      { label: 'Insights & Blog', href: '/blog' },
+      { label: 'Client Intake Form', href: '/intake-form' },
+    ],
+  },
   { label: 'Contact', href: '/contact' },
 ]
 
@@ -57,7 +62,7 @@ export function Navigation({ className }: NavigationProps) {
   const pathname = usePathname()
 
   return (
-    <nav className={cn('hidden lg:flex items-center space-x-8', className)}>
+    <nav className={cn('hidden xl:flex items-center gap-5 2xl:gap-8 whitespace-nowrap', className)}>
       {navigationItems.map((item) => (
         <div
           key={item.label}
@@ -69,14 +74,14 @@ export function Navigation({ className }: NavigationProps) {
             href={item.href}
             aria-current={isActivePath(pathname, item.href) ? 'page' : undefined}
             className={cn(
-              'hover:text-gold-400 font-medium transition-colors py-2 flex items-center',
+              'hover:text-gold-400 text-[13px] 2xl:text-sm font-medium transition-colors py-3 flex items-center whitespace-nowrap',
               isActivePath(pathname, item.href) && 'text-gold-400'
             )}
           >
             {item.label}
             {item.children && (
               <svg
-                className="ml-1 h-4 w-4 transition-transform group-hover:rotate-180"
+                className="ml-1.5 h-3.5 w-3.5 transition-transform group-hover:rotate-180"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -94,14 +99,14 @@ export function Navigation({ className }: NavigationProps) {
           {item.children && activeDropdown === item.label && (
             <>
               {/* Invisible bridge to prevent gap issues */}
-              <div className="absolute top-full left-0 w-64 h-2 z-40" />
+              <div className="absolute top-full left-0 w-72 h-2 z-40" />
               <div className="absolute top-full left-0 pt-2 z-50">
-                <div className="w-64 bg-white rounded-md shadow-lg border border-gray-200 py-2">
+                <div className="w-72 bg-white rounded-xl shadow-xl border border-gray-100 py-2 overflow-hidden">
                   {item.children.map((child) => (
                     <Link
                       key={child.label}
                       href={child.href}
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary-950 transition-colors"
+                      className="block px-5 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary-950 transition-colors whitespace-normal"
                     >
                       {child.label}
                     </Link>
@@ -137,7 +142,7 @@ export function MobileNavigation({ isOpen, onClose, onBookConsultation }: Mobile
   if (!isOpen) return null
 
   return (
-    <div className="lg:hidden">
+    <div className="xl:hidden">
       <div className="fixed inset-0 bg-black bg-opacity-50 z-50" onClick={onClose} />
       <div className="fixed top-0 right-0 h-full w-80 bg-white shadow-xl z-50 overflow-y-auto">
         <div className="p-6">
