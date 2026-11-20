@@ -1,7 +1,7 @@
 import './home-motion.css'
 import { HomeScrollMotion } from '@/components/sections/home-scroll-motion'
 import Link from 'next/link'
-import Image from 'next/image'
+import { HomeHeroGallery } from '@/components/sections/home-hero-gallery'
 
 const services = [
   {number:'01',title:'Financial Planning',text:'A coordinated plan for your investments, savings, retirement and financial goals.',href:'/services/comprehensive-financial-planning',icon:'◌'},
@@ -28,11 +28,7 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-          <div className="relative min-h-[310px] overflow-hidden lg:min-h-full">
-            <Image src="/images/hero-images/lwa-elephant-herd.jpg" alt="Elephant herd, representing Legacy Wealth Advisory's commitment to strength, family and legacy" fill priority sizes="(max-width: 1024px) 100vw, 49vw" className="lwa-hero-image object-cover"/>
-            <div className="absolute inset-0 bg-gradient-to-r from-[#f8f7f3]/30 via-transparent to-[#102c49]/15"/>
-            <div className="absolute bottom-6 right-6 border border-white/60 bg-[#102c49]/80 px-5 py-3 text-xs tracking-[0.15em] text-white backdrop-blur-sm">LEGACY WEALTH ADVISORY</div>
-          </div>
+          <HomeHeroGallery />
         </div>
       </section>
 
