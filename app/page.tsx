@@ -16,9 +16,9 @@ export default function HomePage() {
       <section className="relative isolate overflow-hidden bg-[#f8f7f3]">
         <div className="mx-auto grid max-w-[1440px] lg:min-h-[520px] lg:grid-cols-[51%_49%]">
           <div className="relative z-10 flex items-center px-6 py-16 sm:px-12 md:py-24 lg:px-16 xl:px-20">
-            <div className="max-w-xl">
+            <div className="w-full max-w-2xl">
               <p className="lwa-hero-eyebrow mb-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#9a7a3f]"><span className="h-px w-9 bg-[#b99a5e]"/> Build • Protect • Transfer</p>
-              <h1 className="lwa-hero-title font-serif text-[clamp(2.9rem,5vw,5.3rem)] leading-[1.06] tracking-[-0.035em] text-[#102c49]">Clarity today.<br/><span className="text-[#345472]">Confidence tomorrow.</span></h1>
+              <h1 className="lwa-hero-title font-serif text-[clamp(2.65rem,4.5vw,4.4rem)] leading-[1.12] tracking-[-0.04em] text-[#102c49] lg:text-[clamp(2.7rem,3.65vw,3.9rem)] 2xl:text-[4.15rem]">Clarity today.<br/><span className="text-[#345472] lg:whitespace-nowrap">Confidence tomorrow.</span></h1>
               <div className="my-7 h-px w-14 bg-[#b99a5e]"/>
               <p className="lwa-hero-copy max-w-md text-base leading-8 text-[#53616c] sm:text-lg">Comprehensive financial planning for individuals, families and business owners in Mississauga and the Greater Toronto Area.</p>
               <p className="mt-3 max-w-md text-sm leading-7 text-[#66727b]">Investments, retirement, insurance, estate and succession planning — thoughtfully connected around your goals.</p>
