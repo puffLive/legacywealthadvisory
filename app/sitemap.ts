@@ -18,6 +18,7 @@ const staticRoutes = [
   '/services/comprehensive-financial-planning',
   '/services/retirement-planning',
   '/services/corporate-insurance-planning',
+  '/guides',
   '/guides/estate-planning-business-owners',
   '/guides/critical-illness-vs-disability-insurance',
   '/guides/pension-options-after-leaving-employer',
