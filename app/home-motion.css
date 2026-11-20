@@ -1,0 +1,22 @@
+/* Lightweight, accessible homepage motion. No animation library required. */
+@keyframes lwa-rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes lwa-image-reveal { from { opacity: .55; transform: scale(1.035); } to { opacity: 1; transform: scale(1); } }
+.lwa-hero-eyebrow, .lwa-hero-title, .lwa-hero-copy, .lwa-hero-actions { animation: lwa-rise 750ms cubic-bezier(.2,.75,.25,1) both; }
+.lwa-hero-title { animation-delay: 100ms; }
+.lwa-hero-copy { animation-delay: 220ms; }
+.lwa-hero-actions { animation-delay: 330ms; }
+.lwa-hero-image { animation: lwa-image-reveal 1400ms ease-out both; }
+.lwa-reveal { opacity: 0; transform: translateY(20px); transition: opacity 650ms ease, transform 650ms cubic-bezier(.2,.75,.25,1); }
+.lwa-reveal.lwa-visible { opacity: 1; transform: translateY(0); }
+.lwa-service-card { position: relative; overflow: hidden; }
+.lwa-service-card::before { content: ''; position: absolute; inset: 0 auto auto 0; height: 2px; width: 0; background: #b99a5e; transition: width 350ms ease; }
+.lwa-service-card:hover::before, .lwa-service-card:focus-visible::before { width: 100%; }
+.lwa-service-card:hover .lwa-card-arrow, .lwa-service-card:focus-visible .lwa-card-arrow { transform: translateX(5px); }
+.lwa-card-arrow { display: inline-block; transition: transform 250ms ease; }
+.lwa-cta-arrow { display: inline-block; transition: transform 250ms ease; }
+.lwa-cta:hover .lwa-cta-arrow, .lwa-cta:focus-visible .lwa-cta-arrow { transform: translateX(5px); }
+@media (prefers-reduced-motion: reduce) {
+ .lwa-hero-eyebrow,.lwa-hero-title,.lwa-hero-copy,.lwa-hero-actions,.lwa-hero-image { animation: none !important; }
+ .lwa-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+ .lwa-service-card,.lwa-service-card::before,.lwa-card-arrow,.lwa-cta-arrow { transition: none !important; transform: none !important; }
+}
