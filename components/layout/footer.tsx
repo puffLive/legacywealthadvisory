@@ -7,7 +7,7 @@ import { Logo } from './logo'
 
 const navigationLinks = {
   company: [
-    { label: 'About', href: '/about' },
+    { label: 'About Damian & Credentials', href: '/about' },
     { label: 'Blog', href: '/blog' },
     { label: 'Intake Form', href: '/intake-form' },
     { label: 'Contact', href: '/contact' },
@@ -51,8 +51,8 @@ export function Footer() {
               <Logo className="text-white" />
             </div>
             <p className="text-gray-300 mb-6 text-sm leading-relaxed">
-              Your trusted partner for estate planning, succession planning, and wealth protection
-              in the Greater Toronto Area.
+              Integrated financial planning for individuals, families and business owners
+              across Mississauga and the Greater Toronto Area.
             </p>
             <div className="space-y-2 text-sm">
               <p className="font-semibold text-gold-400">Damian Alexander</p>
