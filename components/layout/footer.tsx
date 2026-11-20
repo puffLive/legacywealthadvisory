@@ -13,6 +13,9 @@ const navigationLinks = {
     { label: 'Contact', href: '/contact' },
   ],
   services: [
+    { label: 'Investment Solutions', href: '/services/investment-solutions' },
+    { label: 'Segregated Funds', href: '/services/segregated-funds' },
+    { label: 'Investment Funds', href: '/services/investment-funds' },
     { label: 'Estate Planning', href: '/services/estate-planning' },
     { label: 'Succession Planning', href: '/services/succession-planning' },
     { label: 'Wealth Protection', href: '/services/wealth-protection' },
