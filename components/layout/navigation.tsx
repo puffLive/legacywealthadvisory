@@ -36,6 +36,14 @@ const navigationItems: NavigationItem[] = [
     ],
   },
   {
+    label: 'Investment Solutions',
+    href: '/services/investment-solutions',
+    children: [
+      { label: 'Segregated Funds', href: '/services/segregated-funds' },
+      { label: 'Investment Funds', href: '/services/investment-funds' },
+    ],
+  },
+  {
     label: 'Resources',
     href: '/guides',
     children: [
