@@ -36,29 +36,20 @@ export function Header({ className }: HeaderProps) {
         )}
       >
         <Container>
-          <div className="flex items-center justify-between h-16 lg:h-20">
+          <div className="flex items-center justify-between gap-4 h-16 xl:h-20">
             {/* Logo */}
             <Logo className="text-white hover:text-gold-400" />
 
             {/* Desktop Navigation */}
-            <Navigation className="text-white" />
+            <Navigation className="text-white flex-shrink-0" />
 
             {/* Contact Info and Book Button - Desktop */}
-            <div className="hidden lg:flex items-center space-x-6">
-              <div className="text-right text-sm">
-                <p className="text-white/80">Call Us Today</p>
-                <a
-                  href="tel:905-840-2222"
-                  className="font-semibold text-white hover:text-gold-400 transition-colors"
-                >
-                  (905) 840-2222
-                </a>
-              </div>
+            <div className="hidden xl:flex items-center flex-shrink-0">
               <Button
                 size="md"
                 variant="secondary"
                 onClick={() => setIsCalendlyOpen(true)}
-                className="bg-gold-500 hover:bg-gold-400 text-primary-950 font-semibold px-6 py-2"
+                className="bg-gold-500 hover:bg-gold-400 text-primary-950 font-semibold px-4 2xl:px-6 py-2 whitespace-nowrap text-sm"
               >
                 Book Consultation
               </Button>
@@ -66,7 +57,7 @@ export function Header({ className }: HeaderProps) {
 
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden p-2 text-white hover:text-gold-400 transition-colors"
+              className="xl:hidden p-2 text-white hover:text-gold-400 transition-colors"
               onClick={() => setIsMobileMenuOpen(true)}
               aria-label="Open mobile menu"
             >
@@ -91,7 +82,7 @@ export function Header({ className }: HeaderProps) {
       />
 
       {/* Spacer to prevent content from hiding under fixed header */}
-      <div className="h-16 lg:h-20" />
+      <div className="h-16 xl:h-20" />
 
       {/* Calendly Modal */}
       <CalendlyModal
