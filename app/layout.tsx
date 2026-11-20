@@ -9,7 +9,7 @@ const inter = Inter({
 })
 
 export const metadata = {
-  title: 'Legacy Wealth Advisory - Strength for Today. Stability for Tomorrow. Legacy Forever.',
+  title: 'Financial Planner in Mississauga | Damian Alexander, CLU | Legacy Wealth Advisory',
   description: 'Legacy Wealth Advisory provides financial planning, retirement planning, investment and insurance solutions, estate planning, and business succession planning in Mississauga, Ontario and the Greater Toronto Area.',
   keywords: 'financial advisor Mississauga, financial planner Mississauga, Legacy Wealth Advisory, Damian Alexander CLU, retirement planning Mississauga, estate planning Mississauga, succession planning, life insurance, investment planning, Greater Toronto Area',
   icons: {
