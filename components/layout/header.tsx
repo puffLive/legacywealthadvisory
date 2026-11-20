@@ -36,9 +36,9 @@ export function Header({ className }: HeaderProps) {
         )}
       >
         <Container>
-          <div className="flex items-center justify-between gap-4 h-16 xl:h-20">
+          <div className="flex min-w-0 items-center justify-between gap-3 h-16 xl:h-20 2xl:gap-5">
             {/* Logo */}
-            <Logo className="text-white hover:text-gold-400" />
+            <Logo compact className="text-white hover:text-gold-400" />
 
             {/* Desktop Navigation */}
             <Navigation className="text-white flex-shrink-0" />
