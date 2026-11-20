@@ -79,7 +79,7 @@ export default function HomePage() {
       </section>
       <section className="lwa-reveal border-t border-[#e8e4dc] bg-white py-14">
         <div className="mx-auto flex max-w-[1300px] flex-col items-start justify-between gap-6 px-6 sm:px-12 lg:flex-row lg:items-center">
-          <div><p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9a7a3f]">Your financial future</p><h2 className="mt-3 font-serif text-3xl text-[#102c49]">Let's build a plan that fits your life.</h2><p className="mt-3 text-sm text-[#64717b]">Start with a conversation about your goals and priorities.</p></div>
+          <div><p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9a7a3f]">Your financial future</p><h2 className="mt-3 font-serif text-3xl text-[#102c49]">Let&apos;s build a plan that fits your life.</h2><p className="mt-3 text-sm text-[#64717b]">Start with a conversation about your goals and priorities.</p></div>
           <a href="https://calendly.com/planningwithdamian/30-min-with-damian" className="lwa-cta inline-flex shrink-0 items-center gap-4 bg-[#102c49] px-6 py-4 text-xs font-semibold uppercase tracking-wider text-white hover:bg-[#234e70]">Schedule a Consultation <span aria-hidden="true">→</span></a>
         </div>
       </section>
