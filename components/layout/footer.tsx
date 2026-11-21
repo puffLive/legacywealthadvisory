@@ -38,7 +38,6 @@ const partnerLogos = [
   { name: 'Empire Life', src: '/images/logo/partnerLogos/empireLife_clean.svg', noInvert: false },
   { name: 'Equitable Life', src: '/images/logo/partnerLogos/equitableLife.svg', noInvert: false },
   { name: 'iA Financial Group', src: '/images/logo/partnerLogos/iAFinancialGroup.svg', noInvert: false },
-  { name: 'Advocis', src: '/images/logo/partnerLogos/advocis.svg', noInvert: false, scale: 1.8 },
 ]
 
 export function Footer() {
@@ -243,6 +242,12 @@ export function Footer() {
                 </span>
                 <span className="text-xs text-gray-400">BNI Member</span>
               </div>
+              <a href="https://www.advocis.ca/membership/membership-benefits/advocis-membership-credly-badge/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2" aria-label="Advocis member information">
+                <span className="inline-flex h-9 w-[70px] items-center justify-center overflow-hidden rounded bg-white px-2 py-1" title="Advocis">
+                  <Image src="/images/logo/partnerLogos/advocis.svg" alt="Advocis logo" width={60} height={28} className="h-7 w-[60px] object-contain" />
+                </span>
+                <span className="text-xs text-gray-400">Advocis Member</span>
+              </a>
             </div>
 
             {/* Legal Links */}
