@@ -5,7 +5,7 @@ export type Topic = { title: string; description: string; eyebrow: string; intro
 
 export const topics: Record<string, Topic> = {
   'comprehensive-financial-planning': {
-    title: 'Comprehensive Financial Planning in Mississauga',
+    title: 'Comprehensive Financial Planning',
     description: 'Explore integrated financial planning in Mississauga for retirement, investments, protection, tax awareness and estate goals.',
     eyebrow: 'Planning and Advisory',
     intro: 'Financial planning brings your investments, cash flow, insurance, retirement goals and estate wishes into one coordinated strategy. Legacy Wealth Advisory works with individuals, families and business owners in Mississauga and the Greater Toronto Area to identify priorities, assess trade-offs and review plans as circumstances change.',
