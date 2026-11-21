@@ -13,7 +13,7 @@ Your ability to earn an income is often your largest financial asset. If an illn
 
 Disability insurance pays a **monthly benefit** if you cannot work because of illness or injury, as defined in your policy. Key features to understand include:
 
-- **Waiting period:** how long you must be disabled before benefits begin, often 90 days or more.
+- **Waiting period:** how long you must be disabled before benefits begin, often 30 days or more.
 - **Benefit period:** how long benefits can continue, such as two years, five years or to age 65.
 - **Definition of disability:** whether you must be unable to do *your own* occupation or *any* occupation you are reasonably suited for.
 
