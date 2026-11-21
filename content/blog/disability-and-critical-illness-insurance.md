@@ -25,7 +25,7 @@ Government programs such as **CPP disability benefits** have strict eligibility 
 
 ## Critical illness insurance
 
-Critical illness insurance pays a **one-time, tax-free lump sum** if you are diagnosed with a covered condition, such as certain cancers, heart attack or stroke, and you survive a waiting period set out in the policy, often 30 days.
+Critical illness insurance pays a **one-time, tax-free lump sum** if you are diagnosed with a covered condition, such as certain cancers, heart attack or stroke, **among many other covered conditions**, and you meet the policy's definitions and any applicable survival-period requirements (often 30 days). The number and types of covered conditions vary by insurer and policy.
 
 You can use the money however you choose, for example to:
 
