@@ -243,8 +243,11 @@ export function Footer() {
                 <span className="text-xs text-gray-400">BNI Member</span>
               </div>
               <a href="https://www.advocis.ca/membership/membership-benefits/advocis-membership-credly-badge/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2" aria-label="Advocis member information">
-                <span className="inline-flex h-9 w-[70px] items-center justify-center overflow-hidden rounded bg-white px-2 py-1" title="Advocis">
-                  <Image src="/images/logo/partnerLogos/advocis.svg" alt="Advocis logo" width={60} height={28} className="h-7 w-[60px] object-contain" />
+                <span className="inline-flex h-12 w-[168px] items-center justify-center rounded bg-white px-3 py-2 sm:w-[190px]" title="Advocis">
+                  <svg viewBox="0 0 600 160" role="img" aria-label="Advocis logo" className="h-full w-full" xmlns="http://www.w3.org/2000/svg">
+                    <text x="2" y="119" fill="#354149" fontFamily="Arial, Helvetica, sans-serif" fontWeight="700" fontSize="128" letterSpacing="-5">Advocis</text>
+                    <path d="M552 10 L594 52 L526 120" fill="none" stroke="#00A969" strokeWidth="24" strokeLinecap="round" strokeLinejoin="miter" />
+                  </svg>
                 </span>
                 <span className="text-xs text-gray-400">Advocis Member</span>
               </a>
