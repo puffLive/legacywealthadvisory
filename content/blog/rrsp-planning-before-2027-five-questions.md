@@ -3,7 +3,7 @@ title: "RRSP Planning Before 2027: Five Questions Worth Asking"
 date: "2026-11-22"
 summary: "Before making another RRSP contribution, review your CRA deduction limit, unused contributions, pension adjustments and the role your RRSP plays in your broader financial plan."
 category: "Retirement Planning"
-status: "draft"
+status: "published"
 seoDescription: "Review five RRSP planning questions for Canadians before 2027, including deduction limits, contribution deadlines, pension adjustments and retirement goals."
 ---
 
