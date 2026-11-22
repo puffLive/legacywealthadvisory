@@ -25,7 +25,6 @@ const navigationLinks = {
   ],
   resources: [
     // { label: 'Resources', href: '/resources' }, // Hidden for now
-    { label: 'Financial Calculators', href: '/resources/calculators' },
     { label: 'Privacy Policy', href: '/privacy-policy' },
     { label: 'Terms of Service', href: '/terms-of-service' },
   ],
