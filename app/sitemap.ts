@@ -23,6 +23,7 @@ const staticRoutes = [
   '/services/investment-funds',
   '/resources/calculators',
   '/resources/calculators/financial-health-score',
+  '/resources/calculators/cost-of-waiting',
   '/resources/calculators/insurance-needs',
   '/resources/calculators/retirement',
   '/resources/calculators/cash-flow',
