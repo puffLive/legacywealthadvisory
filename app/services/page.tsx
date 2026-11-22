@@ -7,29 +7,12 @@ import { Button } from '@/components/ui'
 
 const services = [
   {
-    title: 'Disability Insurance',
-    href: '/services/disability-insurance',
-    description: 'Learn how disability insurance can help protect your income if illness or injury prevents you from working.',
-    icon: (<svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11ZM8 13l3-3 2 2 3-3" /></svg>),
-  },
-  {
-    title: 'Critical Illness Insurance',
-    href: '/services/critical-illness',
-    description: 'Learn how a qualifying critical illness benefit can help protect your savings, income and family during recovery.',
+    title: 'Financial Planning',
+    href: '/services/comprehensive-financial-planning',
+    description: 'Build a coordinated plan for your investments, retirement, insurance and long-term financial goals.',
     icon: (
       <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h2l1-2 2 4 1-2h2" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Life Insurance',
-    href: '/services/life-insurance',
-    description: 'Explore term and permanent life insurance as tools for protecting family income, supporting business continuity and planning your estate.',
-    icon: (
-      <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Zm-3-11 2 2 4-4" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 19V5m0 14h16M7 15l4-5 3 2 5-7" />
       </svg>
     ),
   },
@@ -60,6 +43,33 @@ const services = [
     icon: (
       <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Life Insurance',
+    href: '/services/life-insurance',
+    description: 'Explore term and permanent life insurance as tools for protecting family income, supporting business continuity and planning your estate.',
+    icon: (
+      <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Zm-3-11 2 2 4-4" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Disability Insurance',
+    href: '/services/disability-insurance',
+    description: 'Learn how disability insurance can help protect your income if illness or injury prevents you from working.',
+    icon: (<svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11ZM8 13l3-3 2 2 3-3" /></svg>),
+  },
+  {
+    title: 'Critical Illness Insurance',
+    href: '/services/critical-illness',
+    description: 'Learn how a qualifying critical illness benefit can help protect your savings, income and family during recovery.',
+    icon: (
+      <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h2l1-2 2 4 1-2h2" />
       </svg>
     ),
   },
