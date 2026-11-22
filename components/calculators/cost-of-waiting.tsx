@@ -4,7 +4,6 @@ import { useMemo, useState } from 'react'
 import Link from 'next/link'
 
 const money = (n: number) => new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(n)
-const horizon = 30
 const delay = 5
 function balance(monthly: number, annualReturn: number, years: number, waitYears: number) {
   const rate = Math.pow(1 + annualReturn / 100, 1 / 12) - 1
@@ -15,19 +14,19 @@ function balance(monthly: number, annualReturn: number, years: number, waitYears
   }
   return value
 }
-function Graph({ monthly, annualReturn }: { monthly: number; annualReturn: number }) {
+function Graph({ monthly, annualReturn, horizon }: { monthly: number; annualReturn: number; horizon: number }) {
   const { now, later, maximum } = useMemo(() => {
     const now = Array.from({ length: horizon + 1 }, (_, year) => balance(monthly, annualReturn, year, 0))
     const later = Array.from({ length: horizon + 1 }, (_, year) => balance(monthly, annualReturn, year, delay))
     return { now, later, maximum: Math.max(1, now[horizon]) }
-  }, [monthly, annualReturn])
+  }, [monthly, annualReturn, horizon])
   const left = 66, top = 22, right = 746, bottom = 302
   const points = (values: number[]) => values.map((value, year) => `${left + (right - left) * year / horizon},${bottom - (bottom - top) * value / maximum}`).join(' ')
   return <div className="overflow-hidden rounded-xl border border-[#e7e1d7] bg-white p-4 sm:p-6">
     <div className="mb-4 flex flex-wrap gap-5 text-sm"><span className="flex items-center gap-2 text-[#102c49]"><span className="h-1 w-7 rounded bg-[#1d6a7a]"/>Start today</span><span className="flex items-center gap-2 text-[#7b6136]"><span className="h-1 w-7 rounded bg-[#c49a51]"/>Wait five years</span></div>
     <svg viewBox="0 0 780 355" role="img" aria-label="Line chart comparing projected savings growth over thirty years when starting now versus waiting five years" className="w-full">
       {[0,.25,.5,.75,1].map((fraction) => { const y = bottom - (bottom-top)*fraction; return <g key={fraction}><line x1={left} x2={right} y1={y} y2={y} stroke="#e5e7eb"/><text x={left-12} y={y+5} fontSize="13" textAnchor="end" fill="#566473">{money(maximum*fraction).replace('CA','')}</text></g> })}
-      {[0,5,10,15,20,25,30].map(year => <g key={year}><text x={left+(right-left)*year/horizon} y={bottom+27} fontSize="14" textAnchor="middle" fill="#566473">{year}</text></g>)}
+      {Array.from({ length: horizon / 5 + 1 }, (_, i) => i * 5).map(year => <g key={year}><text x={left+(right-left)*year/horizon} y={bottom+27} fontSize="14" textAnchor="middle" fill="#566473">{year}</text></g>)}
       <text x="406" y="350" textAnchor="middle" fontSize="14" fill="#566473">Years from today</text>
       <polyline key={`now-${monthly}-${annualReturn}`} fill="none" stroke="#1d6a7a" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" points={points(now)} style={{strokeDasharray:1800,strokeDashoffset:1800,animation:'drawGrowth 1.3s ease-out forwards'}}/>
       <polyline key={`later-${monthly}-${annualReturn}`} fill="none" stroke="#c49a51" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" points={points(later)} style={{strokeDasharray:1800,strokeDashoffset:1800,animation:'drawGrowth 1.5s ease-out .15s forwards'}}/>
@@ -67,8 +66,8 @@ export default function CostOfWaiting() {
             <div className="rounded-xl border border-[#f0e5d2] bg-white p-5"><p className="text-sm text-[#53616c]">Wait five years</p><p className="mt-2 text-2xl font-semibold text-[#99733e]">{money(startLater)}</p></div>
             <div className="rounded-xl border border-[#e5e1d8] bg-[#f5f0e6] p-5"><p className="text-sm text-[#53616c]">Projected difference</p><p className="mt-2 text-2xl font-semibold text-[#102c49]">{money(difference)}</p></div>
           </div>
-          <div className="mt-6"><Graph monthly={monthly} annualReturn={annualReturn}/></div>
-          <p className="mt-3 text-sm leading-7 text-[#53616c]">The graph shows the full 30-year comparison. The figures above reflect your selected {years}-year horizon. Starting later also means making 60 fewer monthly contributions.</p>
+          <div className="mt-6"><Graph monthly={monthly} annualReturn={annualReturn} horizon={years}/></div>
+          <p className="mt-3 text-sm leading-7 text-[#53616c]">The graph and figures show your selected {years}-year horizon. Starting later also means making 60 fewer monthly contributions.</p>
           <div className="mt-8 rounded-xl bg-[#102c49] p-7 text-white"><h2 className="font-serif text-2xl">Small steps today can make a difference.</h2><p className="mt-3 max-w-2xl text-sm leading-7 text-white/80">A coordinated plan can help you decide how much to save, which accounts to consider and how your goals fit together.</p><a href="https://calendly.com/planningwithdamian/30-min-with-damian" className="mt-5 inline-flex rounded-lg bg-[#d7b77d] px-5 py-3 text-sm font-semibold text-[#102c49]">Book an Introductory Consultation →</a></div>
         </div>
       </div>
