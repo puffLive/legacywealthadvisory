@@ -91,7 +91,7 @@ export function Footer() {
                 </svg>
               </a>
               </div>
-              <a href="https://g.page/r/CUPiJ9JeiHXJEAE/review?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" aria-label="Leave a Google review for Legacy Wealth Advisory" className="ml-3 inline-flex flex-col items-center align-middle gap-1 rounded-md p-1 text-center text-gold-400 transition-colors hover:text-gold-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-400">
+              <a href="https://g.page/r/CUPiJ9JeiHXJEAE/review" target="_blank" rel="noopener noreferrer" aria-label="Leave a Google review for Legacy Wealth Advisory" className="ml-3 inline-flex flex-col items-center align-middle gap-1 rounded-md p-1 text-center text-gold-400 transition-colors hover:text-gold-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-400">
                 <svg aria-hidden="true" className="h-9 w-9" viewBox="0 0 24 24">
                   <path fill="#4285F4" d="M21.35 11.1H12v3.8h5.35c-.55 2.55-2.7 4.1-5.35 4.1v4c5.2 0 9-3.65 9-8.8 0-.37-.04-.73-.1-1.1Z"/>
                   <path fill="#34A853" d="M12 19a7 7 0 0 1-6.58-4.64l-3.27 2.54A11 11 0 0 0 12 23v-4Z"/>
