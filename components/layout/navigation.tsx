@@ -47,6 +47,7 @@ const navigationItems: NavigationItem[] = [
     label: 'Resources',
     href: '/guides',
     children: [
+      { label: 'Cost of Waiting Calculator', href: '/resources/calculators/cost-of-waiting' },
       { label: 'Financial Health Score', href: '/resources/calculators/financial-health-score' },
       { label: 'Financial Calculators', href: '/resources/calculators' },
       { label: 'Insurance Needs Calculator', href: '/resources/calculators/insurance-needs' },
