@@ -22,6 +22,7 @@ const staticRoutes = [
   '/services/segregated-funds',
   '/services/investment-funds',
   '/resources/calculators',
+  '/resources/calculators/financial-health-score',
   '/resources/calculators/insurance-needs',
   '/resources/calculators/retirement',
   '/resources/calculators/cash-flow',
