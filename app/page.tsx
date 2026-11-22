@@ -20,8 +20,8 @@ export default function HomePage() {
               <p className="lwa-hero-eyebrow mb-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#9a7a3f]"><span className="h-px w-9 bg-[#b99a5e]"/> Build • Protect • Transfer</p>
               <h1 className="lwa-hero-title font-serif text-[clamp(2.65rem,4.5vw,4.4rem)] leading-[1.12] tracking-[-0.04em] text-[#102c49] lg:text-[clamp(2.7rem,3.65vw,3.9rem)] 2xl:text-[4.15rem]">Clarity today.<br/><span className="text-[#345472] lg:whitespace-nowrap">Confidence tomorrow.</span></h1>
               <div className="my-7 h-px w-14 bg-[#b99a5e]"/>
-              <p className="lwa-hero-copy max-w-md text-base leading-8 text-[#53616c] sm:text-lg">Comprehensive financial planning for individuals, families and business owners in Mississauga and the Greater Toronto Area.</p>
-              <p className="mt-3 max-w-md text-sm leading-7 text-[#66727b]">Investments, retirement, insurance, estate and succession planning — thoughtfully connected around your goals.</p>
+              <p className="lwa-hero-copy max-w-md text-base leading-8 text-[#53616c] sm:text-lg">Retirement planning, wealth protection and estate planning for individuals, families and business owners in Mississauga and across the Greater Toronto Area.</p>
+              <p className="mt-3 max-w-md text-sm leading-7 text-[#66727b]">Connect your investments, retirement income, insurance and legacy goals through a coordinated financial plan built around what matters to you.</p>
               <div className="lwa-hero-actions mt-9 flex flex-wrap items-center gap-5">
                 <a href="https://calendly.com/planningwithdamian/30-min-with-damian" className="lwa-cta inline-flex min-h-12 items-center gap-4 rounded-sm bg-[#102c49] px-6 py-3 text-xs font-semibold uppercase tracking-wider text-white transition-colors hover:bg-[#234e70]">Schedule a Consultation <span className="lwa-cta-arrow" aria-hidden="true">→</span></a>
                 <Link href="/services/comprehensive-financial-planning" className="text-sm font-semibold text-[#102c49] underline decoration-[#c2a76e] underline-offset-8">Explore our approach</Link>
