@@ -40,7 +40,7 @@ export function GoogleTestimonialsSection() {
       <div className="mx-auto max-w-[1100px] px-6 sm:px-12">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[.2em] text-[#9a7a3f]">Client feedback</p>
-          <h2 id="client-reviews-heading" className="mt-4 font-serif text-3xl text-[#102c49] sm:text-4xl">What Our Clients Say</h2>
+          <h2 id="client-reviews-heading" className="mt-4 font-serif text-3xl text-[#102c49] sm:text-4xl font-bold">What Our Clients Say</h2>
           <p className="mt-4 text-sm leading-7 text-[#64717b]">Explore feedback shared about Legacy Wealth Advisory on Google.</p>
         </div>
         {current && (
