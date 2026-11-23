@@ -5,7 +5,7 @@ import * as React from 'react'
 type Review = { id: string; name: string; text: string; rating: number; date: string }
 type ReviewData = { success?: boolean; data?: { reviews?: Review[]; averageRating?: number; totalReviews?: number } }
 
-const GOOGLE_REVIEWS_URL = 'https://g.page/r/CUPiJ9JeiHXJEAE/review'
+const GOOGLE_REVIEWS_URL = 'https://www.google.com/searchviewer/10?output=search&svid=CCYSGioYOhYweDA6MHhjOTc1ODg1ZWQyMjdlMjQzGAo&hl=en&gl=CA#sv=CAESzQEKuQEStgEKd0FERGJXZWJJRnkxV2ROX1B6Zm1PenVxbDBIa1Q0NnlqUURwYVRhakNFQi0xTEN3eTYwMXF1dmp4LVNoTW0zQWFnSHEzRHBVaWV3MlBZMDBCcHZjSE1jMUxzc3hfdWFXeWpyQm1vU1hCRkRSUHJhQUdnRXFLVzJZEhdHdFlEYV9uSEhNYTVtTFFQdTlyTHlBcxoiQUhOMEU3RVZETWtWSGxSNEk2QnVtOThGSW5semxlVXRKZxIEODA1MRoBMyoAMAA4AUAAGAAg95L05QNKAhAB'
 
 export function GoogleTestimonialsSection() {
   const [reviews, setReviews] = React.useState<Review[]>([])
@@ -57,7 +57,7 @@ export function GoogleTestimonialsSection() {
           </div>
         )}
         <div className="mt-8 text-center">
-          <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center border border-[#102c49] px-6 py-3 text-sm font-semibold text-[#102c49] transition-colors hover:bg-[#102c49] hover:text-white">View or Leave a Google Review ↗</a>
+          <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center border border-[#102c49] px-6 py-3 text-sm font-semibold text-[#102c49] transition-colors hover:bg-[#102c49] hover:text-white">Read Our Google Reviews ↗</a>
         </div>
       </div>
     </section>
