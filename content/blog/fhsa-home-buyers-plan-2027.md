@@ -3,7 +3,7 @@ title: "Buying Your First Home in 2027? Understanding the FHSA and Home Buyersâ€
 date: "2026-11-23"
 summary: "Compare two Canadian home-buying savings tools, their tax treatment and repayment obligations before committing to a down payment strategy."
 category: "Financial Planning"
-status: "draft"
+status: "published"
 seoDescription: "Understand Canada's FHSA and RRSP Home Buyersâ€™ Plan, including the $60,000 HBP limit, repayment timing and year-end FHSA rules."
 ---
 
