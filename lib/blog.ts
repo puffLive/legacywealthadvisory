@@ -29,6 +29,19 @@ function normaliseDate(value: unknown): string {
   return String(value ?? '').trim()
 }
 
+function defaultCover(title: string, category: string) {
+  const topic = (title + ' ' + category).toLowerCase()
+  const choices: [RegExp, string, string][] = [
+    [/disability|critical illness|insurance|income protection/, 'disability', 'Shield and medical pulse illustrating financial protection'],
+    [/estate|succession|inheritance|legacy|beneficiar|will\b/, 'estate', 'Family tree on a legacy planning document'],
+    [/rrsp|tfsa|rdsp|resp|fhsa|tax|registered/, 'tax', 'Savings document and calculator'],
+    [/retirement|pension|cpp|oas|rrif/, 'retirement', 'Sunrise and pathway illustrating retirement planning'],
+    [/invest|market|stock|nvidia|portfolio|fund/, 'investment', 'Illustrative investment chart with rising and falling segments'],
+  ]
+  const match = choices.find(([pattern]) => pattern.test(topic))
+  return { image: '/images/blog/topic-' + (match?.[1] || 'planning') + '.svg', imageAlt: match?.[2] || 'Financial roadmap with connected planning milestones' }
+}
+
 function readPostFile(fileName: string): Post | null {
   const slug = fileName.replace(/\.md$/, '')
   const raw = fs.readFileSync(path.join(BLOG_DIR, fileName), 'utf8')
@@ -43,6 +56,8 @@ function readPostFile(fileName: string): Post | null {
 
   const words = content.split(/\s+/).filter(Boolean).length
 
+  const cover = defaultCover(String(data.title), String(data.category))
+
   return {
     slug,
     title: String(data.title),
@@ -52,8 +67,8 @@ function readPostFile(fileName: string): Post | null {
     category: String(data.category),
     status: data.status === 'published' ? 'published' : 'draft',
     seoDescription: String(data.seoDescription),
-    image: data.image ? String(data.image) : undefined,
-    imageAlt: data.imageAlt ? String(data.imageAlt) : undefined,
+    image: data.image ? String(data.image) : cover.image,
+    imageAlt: data.imageAlt ? String(data.imageAlt) : data.image ? String(data.title) : cover.imageAlt,
     readingMinutes: Math.max(1, Math.round(words / 220)),
     html: marked.parse(content, { async: false }) as string,
   }
