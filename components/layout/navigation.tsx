@@ -43,7 +43,7 @@ const navigationItems: NavigationItem[] = [
       { label: 'Investment Funds', href: '/services/investment-funds' },
     ],
   },
-  { label: 'Insights & Blog', href: '/blog' },
+  { label: 'Insights & Blog', href: '/blog', children: [{"label":"All topics","href":"/blog"},{"label":"Disability Planning","href":"/blog?topic=Disability%20Planning"},{"label":"Financial Planning","href":"/blog?topic=Financial%20Planning"},{"label":"Insurance","href":"/blog?topic=Insurance"},{"label":"Insurance & Protection","href":"/blog?topic=Insurance%20%26%20Protection"},{"label":"Investing","href":"/blog?topic=Investing"},{"label":"Markets & Investing","href":"/blog?topic=Markets%20%26%20Investing"},{"label":"Pensions","href":"/blog?topic=Pensions"},{"label":"Retirement","href":"/blog?topic=Retirement"},{"label":"Retirement Planning","href":"/blog?topic=Retirement%20Planning"}] },
   {
     label: 'Resources',
     href: '/guides',
@@ -110,7 +110,7 @@ export function Navigation({ className }: NavigationProps) {
               {/* Invisible bridge to prevent gap issues */}
               <div className="absolute top-full left-0 w-72 h-2 z-40" />
               <div className="absolute top-full left-0 pt-2 z-50">
-                <div className="w-72 bg-white rounded-xl shadow-xl border border-gray-100 py-2 overflow-hidden">
+                <div className="w-72 bg-white rounded-xl shadow-xl border border-gray-100 py-2 max-h-[70vh] overflow-y-auto">
                   {item.children.map((child) => (
                     <Link
                       key={child.label}
