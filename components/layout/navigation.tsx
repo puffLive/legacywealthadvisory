@@ -43,6 +43,7 @@ const navigationItems: NavigationItem[] = [
       { label: 'Investment Funds', href: '/services/investment-funds' },
     ],
   },
+  { label: 'Insights & Blog', href: '/blog' },
   {
     label: 'Resources',
     href: '/guides',
@@ -54,7 +55,6 @@ const navigationItems: NavigationItem[] = [
       { label: 'Retirement Calculator', href: '/resources/calculators/retirement' },
       { label: 'Cash Flow Calculator', href: '/resources/calculators/cash-flow' },
       { label: 'Financial Planning Guides', href: '/guides' },
-      { label: 'Insights & Blog', href: '/blog' },
       { label: 'Client Intake Form', href: '/intake-form' },
     ],
   },
@@ -76,7 +76,7 @@ export function Navigation({ className }: NavigationProps) {
   const pathname = usePathname()
 
   return (
-    <nav className={cn('hidden xl:flex items-center gap-5 2xl:gap-8 whitespace-nowrap', className)}>
+    <nav className={cn('hidden xl:flex items-center gap-3 2xl:gap-5 whitespace-nowrap', className)}>
       {navigationItems.map((item) => (
         <div
           key={item.label}
