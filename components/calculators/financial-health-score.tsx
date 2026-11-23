@@ -29,7 +29,7 @@ export default function FinancialHealthScore() {
   return <main className="min-h-screen bg-[#faf9f6]">
     <section className="bg-[#102c49] px-6 py-16 text-white"><div className="mx-auto max-w-4xl">
       <p className="text-xs font-semibold uppercase tracking-[.2em] text-[#d7b77d]">Legacy Financial Tools</p>
-      <h1 className="mt-4 font-serif text-4xl sm:text-5xl">What's Your Financial Health Score?</h1>
+      <h1 className="mt-4 font-serif text-4xl sm:text-5xl">What&apos;s Your Financial Health Score?</h1>
       <p className="mt-5 max-w-2xl leading-8 text-white/85">Answer ten quick questions about your savings, cash flow, retirement, insurance and estate planning. Get an educational snapshot of areas you may want to review.</p>
       <p className="mt-3 text-sm text-white/65">About 3 minutes · No email required · Answers stay in your browser</p>
     </div></section>
