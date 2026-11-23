@@ -7,12 +7,14 @@ import { PostCard } from './post-card'
 
 const ALL = 'All topics'
 
-export function BlogList({ posts }: { posts: PostMeta[] }) {
+export function BlogList({ posts, initialTopic }: { posts: PostMeta[]; initialTopic?: string }) {
   const categories = React.useMemo(
     () => [ALL, ...Array.from(new Set(posts.map((p) => p.category))).sort()],
     [posts]
   )
-  const [active, setActive] = React.useState(ALL)
+  const selectedTopic = initialTopic && categories.includes(initialTopic) ? initialTopic : ALL
+  const [active, setActive] = React.useState(selectedTopic)
+  React.useEffect(() => setActive(selectedTopic), [selectedTopic, initialTopic])
   const visible = active === ALL ? posts : posts.filter((p) => p.category === active)
 
   if (posts.length === 0) {
