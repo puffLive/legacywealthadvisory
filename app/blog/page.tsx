@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default function BlogPage() {
+export default function BlogPage({ searchParams }: { searchParams: { topic?: string | string[] } }) {
   const posts = getPublishedPosts().map(toMeta)
 
   return (
@@ -45,7 +45,7 @@ export default function BlogPage() {
 
       <section className="py-16 lg:py-20 bg-gray-50">
         <Container>
-          <BlogList posts={posts} />
+          <BlogList posts={posts} initialTopic={typeof searchParams.topic === 'string' ? searchParams.topic : undefined} />
         </Container>
       </section>
 
