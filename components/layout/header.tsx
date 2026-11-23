@@ -8,9 +8,10 @@ import { cn } from '@/lib/utils'
 
 interface HeaderProps {
   className?: string
+  blogTopics?: string[]
 }
 
-export function Header({ className }: HeaderProps) {
+export function Header({ className, blogTopics = [] }: HeaderProps) {
   const [isScrolled, setIsScrolled] = React.useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
   const [isCalendlyOpen, setIsCalendlyOpen] = React.useState(false)
@@ -41,7 +42,7 @@ export function Header({ className }: HeaderProps) {
             <Logo compact className="text-white hover:text-gold-400" />
 
             {/* Desktop Navigation */}
-            <Navigation className="text-white flex-shrink-0" />
+            <Navigation blogTopics={blogTopics} className="text-white flex-shrink-0" />
 
             {/* Contact Info and Book Button - Desktop */}
             <div className="hidden xl:flex items-center flex-shrink-0">
@@ -76,6 +77,7 @@ export function Header({ className }: HeaderProps) {
 
       {/* Mobile Navigation */}
       <MobileNavigation
+        blogTopics={blogTopics}
         isOpen={isMobileMenuOpen}
         onClose={() => setIsMobileMenuOpen(false)}
         onBookConsultation={() => setIsCalendlyOpen(true)}

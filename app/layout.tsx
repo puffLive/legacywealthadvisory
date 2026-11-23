@@ -1,12 +1,15 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { Header } from '@/components/layout/header'
+import { getPublishedPosts } from '@/lib/blog'
 import { Footer } from '@/components/layout/footer'
 
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
 })
+
+export const revalidate = 3600
 
 export const metadata = {
   metadataBase: new URL('https://www.legacywealthadvisory.ca'),
@@ -35,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable}`}>
       <body className="font-sans antialiased">
-        <Header />
+        <Header blogTopics={Array.from(new Set(getPublishedPosts().map(post => post.category))).sort()} />
         {children}
         <Footer />
       </body>

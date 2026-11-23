@@ -11,7 +11,7 @@ interface NavigationItem {
   children?: NavigationItem[]
 }
 
-const navigationItems: NavigationItem[] = [
+function getNavigationItems(blogTopics: string[]): NavigationItem[] { return [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
   {
@@ -43,7 +43,7 @@ const navigationItems: NavigationItem[] = [
       { label: 'Investment Funds', href: '/services/investment-funds' },
     ],
   },
-  { label: 'Insights & Blog', href: '/blog', children: [{"label":"All topics","href":"/blog"},{"label":"Disability Planning","href":"/blog?topic=Disability%20Planning"},{"label":"Financial Planning","href":"/blog?topic=Financial%20Planning"},{"label":"Insurance","href":"/blog?topic=Insurance"},{"label":"Insurance & Protection","href":"/blog?topic=Insurance%20%26%20Protection"},{"label":"Investing","href":"/blog?topic=Investing"},{"label":"Markets & Investing","href":"/blog?topic=Markets%20%26%20Investing"},{"label":"Pensions","href":"/blog?topic=Pensions"},{"label":"Retirement","href":"/blog?topic=Retirement"},{"label":"Retirement Planning","href":"/blog?topic=Retirement%20Planning"}] },
+  { label: 'Insights & Blog', href: '/blog', children: [{ label: 'All topics', href: '/blog' }, ...blogTopics.filter(topic => topic !== 'All topics').map(topic => ({ label: topic, href: '/blog?topic=' + encodeURIComponent(topic) }))] },
   {
     label: 'Resources',
     href: '/guides',
@@ -54,7 +54,7 @@ const navigationItems: NavigationItem[] = [
     ],
   },
   { label: 'Contact', href: '/contact' },
-]
+] }
 
 function isActivePath(pathname: string | null, href: string) {
   if (!pathname) return false
@@ -63,16 +63,17 @@ function isActivePath(pathname: string | null, href: string) {
 }
 
 interface NavigationProps {
+  blogTopics?: string[]
   className?: string
 }
 
-export function Navigation({ className }: NavigationProps) {
+export function Navigation({ className, blogTopics = [] }: NavigationProps) {
   const [activeDropdown, setActiveDropdown] = React.useState<string | null>(null)
   const pathname = usePathname()
 
   return (
     <nav className={cn('hidden xl:flex items-center gap-3 2xl:gap-5 whitespace-nowrap', className)}>
-      {navigationItems.map((item) => (
+      {getNavigationItems(blogTopics).map((item) => (
         <div
           key={item.label}
           className="relative group"
@@ -131,12 +132,13 @@ export function Navigation({ className }: NavigationProps) {
 }
 
 interface MobileNavigationProps {
+  blogTopics?: string[]
   isOpen: boolean
   onClose: () => void
   onBookConsultation?: () => void
 }
 
-export function MobileNavigation({ isOpen, onClose, onBookConsultation }: MobileNavigationProps) {
+export function MobileNavigation({ isOpen, onClose, onBookConsultation, blogTopics = [] }: MobileNavigationProps) {
   const [expandedItems, setExpandedItems] = React.useState<string[]>([])
   const pathname = usePathname()
 
@@ -170,7 +172,7 @@ export function MobileNavigation({ isOpen, onClose, onBookConsultation }: Mobile
           </button>
 
           <nav className="mt-8 space-y-2">
-            {navigationItems.map((item) => (
+            {getNavigationItems(blogTopics).map((item) => (
               <div key={item.label}>
                 <div className="flex items-center justify-between">
                   <Link
