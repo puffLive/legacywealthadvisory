@@ -33,6 +33,18 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section aria-labelledby="home-health-score-heading" className="border-y border-[#e8e4dc] bg-white py-10 sm:py-12">
+        <div className="mx-auto flex max-w-[1300px] flex-col gap-6 px-6 sm:px-12 lg:flex-row lg:items-center lg:justify-between">
+          <div className="max-w-2xl">
+            <p className="text-xs font-semibold uppercase tracking-[.2em] text-[#9a7a3f]">Free financial assessment</p>
+            <h2 id="home-health-score-heading" className="mt-3 font-serif text-3xl leading-tight text-[#102c49] sm:text-4xl">What&apos;s Your Financial Health Score?</h2>
+            <p className="mt-3 text-sm leading-7 text-[#53616c]">Take a quick assessment of your savings, cash flow, retirement, insurance and estate planning to discover areas worth reviewing.</p>
+            <p className="mt-3 text-xs text-[#64717b]">10 questions · About 3 minutes · No email required</p>
+          </div>
+          <Link href="/resources/calculators/financial-health-score" className="lwa-cta inline-flex min-h-12 shrink-0 items-center justify-center gap-4 self-start bg-[#102c49] px-6 py-4 text-sm font-semibold text-white transition-colors hover:bg-[#234e70] lg:self-center">Get Your Financial Health Score <span aria-hidden="true">→</span></Link>
+        </div>
+      </section>
+
       <section aria-label="Our approach" className="lwa-reveal bg-[#102c49] text-white">
         <div className="mx-auto grid max-w-[1440px] gap-0 px-6 py-8 sm:grid-cols-2 sm:px-12 lg:grid-cols-4 lg:px-16">
           {[
