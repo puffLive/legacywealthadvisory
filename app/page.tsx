@@ -1,4 +1,5 @@
 import './home-motion.css'
+import { HomeClientGallery } from '@/components/sections/home-client-gallery'
 import { GoogleTestimonialsSection } from '@/components/sections/testimonials-google'
 import { HomeScrollMotion } from '@/components/sections/home-scroll-motion'
 import Link from 'next/link'
@@ -86,6 +87,7 @@ export default function HomePage() {
           <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between"><p className="max-w-xl text-sm leading-7 text-[#53616c]"><strong className="text-[#102c49]">Damian Alexander, CLU</strong> brings more than two decades of financial services experience to an integrated approach to planning. Learn about his professional background, licensing context and five-step process.</p><Link href="/about" className="shrink-0 text-sm font-semibold text-[#102c49] underline decoration-[#b99a5e] underline-offset-8">Meet Damian →</Link></div>
         </div>
       </section>
+      <HomeClientGallery />
       <GoogleTestimonialsSection />
       <section className="lwa-reveal border-t border-[#e8e4dc] bg-white py-14">
         <div className="mx-auto flex max-w-[1300px] flex-col items-start justify-between gap-6 px-6 sm:px-12 lg:flex-row lg:items-center">
