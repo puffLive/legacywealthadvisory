@@ -5,7 +5,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
  title:'About Damian Alexander, CLU | Legacy Wealth Advisory',
  description:'Meet Damian Alexander, CLU, founder of Legacy Wealth Advisory in Mississauga. Learn about his experience, professional approach, insurance licensing and financial planning process.',
- alternates:{canonical:'https://legacywealthadvisory.ca/about'}
+ alternates:{canonical:'https://www.legacywealthadvisory.ca/about'}
 }
 
 const stages=[
@@ -17,7 +17,7 @@ const stages=[
 ]
 
 export default function AboutPage(){
- const person={'@context':'https://schema.org','@type':'Person',name:'Damian Alexander',jobTitle:'Founder',description:'Chartered Life Underwriter (CLU) and founder of Legacy Wealth Advisory',worksFor:{'@type':'Organization',name:'Legacy Wealth Advisory',url:'https://legacywealthadvisory.ca'},url:'https://legacywealthadvisory.ca/about',sameAs:['https://www.linkedin.com/in/damianfalexander/']}
+ const person={'@context':'https://schema.org','@type':'Person',name:'Damian Alexander',jobTitle:'Founder',description:'Chartered Life Underwriter (CLU) and founder of Legacy Wealth Advisory',worksFor:{'@type':'Organization',name:'Legacy Wealth Advisory',url:'https://www.legacywealthadvisory.ca'},url:'https://www.legacywealthadvisory.ca/about',sameAs:['https://www.linkedin.com/in/damianfalexander/']}
  return <main className="bg-[#faf9f6]">
   <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(person)}}/>
   <section className="bg-[#102c49] text-white py-16 lg:py-24"><div className="mx-auto max-w-6xl px-6 grid gap-12 lg:grid-cols-[1.25fr_.75fr] items-center">
