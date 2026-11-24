@@ -5,6 +5,10 @@ import { HomeScrollMotion } from '@/components/sections/home-scroll-motion'
 import Link from 'next/link'
 import { HomeHeroGallery } from '@/components/sections/home-hero-gallery'
 
+export const metadata = { alternates: { canonical: '/' }, openGraph: { type: 'website', locale: 'en_CA', siteName: 'Legacy Wealth Advisory', url: '/', title: 'Financial Planner in Mississauga | Legacy Wealth Advisory', description: 'Financial planning, retirement, insurance and estate planning in Mississauga and the GTA.' } }
+
+const businessSchema = { '@context': 'https://schema.org', '@graph': [{ '@type': 'FinancialService', '@id': 'https://www.legacywealthadvisory.ca/#business', name: 'Legacy Wealth Advisory', url: 'https://www.legacywealthadvisory.ca/', telephone: '+1-905-840-2222', email: 'info@legacywealthadvisory.ca', address: { '@type': 'PostalAddress', streetAddress: '14-30 Eglinton Ave W', addressLocality: 'Mississauga', addressRegion: 'ON', postalCode: 'L5R 0C1', addressCountry: 'CA' }, areaServed: 'Greater Toronto Area', logo: 'https://www.legacywealthadvisory.ca/images/logo/legacyLogos/lwa-logo-512x512.png' }, { '@type': 'WebSite', '@id': 'https://www.legacywealthadvisory.ca/#website', url: 'https://www.legacywealthadvisory.ca/', name: 'Legacy Wealth Advisory', publisher: { '@id': 'https://www.legacywealthadvisory.ca/#business' }, inLanguage: 'en-CA' }] }
+
 const services = [
   {number:'01',title:'Financial Planning',text:'A coordinated plan for your investments, savings, retirement and financial goals.',href:'/services/comprehensive-financial-planning',icon:'◌'},
   {number:'02',title:'Retirement & Wealth',text:'Build a strategy for retirement income, investments and changing priorities.',href:'/services/retirement-planning',icon:'↗'},
@@ -14,7 +18,7 @@ const services = [
 
 export default function HomePage() {
   return (
-    <main className="bg-[#faf9f6]"><HomeScrollMotion />
+    <main className="bg-[#faf9f6]"><HomeScrollMotion /><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(businessSchema)}} />
       <section className="relative isolate overflow-hidden bg-[#f8f7f3]">
         <div className="mx-auto grid max-w-[1440px] lg:min-h-[520px] lg:grid-cols-[51%_49%]">
           <div className="relative z-10 flex items-center px-6 py-16 sm:px-12 md:py-24 lg:px-16 xl:px-20">

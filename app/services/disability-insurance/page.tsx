@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/services/disability-insurance' },
   title: 'Disability Insurance in Canada | Legacy Wealth Advisory',
   description: 'Learn how disability insurance can help replace income if illness or injury prevents you from working. Explore individual, group and business coverage in Ontario.',
 }

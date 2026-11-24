@@ -1,0 +1,4 @@
+import type { Metadata } from 'next'
+import type { ReactNode } from 'react'
+export const metadata: Metadata = {"title":"Financial Planning and Insurance Services in Mississauga | Legacy Wealth Advisory","description":"Explore financial planning, retirement, estate and insurance services for families and business owners in Mississauga and the GTA.","alternates":{"canonical":"/services"},"openGraph":{"type":"website","url":"/services","title":"Financial Planning and Insurance Services in Mississauga | Legacy Wealth Advisory","description":"Explore financial planning, retirement, estate and insurance services for families and business owners in Mississauga and the GTA.","siteName":"Legacy Wealth Advisory","locale":"en_CA"}}
+export default function Layout({children}: {children: ReactNode}) { return <>{children}</> }
