@@ -13,8 +13,7 @@ export const revalidate = 3600
 
 export const metadata = {
   metadataBase: new URL('https://www.legacywealthadvisory.ca'),
-  alternates: { canonical: '/' },
-  openGraph: { type: 'website', locale: 'en_CA', siteName: 'Legacy Wealth Advisory', url: 'https://www.legacywealthadvisory.ca', title: 'Financial Planner in Mississauga | Damian Alexander, CLU | Legacy Wealth Advisory', description: 'Financial planning, retirement planning, insurance and estate planning guidance for families and business owners in Mississauga and the GTA.' },
+  openGraph: { type: 'website', locale: 'en_CA', siteName: 'Legacy Wealth Advisory' },
   robots: { index: true, follow: true },
   title: 'Financial Planner in Mississauga | Damian Alexander, CLU | Legacy Wealth Advisory',
   description: 'Legacy Wealth Advisory provides financial planning, retirement planning, investment and insurance solutions, estate planning, and business succession planning in Mississauga, Ontario and the Greater Toronto Area.',
