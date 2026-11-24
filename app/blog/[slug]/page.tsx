@@ -72,17 +72,18 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     mainEntityOfPage: url,
     url,
     image: post.image ? `${SITE_URL}${post.image}` : `${SITE_URL}/images/logo/legacyLogos/lwa-logo-512x512.png`,
-    author: { '@type': 'Person', name: 'Damian Alexander' },
+    author: { '@type': 'Person', name: 'Damian Alexander', url: `${SITE_URL}/about` },
     publisher: {
       '@type': 'Organization',
       name: 'Legacy Wealth Advisory',
+      '@id': `${SITE_URL}/#business`,
       logo: { '@type': 'ImageObject', url: `${SITE_URL}/images/logo/legacyLogos/lwa-logo-512x512.png` },
     },
   }
 
   return (
     <main>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }} />
 
       <section className="py-16 lg:py-20 bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800 text-white">
         <Container size="md">
@@ -123,7 +124,9 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
           <article className="blog-content" dangerouslySetInnerHTML={{ __html: post.html }} />
 
+          <div className="mt-8 border-t pt-5 text-sm text-gray-600">Published by Legacy Wealth Advisory. <Link href="/about" className="underline font-medium text-primary-950">Meet Damian Alexander, CLU, and learn about our planning approach.</Link></div>
           <BlogDisclaimer />
+          <nav aria-label="Financial planning resources" className="mt-6 flex flex-wrap gap-4 text-sm font-medium text-primary-950"><Link className="underline" href="/resources/calculators">Financial planning calculators</Link><Link className="underline" href="/guides">Canadian financial planning guides</Link></nav>
 
           <div className="mt-12 rounded-2xl bg-gradient-to-r from-primary-950 to-primary-800 text-white p-8 text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">Speak With a Financial Planner</h2>
