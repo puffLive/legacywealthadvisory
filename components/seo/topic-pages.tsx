@@ -63,14 +63,14 @@ export const topics: Record<string, Topic> = {
 
 export function topicMetadata(slug: string): Metadata {
   const t = topics[slug]
-  return { title: t.title + ' | Legacy Wealth Advisory', description: t.description, alternates: { canonical: 'https://legacywealthadvisory.ca' + (['comprehensive-financial-planning','retirement-planning','corporate-insurance-planning'].includes(slug) ? '/services/' : '/guides/') + slug } }
+  return { title: t.title + ' | Legacy Wealth Advisory', description: t.description, alternates: { canonical: 'https://www.legacywealthadvisory.ca' + (['comprehensive-financial-planning','retirement-planning','corporate-insurance-planning'].includes(slug) ? '/services/' : '/guides/') + slug } }
 }
 
 export function TopicPage({ slug }: { slug: string }) {
   const t = topics[slug]
   if (!t) return null
   const path = (['comprehensive-financial-planning','retirement-planning','corporate-insurance-planning'].includes(slug) ? '/services/' : '/guides/') + slug
-  const schema = { '@context':'https://schema.org', '@type':'WebPage', name:t.title, description:t.description, url:'https://legacywealthadvisory.ca'+path, publisher:{'@type':'Organization',name:'Legacy Wealth Advisory',url:'https://legacywealthadvisory.ca'} }
+  const schema = { '@context':'https://schema.org', '@type':'WebPage', name:t.title, description:t.description, url:'https://www.legacywealthadvisory.ca'+path, publisher:{'@type':'Organization',name:'Legacy Wealth Advisory',url:'https://www.legacywealthadvisory.ca'} }
   return <main>
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema)}}/>
     <section className="bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800 py-16 text-white"><div className={slug === "comprehensive-financial-planning" ? "max-w-6xl mx-auto px-6 grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center" : "max-w-4xl mx-auto px-6"}><div><p className="uppercase tracking-wide text-gold-400 font-semibold text-sm mb-3">{t.eyebrow}</p><h1 className="text-3xl md:text-5xl font-bold mb-6">{t.title}</h1><p className="text-lg text-blue-100 leading-relaxed">{t.intro}</p><a className="inline-block mt-8 bg-gold-500 text-primary-950 font-semibold rounded-md px-6 py-3" href="https://calendly.com/planningwithdamian/30-min-with-damian">Book an Introductory Consultation</a></div>{slug === "comprehensive-financial-planning" && <div className="overflow-hidden rounded-2xl border border-white/15 shadow-2xl"><img src="/images/financial-planning-gps.svg" alt="Two people viewing a GPS-style financial roadmap showing wealth building, protection and retirement" className="block w-full h-auto object-cover" loading="eager" /></div>}</div></section>
