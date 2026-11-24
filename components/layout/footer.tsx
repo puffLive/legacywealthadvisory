@@ -24,7 +24,6 @@ const navigationLinks = {
     { label: 'Disability Insurance', href: '/services/disability-insurance' },
   ],
   resources: [
-    { label: 'Financial Planning Guides', href: '/guides' },
     { label: 'Privacy Policy', href: '/privacy-policy' },
     { label: 'Terms of Service', href: '/terms-of-service' },
   ],
