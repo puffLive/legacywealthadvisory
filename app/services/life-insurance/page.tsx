@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/services/life-insurance' },
   title: 'Life Insurance | Tools for Financial & Estate Planning | Legacy Wealth Advisory',
   description: 'Learn why life insurance matters, its benefits, and how term, whole life, universal life and other coverage options support Canadian financial and estate planning.',
 }
