@@ -25,6 +25,7 @@ const staticRoutes = [
   '/resources/calculators/financial-health-score',
   '/resources/calculators/cost-of-waiting',
   '/resources/calculators/insurance-needs',
+  '/resources/calculators/critical-illness-needs',
   '/resources/calculators/retirement',
   '/resources/calculators/cash-flow',
   '/guides',
