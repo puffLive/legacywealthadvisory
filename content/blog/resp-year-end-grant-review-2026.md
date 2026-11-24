@@ -3,7 +3,7 @@ title: "Before Year-End: Are You Making the Most of Your Child’s RESP?"
 date: "2026-11-24"
 summary: "Understand education savings grants, catch-up opportunities and important age-related deadlines before December 31."
 category: "Financial Planning"
-status: "draft"
+status: "published"
 seoDescription: "Canadian RESP year-end planning: education savings grants, carry-forward room, contribution limits and age-related deadlines."
 ---
 
