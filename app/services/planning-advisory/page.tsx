@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = { title: 'Planning and Advisory | Legacy Wealth Advisory', description: 'Explore planning and advisory from Legacy Wealth Advisory in Ontario.' }
+export const metadata: Metadata = {
+  alternates: { canonical: '/services/planning-advisory' }, title: 'Planning and Advisory | Legacy Wealth Advisory', description: 'Explore planning and advisory from Legacy Wealth Advisory in Ontario.' }
 
 export default function Page() {
   return (
