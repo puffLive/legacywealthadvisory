@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/services/critical-illness' },
   title: 'Critical Illness Insurance | Legacy Wealth Advisory',
   description: 'Understand critical illness insurance in Canada: how lump-sum benefits work, common covered conditions, policy options and financial planning benefits.',
 }
