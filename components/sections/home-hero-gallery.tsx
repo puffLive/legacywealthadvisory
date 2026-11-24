@@ -28,6 +28,8 @@ const slides = [
 
 export function HomeHeroGallery() {
   const [active, setActive] = React.useState(0)
+  const [visited, setVisited] = React.useState<number[]>([0])
+  React.useEffect(() => { setVisited(previous => previous.includes(active) ? previous : [...previous, active]) }, [active])
   const [paused, setPaused] = React.useState(false)
   const [reducedMotion, setReducedMotion] = React.useState(false)
 
@@ -49,7 +51,7 @@ export function HomeHeroGallery() {
 
   return (
     <div className="relative h-full min-h-[340px] overflow-hidden bg-[#d9d4ca] lg:min-h-[550px]" aria-label="Legacy Wealth Advisory homepage photo gallery" aria-roledescription="carousel">
-      {slides.map((slide, index) => (
+      {slides.map((slide, index) => (visited.includes(index) || index === active) && (
         <div
           key={slide.src}
           className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === active ? 'opacity-100' : 'pointer-events-none opacity-0'}`}
