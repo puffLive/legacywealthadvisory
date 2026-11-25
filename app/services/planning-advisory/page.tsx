@@ -1,3 +1,4 @@
+import { ServiceFAQ } from '@/components/sections/service-faq'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
@@ -41,6 +42,7 @@ export default function Page() {
           </div>
         </section>
       </div>
-    </main>
+    <ServiceFAQ items={[{"question":"What does a financial plan include?","answer":"A financial plan coordinates cash flow, savings, investments, retirement income, insurance and estate goals based on your circumstances."},{"question":"Does Legacy Wealth Advisory work with accountants and lawyers?","answer":"Yes. Where specialized tax or legal advice is needed, planning may be coordinated with qualified accountants and lawyers."},{"question":"Where does Legacy Wealth Advisory serve clients?","answer":"Legacy Wealth Advisory serves individuals, families and business owners in Mississauga and across the Greater Toronto Area."}]} />
+</main>
   )
 }
