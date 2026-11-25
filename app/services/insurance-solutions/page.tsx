@@ -1,3 +1,4 @@
+import { ServiceFAQ } from '@/components/sections/service-faq'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
@@ -39,6 +40,7 @@ export default function Page() {
           <p className="mt-5 text-xs leading-6 text-white/75">Insurance benefits are subject to policy terms, eligibility, exclusions and underwriting.</p>
         </section>
       </div>
-    </main>
+    <ServiceFAQ items={[{"question":"What is the difference between life, critical illness and disability insurance?","answer":"Life insurance pays a benefit on an insured death, critical illness insurance may pay a lump sum for a covered diagnosis, and disability insurance may replace part of income during a covered disability. Policy terms and exclusions apply."},{"question":"How much insurance do I need?","answer":"Coverage needs depend on income, debts, dependants, existing coverage, savings and budget. A needs analysis can help identify potential gaps."},{"question":"Can business owners use insurance for succession planning?","answer":"Insurance may help fund buy-sell arrangements or protect a business against the loss of a key person, depending on ownership, policy terms and professional tax and legal advice."}]} />
+</main>
   )
 }

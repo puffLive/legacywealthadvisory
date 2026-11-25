@@ -1,0 +1,4 @@
+export function ServiceFAQ({items}:{items:{question:string;answer:string}[]}) {
+ const schema={'@context':'https://schema.org','@type':'FAQPage',mainEntity:items.map(item=>({'@type':'Question',name:item.question,acceptedAnswer:{'@type':'Answer',text:item.answer}}))}
+ return <section className="mx-auto max-w-5xl px-6 py-12" aria-label="Frequently asked questions"><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema).replace(/</g,'\\u003c')}}/><h2 className="font-serif text-3xl text-[#102c49] mb-6">Frequently asked questions</h2><div className="space-y-5">{items.map(item=><article key={item.question} className="border-b border-[#e8e4dc] pb-5"><h3 className="text-xl font-semibold text-[#102c49]">{item.question}</h3><p className="mt-3 leading-7 text-[#53616c]">{item.answer}</p></article>)}</div></section>
+}

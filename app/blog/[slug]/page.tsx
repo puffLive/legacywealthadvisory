@@ -72,7 +72,8 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     mainEntityOfPage: url,
     url,
     image: post.image ? `${SITE_URL}${post.image}` : `${SITE_URL}/images/logo/legacyLogos/lwa-logo-512x512.png`,
-    author: { '@type': 'Person', name: 'Damian Alexander', url: `${SITE_URL}/about` },
+    inLanguage: 'en-CA',
+    author: { '@type': 'Organization', name: 'Legacy Wealth Advisory', '@id': `${SITE_URL}/#business` },
     publisher: {
       '@type': 'Organization',
       name: 'Legacy Wealth Advisory',
@@ -122,6 +123,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             </div>
           )}
 
+          <section className="mb-8 border-l-4 border-[#b99a5e] bg-[#faf9f6] p-6"><h2 className="font-serif text-2xl text-[#102c49]">Article overview</h2><p className="mt-3 leading-7 text-[#53616c]">{post.summary}</p></section>
           <article className="blog-content" dangerouslySetInnerHTML={{ __html: post.html }} />
 
           <div className="mt-8 border-t pt-5 text-sm text-gray-600">Published by Legacy Wealth Advisory. <Link href="/about" className="underline font-medium text-primary-950">Meet Damian Alexander, CLU, and learn about our planning approach.</Link></div>

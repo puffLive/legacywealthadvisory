@@ -17,7 +17,7 @@ const stages=[
 ]
 
 export default function AboutPage(){
- const person={'@context':'https://schema.org','@type':'Person',name:'Damian Alexander',jobTitle:'Founder',description:'Chartered Life Underwriter (CLU) and founder of Legacy Wealth Advisory',worksFor:{'@type':'Organization',name:'Legacy Wealth Advisory',url:'https://www.legacywealthadvisory.ca'},url:'https://www.legacywealthadvisory.ca/about',sameAs:['https://www.linkedin.com/in/damianfalexander/']}
+ const person={'@context':'https://schema.org','@type':'Person','@id':'https://www.legacywealthadvisory.ca/about#advisor',hasCredential:{'@type':'EducationalOccupationalCredential',name:'Chartered Life Underwriter (CLU)'},knowsAbout:['Insurance planning','Estate planning','Retirement planning','Business succession planning'],name:'Damian Alexander',jobTitle:'Founder',description:'Chartered Life Underwriter (CLU) and founder of Legacy Wealth Advisory',worksFor:{'@type':'Organization','@id':'https://www.legacywealthadvisory.ca/#business',name:'Legacy Wealth Advisory',url:'https://www.legacywealthadvisory.ca'},url:'https://www.legacywealthadvisory.ca/about',sameAs:['https://www.linkedin.com/in/damianfalexander/']}
  return <main className="bg-[#faf9f6]">
   <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(person)}}/>
   <section className="bg-[#102c49] text-white py-16 lg:py-24"><div className="mx-auto max-w-6xl px-6 grid gap-12 lg:grid-cols-[1.25fr_.75fr] items-center">
