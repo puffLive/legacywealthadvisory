@@ -40,8 +40,8 @@ const config: Config = {
         }
       },
       fontFamily: {
-        serif: ['Times New Roman', 'serif'],
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        serif: ['Times New Roman', 'Times', 'serif'],
+        sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
       },
       spacing: {
         '18': '4.5rem',
