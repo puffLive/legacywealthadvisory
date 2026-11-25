@@ -3,7 +3,7 @@ title: "If Your Income Stopped Tomorrow, How Long Could Your Financial Plan Last
 date: "2026-11-25"
 summary: "Five questions to help Canadian households and business owners assess income protection before 2027."
 category: "Financial Planning"
-status: "draft"
+status: "published"
 seoDescription: "Review emergency savings, workplace disability benefits and income protection gaps before 2027."
 ---
 
