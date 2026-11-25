@@ -1,4 +1,5 @@
 import './globals.css'
+import MarketTicker from '@/components/layout/market-ticker'
 import { Inter } from 'next/font/google'
 import { Header } from '@/components/layout/header'
 import { getPublishedPosts } from '@/lib/blog'
@@ -38,6 +39,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable}`}>
       <body className="font-sans antialiased">
         <Header blogTopics={Array.from(new Set(getPublishedPosts().map(post => post.category))).sort()} />
+        <MarketTicker />
         {children}
         <Footer />
       </body>
