@@ -29,6 +29,7 @@ const staticRoutes = [
   '/resources/calculators/rrsp-tax-savings',
   '/resources/calculators/disability-needs',
   '/resources/calculators/cpp-oas',
+  '/resources/calculators/rrsp-vs-tfsa',
   '/resources/calculators/retirement',
   '/resources/calculators/cash-flow',
   '/guides',
