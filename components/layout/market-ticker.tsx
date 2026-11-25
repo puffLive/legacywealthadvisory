@@ -1,6 +1,6 @@
 'use client'
 import {useEffect,useRef} from 'react'
-const symbols=[{proName:'OANDA:SPX500USD',title:'S&P 500 (CFD)'},{proName:'NASDAQ:IXIC',title:'NASDAQ Composite'},{proName:'TSX:TSX',title:'S&P/TSX Composite'},{proName:'OANDA:US30USD',title:'Dow Jones (CFD)'},{proName:'FX_IDC:USDCAD',title:'USD/CAD'},{proName:'OANDA:XAUUSD',title:'Gold (USD)'},{proName:'OANDA:WTICOUSD',title:'WTI Crude Oil (CFD)'}]
+const symbols=[{proName:'OANDA:SPX500USD',title:'S&P 500 (CFD)'},{proName:'FOREXCOM:NSXUSD',title:'NASDAQ 100 (CFD)'},{proName:'TSX:TSX',title:'S&P/TSX Composite'},{proName:'OANDA:US30USD',title:'Dow Jones (CFD)'},{proName:'FX_IDC:USDCAD',title:'USD/CAD'},{proName:'OANDA:XAUUSD',title:'Gold (USD)'},{proName:'OANDA:WTICOUSD',title:'WTI Crude Oil (CFD)'}]
 export default function MarketTicker(){
  const host=useRef<HTMLDivElement>(null)
  useEffect(()=>{
