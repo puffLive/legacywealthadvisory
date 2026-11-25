@@ -26,6 +26,8 @@ const staticRoutes = [
   '/resources/calculators/cost-of-waiting',
   '/resources/calculators/insurance-needs',
   '/resources/calculators/critical-illness-needs',
+  '/resources/calculators/rrsp-tax-savings',
+  '/resources/calculators/disability-needs',
   '/resources/calculators/retirement',
   '/resources/calculators/cash-flow',
   '/guides',
