@@ -2,7 +2,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  alternates: { canonical: '/services/planning-advisory' }, title: 'Planning and Advisory | Legacy Wealth Advisory', description: 'Comprehensive financial planning, retirement, estate and succession planning and wealth protection for individuals, families and business owners in Mississauga and Ontario.' }
+  alternates: { canonical: '/services/planning-advisory' }, title: 'Planning and Advisory | Legacy Wealth Advisory', description: 'Comprehensive financial planning, retirement, tax-efficient wealth strategies, estate and succession planning and wealth protection for individuals, families and business owners in Mississauga and Ontario.' }
 
 export default function Page() {
   return (
@@ -23,6 +23,21 @@ export default function Page() {
           <p className="text-gray-700 leading-7">We begin by understanding your current financial circumstances and defining what you want to achieve. We analyze your options, identify opportunities and potential risks, and develop a coordinated strategy. Where specialized tax or legal advice is required, we work with your qualified professionals. We help implement the agreed strategies and review your plan as your needs evolve.</p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[['Build','Develop savings, investment and retirement strategies.'],['Protect','Manage financial risks and safeguard your income and assets.'],['Transfer','Plan for your estate, business succession and future generations.']].map(([title,description])=><div key={title}><h3 className="font-semibold text-primary-950">{title}</h3><p className="mt-2 text-sm leading-6 text-gray-700">{description}</p></div>)}
+          </div>
+        </section>
+        <section className="mb-12 max-w-4xl" aria-labelledby="tax-planning-heading">
+          <h2 id="tax-planning-heading" className="font-serif text-3xl sm:text-4xl text-primary-950 mb-6">Tax-Efficient Financial Planning</h2>
+          <div className="space-y-5 text-base sm:text-lg leading-8 text-gray-700">
+            <p>Taxes can have a significant impact on your ability to accumulate, preserve and transfer wealth. An effective financial plan considers not only investment growth but also how your income, investments, retirement savings and assets are structured from a tax perspective.</p>
+            <p>At Legacy Wealth Advisory, we help identify opportunities to structure your financial affairs in a tax-efficient manner, with the objective of minimizing unnecessary taxes, maximizing after-tax income and preserving more of your wealth.</p>
+            <ul className="list-disc space-y-2 pl-6">
+              <li>Tax-efficient investment and registered account strategies.</li>
+              <li>Strategic retirement income and withdrawal planning.</li>
+              <li>Personal and corporate wealth structuring, including exploring salary and dividend options with your accountant.</li>
+              <li>Tax-efficient estate planning and wealth transfer.</li>
+              <li>Coordination with accountants and tax professionals.</li>
+            </ul>
+            <p>The objective is to help you keep more of what you earn, make informed financial decisions and build a strategy that supports your long-term financial goals. Appropriate strategies depend on your circumstances and applicable tax rules.</p>
           </div>
         </section>
         <h2 className="font-serif text-3xl text-primary-950 mb-6">Explore Our Planning and Advisory Services</h2>
