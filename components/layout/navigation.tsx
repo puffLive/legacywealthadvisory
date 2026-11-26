@@ -73,7 +73,7 @@ export function Navigation({ className, blogTopics = [] }: NavigationProps) {
   const pathname = usePathname()
 
   return (
-    <nav className={cn('hidden xl:flex items-center gap-2 2xl:gap-4 whitespace-nowrap', className)}>
+    <nav className={cn('hidden xl:flex items-center justify-evenly gap-2 2xl:gap-5 whitespace-nowrap', className)}>
       {getNavigationItems(blogTopics).map((item) => (
         <div
           key={item.label}

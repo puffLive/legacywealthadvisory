@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import { Container, Button, CalendlyModal } from '@/components/ui'
+import { Button, CalendlyModal } from '@/components/ui'
 import { Logo } from './logo'
 import { Navigation, MobileNavigation } from './navigation'
 import { cn } from '@/lib/utils'
@@ -36,13 +36,13 @@ export function Header({ className, blogTopics = [] }: HeaderProps) {
           className
         )}
       >
-        <Container>
-          <div className="flex min-w-0 items-center justify-between gap-3 h-16 xl:h-20 2xl:gap-5">
+        <div className="mx-auto w-full max-w-[1920px] px-4 sm:px-6 2xl:px-8">
+          <div className="flex min-w-0 items-center justify-between gap-3 h-16 xl:h-20 2xl:gap-8">
             {/* Logo */}
-            <Logo compact className="text-white hover:text-gold-400" />
+            <Logo compact className="text-white hover:text-gold-400 shrink-0" />
 
             {/* Desktop Navigation */}
-            <Navigation blogTopics={blogTopics} className="text-white flex-shrink-0" />
+            <Navigation blogTopics={blogTopics} className="text-white flex-1" />
 
             {/* Contact Info and Book Button - Desktop */}
             <div className="hidden xl:flex items-center flex-shrink-0">
@@ -72,7 +72,7 @@ export function Header({ className, blogTopics = [] }: HeaderProps) {
               </svg>
             </button>
           </div>
-        </Container>
+        </div>
       </header>
 
       {/* Mobile Navigation */}
