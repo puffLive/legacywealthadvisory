@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server'
-import nodemailer from 'nodemailer'
 import { z } from 'zod'
 
 export const runtime = 'nodejs'
@@ -47,10 +46,6 @@ export async function POST(request:NextRequest) {
     if (raw.length > maxBodyBytes) return NextResponse.json({success:false,error:'Submission is too large.'},{status:413})
     const parsed = schema.safeParse(JSON.parse(raw))
     if (!parsed.success) return NextResponse.json({success:false,error:'Please provide your name, email, phone and consent.'},{status:400})
-    if (!process.env.SMTP_HOST || !process.env.SMTP_USER || !process.env.SMTP_PASSWORD) {
-      console.error('Intake form SMTP credentials are not configured')
-      return NextResponse.json({success:false,error:'Online submission is not available right now. Please contact our office.'},{status:503})
-    }
     const data = parsed.data as Record<string,unknown>
     const rows = Object.entries(data).filter(([k,v])=>k!=='consent'&&typeof v==='string'&&v.length>0&&v.length<=4000)
     if(rows.length>110) return NextResponse.json({success:false,error:'Too many fields.'},{status:400})
@@ -63,22 +58,27 @@ export async function POST(request:NextRequest) {
       'Client consent: yes',
       'Handle as confidential client discovery information. Do not forward through unsecured channels.',
     ].join('\n')
-    const transporter = nodemailer.createTransport({
-      host:process.env.SMTP_HOST,
-      port:Number(process.env.SMTP_PORT||587),
-      secure:process.env.SMTP_SECURE==='true',
-      auth:{user:process.env.SMTP_USER,pass:process.env.SMTP_PASSWORD},
-    })
-    await transporter.sendMail({
-      from:process.env.SMTP_FROM||process.env.SMTP_USER,
-      to:process.env.INTAKE_FORM_RECIPIENT||'damian@legacywealthadvisory.ca',
-      replyTo:String(data.email),
-      subject:'Legacy Wealth Advisory Intake Form — '+String(data.fullName).replace(/[\r\n]/g,' '),
-      text:body,
-    })
+    const {ZOHO_CLIENT_ID,ZOHO_CLIENT_SECRET,ZOHO_REFRESH_TOKEN}=process.env
+    if(!ZOHO_CLIENT_ID||!ZOHO_CLIENT_SECRET||!ZOHO_REFRESH_TOKEN)return NextResponse.json({success:false,error:'Online submission is temporarily unavailable.'},{status:503})
+    const token=await fetch('https://accounts.zohocloud.ca/oauth/v2/token',{method:'POST',body:new URLSearchParams({client_id:ZOHO_CLIENT_ID,client_secret:ZOHO_CLIENT_SECRET,refresh_token:ZOHO_REFRESH_TOKEN,grant_type:'refresh_token'})})
+    const auth=await token.json()
+    if(!token.ok||!auth.access_token)throw new Error('CRM authorization failed')
+    const names=parsed.data.fullName.split(/\s+/)
+    const lastName=names.pop()!
+    const description='Client Intake | Consent recorded '+new Date().toISOString()
+    const headers={Authorization:'Zoho-oauthtoken '+auth.access_token,'Content-Type':'application/json'}
+    const lead=await fetch('https://www.zohoapis.ca/crm/v2/Leads',{method:'POST',headers,body:JSON.stringify({data:[{First_Name:names.join(' ')||undefined,Last_Name:lastName,Email:parsed.data.email,Phone:parsed.data.phone,Company:'Individual',Lead_Source:'Website',Description:description}]})})
+    const result=await lead.json()
+    const id=result.data?.[0]?.details?.id
+    if(!lead.ok||result.data?.[0]?.code!=='SUCCESS'||!id)throw new Error('CRM lead creation failed')
+    const attachment=new FormData()
+    attachment.append('file',new Blob([body],{type:'text/plain'}),'Client-intake.txt')
+    const uploaded=await fetch('https://www.zohoapis.ca/crm/v2/Leads/'+encodeURIComponent(id)+'/Attachments',{method:'POST',headers:{Authorization:headers.Authorization},body:attachment})
+    const uploadResult=await uploaded.json()
+    if(!uploaded.ok||uploadResult.data?.[0]?.code!=='SUCCESS')return NextResponse.json({success:false,error:'Your contact details were saved, but the intake document could not be attached. Please contact our office before resubmitting.'},{status:502})
     return NextResponse.json({success:true})
   } catch (error) {
-    console.error('Intake form delivery error',error)
+    console.error('Intake form delivery failed')
     return NextResponse.json({success:false,error:'We could not deliver your intake form. Please contact our office.'},{status:500})
   }
 }
