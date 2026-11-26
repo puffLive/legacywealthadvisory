@@ -158,6 +158,7 @@ export function CalendlyModal({
   utm,
   pageSettings,
 }: CalendlyModalProps) {
+  const [lead, setLead] = React.useState<{firstName:string;lastName:string;email:string;phone:string}|null>(null)
   const [rootElement, setRootElement] = React.useState<HTMLElement | null>(null)
 
   React.useEffect(() => {
@@ -181,7 +182,7 @@ export function CalendlyModal({
       open={isOpen}
       onModalClose={onClose}
       rootElement={rootElement}
-      prefill={prefill}
+      prefill={{...prefill, firstName:lead.firstName, lastName:lead.lastName, email:lead.email}}
       utm={utm}
       pageSettings={pageSettings}
     />
