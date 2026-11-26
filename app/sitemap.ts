@@ -37,6 +37,7 @@ const staticRoutes = [
   '/guides/critical-illness-vs-disability-insurance',
   '/guides/pension-options-after-leaving-employer',
   '/guides/rrsp-vs-tfsa-vs-fhsa',
+  '/events',
   '/contact',
   '/blog',
   '/privacy-policy',
