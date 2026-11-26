@@ -7,7 +7,7 @@ const contactSchema = z.object({
   firstName: z.string().min(2, 'First name must be at least 2 characters'),
   lastName: z.string().min(2, 'Last name must be at least 2 characters'),
   email: z.string().email('Please enter a valid email address'),
-  phone: z.string().min(10, 'Please enter a valid phone number'),
+  phone: z.string().trim().refine(value => value === '' || value.replace(/\D/g, '').length >= 10, 'Please enter a valid phone number').optional(),
   message: z.string().max(4000).optional(),
   source: z.enum(['contact','consultation']).default('contact'),
 });
@@ -50,7 +50,7 @@ async function addLeadToZoho(data: ContactFormData) {
           First_Name: data.firstName,
           Last_Name: data.lastName,
           Email: data.email,
-          Phone: data.phone,
+          ...(data.phone ? { Phone: data.phone } : {}),
           Company: 'Individual',
           Lead_Source: 'Website',
           Description: (data.source === 'consultation' ? 'Consultation request (appointment not yet confirmed)' : 'General website inquiry') + ' | ' + (data.message || 'No additional details provided'),
@@ -102,7 +102,7 @@ async function sendEmailNotification(data: ContactFormData) {
     <ul>
       <li><strong>Name:</strong> ${data.firstName} ${data.lastName}</li>
       <li><strong>Email:</strong> ${data.email}</li>
-      <li><strong>Phone:</strong> ${data.phone}</li>
+      <li><strong>Phone:</strong> ${data.phone || 'Not provided'}</li>
     </ul>
 
     ${data.message ? `<h3>Message:</h3>
@@ -120,7 +120,7 @@ New Contact Form Submission
 Contact Information:
 - Name: ${data.firstName} ${data.lastName}
 - Email: ${data.email}
-- Phone: ${data.phone}
+- Phone: ${data.phone || 'Not provided'}
 ${data.message ? `
 Message:
 ${data.message}` : ''}
