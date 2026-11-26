@@ -8,7 +8,8 @@ const contactSchema = z.object({
   lastName: z.string().min(2, 'Last name must be at least 2 characters'),
   email: z.string().email('Please enter a valid email address'),
   phone: z.string().min(10, 'Please enter a valid phone number'),
-  message: z.string().optional(),
+  message: z.string().max(4000).optional(),
+  source: z.enum(['contact','consultation']).default('contact'),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
@@ -19,7 +20,7 @@ async function addLeadToZoho(data: ContactFormData) {
     // Check if Zoho credentials are configured
     if (!process.env.ZOHO_CLIENT_ID || !process.env.ZOHO_CLIENT_SECRET || !process.env.ZOHO_REFRESH_TOKEN) {
       console.log('Zoho CRM integration not configured - skipping');
-      return { success: true, message: 'Zoho integration skipped (not configured)' };
+      return { success: false, error: 'CRM not configured' };
     }
 
     // Get access token using refresh token (Canadian data center)
@@ -52,7 +53,7 @@ async function addLeadToZoho(data: ContactFormData) {
           Phone: data.phone,
           Company: 'Individual',
           Lead_Source: 'Website',
-          Description: data.message || 'No additional details provided',
+          Description: (data.source === 'consultation' ? 'Consultation request (appointment not yet confirmed)' : 'General website inquiry') + ' | ' + (data.message || 'No additional details provided'),
         },
       ],
     };
@@ -173,16 +174,14 @@ export async function POST(request: NextRequest) {
     // Validate the data
     const validatedData = contactSchema.parse(body);
 
-    // Send email notification
-    await sendEmailNotification(validatedData);
-
-    // Add to Zoho CRM (this won't fail the submission if it errors)
     const zohoResult = await addLeadToZoho(validatedData);
+    if (!zohoResult.success) return NextResponse.json({success:false,error:'We could not save your inquiry. Please try again or call us.'},{status:503});
+    if (validatedData.source === 'contact') { try { await sendEmailNotification(validatedData); } catch { console.error('Contact notification failed after CRM save'); } }
 
     return NextResponse.json({
       success: true,
       message: 'Thank you for your submission! We will contact you soon.',
-      zoho: zohoResult,
+
     });
   } catch (error) {
     console.error('Contact form submission error:', error);

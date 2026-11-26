@@ -1,7 +1,13 @@
 'use client'
 
 import * as React from 'react'
-import { InlineWidget, PopupButton, PopupModal, useCalendlyEventListener } from 'react-calendly'
+import { InlineWidget, PopupModal, useCalendlyEventListener } from 'react-calendly'
+
+function ConsultationGate({onSaved}:{onSaved:(data:{firstName:string;lastName:string;email:string;phone:string})=>void}){
+ const [busy,setBusy]=React.useState(false);const [error,setError]=React.useState(false)
+ async function submit(e:React.FormEvent<HTMLFormElement>){e.preventDefault();if(busy)return;const f=new FormData(e.currentTarget);const data={firstName:String(f.get('firstName')),lastName:String(f.get('lastName')),email:String(f.get('email')),phone:String(f.get('phone'))};setBusy(true);setError(false);try{const r=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...data,source:'consultation'})});const result=await r.json();if(!r.ok||!result.success)throw new Error();onSaved(data)}catch{setError(true)}finally{setBusy(false)}}
+ return <form onSubmit={submit} className="p-6 space-y-4 bg-white text-primary-950"><h2 className="font-serif text-2xl">Book your consultation</h2><p className="text-sm">Enter your contact details, then choose an appointment time.</p><div className="grid gap-4 sm:grid-cols-2">{[{name:'firstName',label:'First name',type:'text'},{name:'lastName',label:'Last name',type:'text'},{name:'email',label:'Email address',type:'email'},{name:'phone',label:'Phone number',type:'tel'}].map(f=><label key={f.name} className="text-sm">{f.label}<input required minLength={f.name==='phone'?10:2} maxLength={254} name={f.name} type={f.type} className="block w-full border rounded p-3 mt-1"/></label>)}</div><p className="text-xs">By continuing, you agree to be contacted about your consultation request. <a href="/privacy-policy" className="underline">Privacy policy</a>.</p>{error&&<p role="alert" className="text-red-700">Unable to save your request. Please retry or call (905) 840-2222.</p>}<button disabled={busy} className="bg-primary-950 text-white rounded px-5 py-3">{busy?'Saving…':'Continue to appointment booking'}</button></form>
+}
 
 interface CalendlyInlineProps {
   url: string
@@ -29,6 +35,7 @@ interface CalendlyInlineProps {
 }
 
 export function CalendlyInline({ url, prefill, utm, pageSettings }: CalendlyInlineProps) {
+  const [lead,setLead]=React.useState<{firstName:string;lastName:string;email:string;phone:string}|null>(null)
   useCalendlyEventListener({
     onEventScheduled: (e) => {
       console.log('Event scheduled:', e.data.payload)
@@ -36,11 +43,12 @@ export function CalendlyInline({ url, prefill, utm, pageSettings }: CalendlyInli
     },
   })
 
+  if(!lead)return <ConsultationGate onSaved={setLead}/>
   return (
     <div className="calendly-inline-widget-container">
       <InlineWidget
         url={url}
-        prefill={prefill}
+        prefill={{...prefill,firstName:lead.firstName,lastName:lead.lastName,email:lead.email}}
         utm={utm}
         pageSettings={pageSettings}
         styles={{ minWidth: '100%', height: '700px' }}
@@ -112,15 +120,7 @@ export function CalendlyButton({
   if (!rootElement) return null
 
   return (
-    <PopupButton
-      url={url}
-      rootElement={rootElement}
-      text={text}
-      className={buttonClasses}
-      prefill={prefill}
-      utm={utm}
-      pageSettings={pageSettings}
-    />
+    <button className={buttonClasses} onClick={()=>{window.location.href='/contact#calendly-booking'}}>{text}</button>
   )
 }
 
@@ -172,6 +172,8 @@ export function CalendlyModal({
   })
 
   if (!rootElement) return null
+  if(isOpen&&!lead)return <div className="fixed inset-0 z-[100] bg-black/50 flex items-center justify-center p-4"><div role="dialog" aria-modal="true" className="bg-white w-full max-w-xl max-h-[90vh] overflow-auto rounded-lg"><button onClick={onClose} className="float-right p-4" aria-label="Close">×</button><ConsultationGate onSaved={setLead}/></div></div>
+  if(!lead)return null
 
   return (
     <PopupModal
