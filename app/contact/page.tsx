@@ -10,7 +10,7 @@ const contactSchema = z.object({
   firstName: z.string().min(2, 'First name must be at least 2 characters'),
   lastName: z.string().min(2, 'Last name must be at least 2 characters'),
   email: z.string().email('Please enter a valid email address'),
-  phone: z.string().min(10, 'Please enter a valid phone number'),
+  phone: z.string().trim().refine(value => value === '' || value.replace(/\D/g, '').length >= 10, 'Please enter a valid phone number').optional(),
   message: z.string().optional(),
 })
 
@@ -177,11 +177,10 @@ export default function ContactPage() {
                     required
                   />
                   <Input
-                    label="Phone Number"
+                    label="Phone Number (Optional)"
                     type="tel"
                     {...register('phone')}
                     error={errors.phone?.message}
-                    required
                   />
                 </div>
 
@@ -273,7 +272,8 @@ export default function ContactPage() {
                     <div>
                       <h4 className="font-semibold mb-1">Office Hours</h4>
                       <p className="text-blue-100 text-sm">
-                        Monday - Friday: 9:00 AM - 6:00 PM<br />
+                        Monday - Thursday: 1:00 PM - 5:00 PM<br />
+                        Friday: 1:00 PM - 3:00 PM<br />
                         Saturday: By appointment<br />
                         Sunday: Closed
                       </p>
