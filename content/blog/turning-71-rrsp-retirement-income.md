@@ -3,7 +3,7 @@ title: "Turning 71 in 2026? Make a Plan for Your Retirement Income"
 date: "2026-11-27"
 summary: "Understand RRSP maturity, RRIF withdrawals and annuity options before December 31."
 category: "Financial Planning"
-status: "draft"
+status: "published"
 seoDescription: "Turning 71 in Canada? Learn about the December 31 RRSP maturity deadline, RRIF minimum payments and retirement income planning."
 ---
 
