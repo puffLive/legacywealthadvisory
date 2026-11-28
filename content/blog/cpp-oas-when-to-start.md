@@ -3,7 +3,7 @@ title: "CPP and OAS: Should You Start Early or Wait?"
 date: "2026-11-28"
 summary: "Understand public pension timing and how it fits into a Canadian retirement income plan."
 category: "Financial Planning"
-status: "draft"
+status: "published"
 seoDescription: "Compare CPP and OAS starting ages, pension adjustments and retirement income considerations in Canada."
 ---
 
